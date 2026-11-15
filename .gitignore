@@ -1,6 +1,12 @@
-# Only reviewed planning documents are tracked at this stage.
-*
-!/.gitignore
-!/README.md
-!/docs/
-!/docs/PLAN.md
+node_modules/
+data/
+.env
+.env.*
+!.env.example
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+coverage/
+.DS_Store
+work/

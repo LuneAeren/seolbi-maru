@@ -1,0 +1,156 @@
+{
+  "version": "0.1.0",
+  "generatedOn": "2026-11-15",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "62b27fb266e55b191e76b83782b72278f1a3aa31f0dc3aebf53935a99c54d238",
+      "bytes": 542
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "23dd2fd791cca06814025848976b0ca32ae74eab82b5c798e30006a8dfad4049",
+      "bytes": 103
+    },
+    {
+      "path": "README.md",
+      "sha256": "f12d149eb2dadb5e831b372958b267b056ff71de95bb2df5721f37b43fe17404",
+      "bytes": 5599
+    },
+    {
+      "path": "docs/DEPENDENCIES.json",
+      "sha256": "ff171b346a77aa78fe670175d20a07d876fd65b5c09e22b7631be6ad890aea58",
+      "bytes": 58130
+    },
+    {
+      "path": "docs/DEPENDENCY-AUDIT.json",
+      "sha256": "e8134d875a359c1ef4981a520eff8ee5dfd4f792e80ed8fd70c2695c383e9eb9",
+      "bytes": 362
+    },
+    {
+      "path": "docs/INTERNAL-HANDOFF.md",
+      "sha256": "92e7553cfe8e97489cb526385c548a435064b30154b1b007b20768f982e37978",
+      "bytes": 9778
+    },
+    {
+      "path": "docs/PLAN.md",
+      "sha256": "b1cedb2b0475d56fa61fe4b56b60a92131e3fa5894ded20a48695116e4fbdff6",
+      "bytes": 25747
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "sha256": "bde5b565b791ebcada9b525fc88717de3ac77cbc0c24d2c1ff7cce83c6b9d511",
+      "bytes": 4588
+    },
+    {
+      "path": "fixtures/점검표-샘플.csv",
+      "sha256": "3958799ae9e614482a1cbede1f0472d687a59d67e72b5e9c20c4b133bb331b36",
+      "bytes": 168
+    },
+    {
+      "path": "fixtures/점검표-샘플.xlsx",
+      "sha256": "f352a81c20e70e6b833042fe8b47b205efd58abde4abb764ca3ccc0999299402",
+      "bytes": 7354
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "1a8dcb6496123986a3695e97d925dd8c912b7abe9db87af94c10b9e20ff7eea0",
+      "bytes": 114964
+    },
+    {
+      "path": "package.json",
+      "sha256": "c90ec042441b401d75aae777e2673823be89e8ad569f292c8ce81e114d8db261",
+      "bytes": 681
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "1cda42583b38821b68768796e911f0162a12eabf516e4f8ce7b74ba1849a785a",
+      "bytes": 34987
+    },
+    {
+      "path": "public/index.html",
+      "sha256": "f09a0777e0b146d3127a8e2c0cd4f0c3f9cec2c4cb9cdc89c9f7ba58cc758c97",
+      "bytes": 1719
+    },
+    {
+      "path": "public/mark.svg",
+      "sha256": "7630a6ceea5cdfff60147a7efe920aaa8fecb039dfe494be253031732e5445dd",
+      "bytes": 195
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "a062a8e5b64e20a313b03e201fca2e722d5078a048ae24155e816dffa19cea28",
+      "bytes": 15854
+    },
+    {
+      "path": "scripts/check-source.js",
+      "sha256": "d2bc8472b2f4a8786b65ad46c67cb582dc79a9efd5ae50dbef1cd851713aea5c",
+      "bytes": 1106
+    },
+    {
+      "path": "scripts/inventory.js",
+      "sha256": "8ad32b7b6c42f33bf2866db5077f6128a9319d93ee32bba1913ddb7ad612dc98",
+      "bytes": 709
+    },
+    {
+      "path": "scripts/make-fixtures.js",
+      "sha256": "ced510b2b42fc323c1f72f82b9ee762a97f763841a69318637c4ebfb918321d1",
+      "bytes": 1116
+    },
+    {
+      "path": "src/app.js",
+      "sha256": "a3a1b6a44a706bd418be90ddb7ec5ede3eb3675fd10032198717760c850c10f0",
+      "bytes": 12094
+    },
+    {
+      "path": "src/connectors.js",
+      "sha256": "4f985d845ea238c7ce5eab0cdd8a4fe25cf2bf86611036f9fa4d49931dab86bc",
+      "bytes": 726
+    },
+    {
+      "path": "src/core.js",
+      "sha256": "3f49c3b80503a034c5688d1a7b73cd1b76cd7c665252b212078526f889086f84",
+      "bytes": 2853
+    },
+    {
+      "path": "src/ingestion.js",
+      "sha256": "9ef87bc05bc6c8e5eb8e99b64b56af57a07d0d295a3f60dec593238329b014f4",
+      "bytes": 2340
+    },
+    {
+      "path": "src/parser-worker.js",
+      "sha256": "2efa343dd8081ac8de461a1b7b1718569be91f3fc86f41608472c6da63d9c275",
+      "bytes": 6198
+    },
+    {
+      "path": "src/security.js",
+      "sha256": "9350bbfbe533a4d7c3451fe16fa4adcc9501cdfa8e6595686ae80199f2cda283",
+      "bytes": 4201
+    },
+    {
+      "path": "src/seed.js",
+      "sha256": "cc2d8593eb3955aefc35bf3f469266ebdf034c1a51764cd431b5508aab561053",
+      "bytes": 3617
+    },
+    {
+      "path": "src/server.js",
+      "sha256": "ce3799eb431b9d9e52a1d9f3f01edc476dd4276824fdda16f1500a7e2a193883",
+      "bytes": 463
+    },
+    {
+      "path": "src/store.js",
+      "sha256": "3b7224160612c218fcb17dbdc769fb70aecc9285eeefaccc6101e5c6f3edb319",
+      "bytes": 6441
+    },
+    {
+      "path": "src/tables.js",
+      "sha256": "126b9172c470bc9e4383a9caa8a4dacf6a9d0c8f96087d272739e658e65676c7",
+      "bytes": 3323
+    },
+    {
+      "path": "test/portal.test.js",
+      "sha256": "19de89a1d47db9ebe66e6a128099cb1d790f185b0ed76f8173d6b9e8b7b603e4",
+      "bytes": 10851
+    }
+  ]
+}

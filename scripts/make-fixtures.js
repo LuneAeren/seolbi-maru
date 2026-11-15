@@ -1,0 +1,10 @@
+import { mkdir, writeFile } from 'node:fs/promises';
+import ExcelJS from 'exceljs';
+await mkdir('fixtures',{recursive:true});
+const rows=[['설비번호','점검항목','결과','비고'],['000123','외관, 센서','양호','한글과 "따옴표"'],['000124','윤활','확인 필요','첫 줄\n둘째 줄']];
+const csv='\ufeff'+rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('\r\n');
+await writeFile('fixtures/점검표-샘플.csv',csv);
+const book=new ExcelJS.Workbook();book.addWorksheet('점검표').addRows(rows);book.addWorksheet('인수인계').addRows([['번호','내용'],['001','가짜 인수인계 자료']]);await book.xlsx.writeFile('fixtures/점검표-샘플.xlsx');
+let large='설비번호,점검내용,결과,비고\r\n';for(let i=0;Buffer.byteLength(large)<2*1024*1024;i++)large+=`${String(i).padStart(6,'0')},${'가짜 설비 점검 자료 '.repeat(4)},양호,테스트 데이터\r\n`;
+await mkdir('data',{recursive:true});await writeFile('data/검수용-약2MB.csv',large);
+console.log('Sample CSV/XLSX fixtures and data/검수용-약2MB.csv created. All records are fake.');
