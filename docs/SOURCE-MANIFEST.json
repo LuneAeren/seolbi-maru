@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1",
+  "version": "0.2.0",
   "generatedOn": "2026-11-15",
   "files": [
     {
@@ -14,8 +14,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "84df02153fba7e1898f8ed475adca9dab404e33dfb0128d8487be21e89958b67",
-      "bytes": 6351
+      "sha256": "a9b6cb37340b8b40fe67e200efacb34445253df985ae477679b616e9a596e3c3",
+      "bytes": 12613
+    },
+    {
+      "path": "docs/AI-INTEGRATION.md",
+      "sha256": "8230e93686e5a3b147ea434664e3d0d62ba4f970c76b663981ea7390cd7b4fd0",
+      "bytes": 10625
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -39,8 +44,23 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "57958bdefdac6e0219f3e316116b0abbae22307a7de7ba6ff7b2a1695ca36b7e",
-      "bytes": 5445
+      "sha256": "9018b1c89dce05b185fc49b7382edb5017c48e6b922befe8563adeeec39c0a3e",
+      "bytes": 7540
+    },
+    {
+      "path": "docs/research/DESIGN-REFERENCES.md",
+      "sha256": "ea79305b97f43b49a502e3ae2e49a352751ea86f0db7f2203094a0511c14ba87",
+      "bytes": 5312
+    },
+    {
+      "path": "docs/research/design-sources.json",
+      "sha256": "9d4de433d99ebdf5070b207bd29f22b1465b07a2dea53eab2bb4008bddcf7f28",
+      "bytes": 1807
+    },
+    {
+      "path": "fixtures/오늘업무-샘플.csv",
+      "sha256": "cf9cecfc2109bc584d4b19a4508b4565280449e7974fefab0c06c16830edda85",
+      "bytes": 220
     },
     {
       "path": "fixtures/점검표-샘플.csv",
@@ -54,18 +74,88 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "0b0cdf7e687c3c4de9eb8fa70548a8696ec0b72c4411f45a391da124c77b9a87",
+      "sha256": "b921de33632621ad7aaaac6e6dc081968955c170defc129dd8554cf30668fb32",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "7db785baba1068ef87d3db7d53f691b1f7f14f479b5bc0a289c894e4c3422b19",
+      "sha256": "9b4f0946c7d774093164ec2ed12eb6ab31294151ad295d7b9179e7307e0a43cf",
       "bytes": 681
     },
     {
       "path": "public/app.js",
       "sha256": "e2fff2462ba4bda763acc0e27ee72afcd60d2636228304906616e83d0bb19254",
       "bytes": 40764
+    },
+    {
+      "path": "public/design-lab/01-ledger.html",
+      "sha256": "4bcd9f940dc89cb8afdfecdf998f2555727d8a0f8af0558927633da9e9053d83",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/02-midnight.html",
+      "sha256": "5537ed7c624b77b733b5715a449d3e0d305b8af7a69f220fc7593452cbdd30c3",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/03-briefing.html",
+      "sha256": "c4552d3003e9efd28ef92c99c4e7ac5b68f387988977c111bfa1803cf1f947dc",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/04-cobalt.html",
+      "sha256": "4ced52a74ea366026a0afb7f135e39d5471c17881a49b3a92bfc1285fbf15690",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/05-sage.html",
+      "sha256": "9fa69ebae836b2949a7b0b50781b49ab8d9467c2342b5f81fe732d5f07d184cc",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/06-signal.html",
+      "sha256": "a52aa39c203623f7d8ccdb48d966102f8fb7d4ac22aeb52102009b95a2ce7c5b",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/07-blueprint.html",
+      "sha256": "c726f44c6706be22372a46e0a997368965f29a6b8f6e9e8c82f50683d55bca16",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/08-pearl.html",
+      "sha256": "258bb6c004e0ce0120a4f805bd0904de2875c172e886e3e39d5950d316c774b9",
+      "bytes": 331
+    },
+    {
+      "path": "public/design-lab/catalog.js",
+      "sha256": "73a870288fb0c049eafb2f971b14dc03194497fc4384b3c2ca3d4d3ef1a6d582",
+      "bytes": 2494
+    },
+    {
+      "path": "public/design-lab/gallery.css",
+      "sha256": "72ef3cf58aed66bb8bfcd52b6151b3300718de8ecd6e4fa9a8929a9952087cf4",
+      "bytes": 2022
+    },
+    {
+      "path": "public/design-lab/gallery.js",
+      "sha256": "741b31a07583bae1a32f068a4db3ce0da42398f63874f1b9c0e4ed639151c30b",
+      "bytes": 1759
+    },
+    {
+      "path": "public/design-lab/index.html",
+      "sha256": "701b2de28d6f74df739273f8052755608abbc773bc17c4ef384b9cf11e1efac9",
+      "bytes": 1346
+    },
+    {
+      "path": "public/design-lab/prototype.css",
+      "sha256": "fa398fd455a50667d7a18b5ed675623b876b645b88d3f91c790aa5fc40bc43a7",
+      "bytes": 26608
+    },
+    {
+      "path": "public/design-lab/prototype.js",
+      "sha256": "a4811e464ae717e4ce43c69add23b6d4f56e25f282233e2aa61a80d4cb4895e7",
+      "bytes": 12801
     },
     {
       "path": "public/desktop.css",
@@ -83,14 +173,94 @@
       "bytes": 195
     },
     {
+      "path": "public/reference-lab/app.js",
+      "sha256": "a8768abd1d597453d597fb1209acba4acb4405e6cbc3a29215f3a18455f167bf",
+      "bytes": 18228
+    },
+    {
+      "path": "public/reference-lab/index.html",
+      "sha256": "5bb622e861979106bc344c85a7a8102b180e22ab76319e47e5288c199d2225c0",
+      "bytes": 865
+    },
+    {
+      "path": "public/reference-lab/style.css",
+      "sha256": "abd141012948e1fb31de19e3c4548c012653eb0a11402e5ad2eebf62513ec136",
+      "bytes": 14902
+    },
+    {
       "path": "public/styles.css",
       "sha256": "002df76ba8914b4e5a15679bca21a3235c503fad3d8dbce212314662ed1ae996",
       "bytes": 13816
     },
     {
+      "path": "reference-kit/DESIGN-GUIDE.md",
+      "sha256": "c17e7d362f6ba1836dbd1b5a0628c88b839bb618b8f7c24e58c9fe891380928b",
+      "bytes": 1577
+    },
+    {
+      "path": "reference-kit/README.md",
+      "sha256": "d05184779bc79d157803a5b3cb350bb5a027045c43874256f01825bdf8c23218",
+      "bytes": 6661
+    },
+    {
+      "path": "reference-kit/planner.js",
+      "sha256": "9073b6e21ccaa11a0a1889859f61712b44b726b5d59ee2dd03db374fbdf464d8",
+      "bytes": 7002
+    },
+    {
+      "path": "reference-kit/recipes/01-import.md",
+      "sha256": "006bf5ad7f66d724f833d290490f8647c1a57f1e2b153f49dc0b482addc37c62",
+      "bytes": 1000
+    },
+    {
+      "path": "reference-kit/recipes/02-assignment.md",
+      "sha256": "f2dc834e93e2258acdfac6e5d0834ed6a0529a5bebe1f02f4c5e3631a19a3d2b",
+      "bytes": 998
+    },
+    {
+      "path": "reference-kit/recipes/03-calendar.md",
+      "sha256": "69be996e48967f2a8b0b419b1ca897267777f4b05eb0ce798d50a3f7a246324b",
+      "bytes": 1040
+    },
+    {
+      "path": "reference-kit/recipes/04-checklists.md",
+      "sha256": "6ec700b5ec40a7e35aca3de5bae596d21778604ad5e192d79c5cb808b36d9e7d",
+      "bytes": 842
+    },
+    {
+      "path": "reference-kit/recipes/05-informs.md",
+      "sha256": "ae1d96c1795ebb65b359102e3ab9d7bbdacf089662b49b694af76512b92638f3",
+      "bytes": 841
+    },
+    {
+      "path": "reference-kit/recipes/06-history.md",
+      "sha256": "f9ac3ed55e779a8907289f525515ba085632bc1fb5318efb06ca14a45a2e964e",
+      "bytes": 715
+    },
+    {
+      "path": "reference-kit/recipes/07-handover.md",
+      "sha256": "ba0782e6c992691e69226cb999d3331c2bc72a10469049c72919e5a3d86eac6e",
+      "bytes": 684
+    },
+    {
+      "path": "reference-kit/recipes/08-integration.md",
+      "sha256": "28719061acfcfdec330bc8433421d2dfb8e3401ce78e155d925c45eb4d3b54db",
+      "bytes": 1145
+    },
+    {
+      "path": "reference-kit/router.js",
+      "sha256": "c68fded7f2497cf16bc4fcc0552025bb9dfd4597db08cccd38d7168026aa8fda",
+      "bytes": 4500
+    },
+    {
+      "path": "reference-kit/workflows.js",
+      "sha256": "e4a881fef8769d3627cb778b80e6c60da80da4aaf977921cb3bbe22b328c75cc",
+      "bytes": 8003
+    },
+    {
       "path": "scripts/check-source.js",
-      "sha256": "d2bc8472b2f4a8786b65ad46c67cb582dc79a9efd5ae50dbef1cd851713aea5c",
-      "bytes": 1106
+      "sha256": "921bea5d4aa8226310189f9f42224e698f539decc35a51506fe635452a52bdc6",
+      "bytes": 1290
     },
     {
       "path": "scripts/inventory.js",
@@ -104,8 +274,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "a3a1b6a44a706bd418be90ddb7ec5ede3eb3675fd10032198717760c850c10f0",
-      "bytes": 12094
+      "sha256": "70f9d33374f882ca6767b60808a895481eeb064587e6f1fe8894b0869425c504",
+      "bytes": 12472
     },
     {
       "path": "src/connectors.js",
@@ -151,6 +321,11 @@
       "path": "src/tables.js",
       "sha256": "126b9172c470bc9e4383a9caa8a4dacf6a9d0c8f96087d272739e658e65676c7",
       "bytes": 3323
+    },
+    {
+      "path": "test/planner.test.js",
+      "sha256": "07daab753be08862385e10d0c4f2758958e307a1f2cebb485121f1e1bdf8cfa8",
+      "bytes": 9109
     },
     {
       "path": "test/portal.test.js",

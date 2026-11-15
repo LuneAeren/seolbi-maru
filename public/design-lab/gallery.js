@@ -1,0 +1,8 @@
+import {concepts} from './catalog.js';
+const $=s=>document.querySelector(s);let active=concepts[0],saved=[];
+try{saved=JSON.parse(localStorage.getItem('seolbi-design-votes')||'[]').filter(id=>concepts.some(c=>c.id===id));}catch{}
+function show(c){active=c;$('#preview').src=`${c.id}-${c.key}.html`;$('#open').href=`${c.id}-${c.key}.html`;$('#concept-name').textContent=`${c.id} · ${c.name} / ${c.title}`;$('#concept-description').textContent=c.layout;document.querySelectorAll('.choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===c.id)));updateVotes();}
+function updateVotes(){$('#selection').textContent=`선호안: ${saved.length?saved.map(id=>id+'번').join(', '):'없음'}`;$('#favorite').textContent=saved.includes(active.id)?'선호안에서 빼기':'선호안에 담기';try{localStorage.setItem('seolbi-design-votes',JSON.stringify(saved));}catch{}}
+for(const c of concepts){const b=document.createElement('button');b.type='button';b.className='choice';b.dataset.id=c.id;const n=document.createElement('span');n.textContent=c.id;const title=document.createElement('strong');title.textContent=c.name;const sub=document.createElement('small');sub.textContent=c.title;b.append(n,title,sub);b.addEventListener('click',()=>show(c));$('#choices').append(b);}
+$('#favorite').addEventListener('click',()=>{saved=saved.includes(active.id)?saved.filter(id=>id!==active.id):[...saved,active.id];updateVotes();});
+$('#copy').addEventListener('click',async()=>{const text=`선호 디자인: ${saved.join(', ')||'미선택'}\n메모: ${$('#feedback').value}`;try{await navigator.clipboard.writeText(text);$('#message').textContent='복사했습니다. 채팅에 붙여넣어 주세요.';}catch{$('#message').textContent=text;}});show(active);

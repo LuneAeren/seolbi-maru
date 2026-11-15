@@ -1,0 +1,54 @@
+{
+  "checkedOn": "2026-11-15",
+  "method": "Read-only GitHub metadata and upstream text files; no installers executed; prototypes independently authored.",
+  "repositories": [
+    {
+      "repo": "anthropics/skills",
+      "commit": "1780c5e5a552fd4d1c9d6a7b0cab26b0c2bef064",
+      "license": "Apache-2.0 (frontend-design/LICENSE.txt)",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "license": "미확인 · 링크 참고만",
+      "url": "https://github.com/vercel-labs/agent-skills"
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "d643997c82e94742dd3bee43210b0198e8bbba3d",
+      "license": "MIT",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "commit": "2b86d9c07b97d4bed7de23583e1bd1e58dd2baae",
+      "license": "Apache-2.0",
+      "url": "https://github.com/pbakaus/impeccable"
+    },
+    {
+      "repo": "tabler/tabler",
+      "commit": "46bd1d781a964202dc9be180da866f1feed3ccf5",
+      "license": "MIT",
+      "url": "https://github.com/tabler/tabler"
+    },
+    {
+      "repo": "carbon-design-system/carbon",
+      "commit": "fa75d78b0d4b9e78e1e76bf3e459f4fc12eabeef",
+      "license": "Apache-2.0",
+      "url": "https://github.com/carbon-design-system/carbon"
+    },
+    {
+      "repo": "shadcn-ui/ui",
+      "commit": "e62c9435fff729a175f38983dee73b2cb4f6a069",
+      "license": "MIT",
+      "url": "https://github.com/shadcn-ui/ui"
+    },
+    {
+      "repo": "microsoft/fluentui",
+      "commit": "f9720c35ba893c9630f4c0389d07dc6d6fd6068d",
+      "license": "MIT (root LICENSE read)",
+      "url": "https://github.com/microsoft/fluentui"
+    }
+  ]
+}

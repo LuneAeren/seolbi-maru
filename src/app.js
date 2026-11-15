@@ -6,6 +6,7 @@ import { createStore } from './store.js';
 import { security } from './security.js';
 import { seed } from './seed.js';
 import { AppError, fail, kinds, text, validateEntity } from './core.js';
+import { referenceRouter } from '../reference-kit/router.js';
 import { parseFile, validateTable, csvOutput, xlsxOutput, LIMITS } from './tables.js';
 
 const publicDir = fileURLToPath(new URL('../public/', import.meta.url));
@@ -17,7 +18,12 @@ export function createApp(config, options = {}) {
   if (config.mode === 'demo') seed(store);
   app.disable('x-powered-by'); app.set('trust proxy', false);
   app.use(helmet({ contentSecurityPolicy: { directives: { defaultSrc: ["'none'"], scriptSrc: ["'self'"], scriptSrcAttr: ["'none'"], styleSrc: ["'self'"], imgSrc: ["'self'"], fontSrc: ["'self'"], connectSrc: ["'self'"], objectSrc: ["'none'"], frameSrc: ["'none'"], frameAncestors: ["'none'"], baseUri: ["'none'"], formAction: ["'self'"], upgradeInsecureRequests: config.mode === 'production' ? [] : null } }, strictTransportSecurity: config.mode === 'production' ? undefined : false, referrerPolicy: { policy: 'no-referrer' } }));
-  app.use((_req, res, next) => { res.set('Cache-Control', 'no-store'); next(); });
+  app.use((req, res, next) => {
+    if (req.path.startsWith('/design-lab/')) {
+      res.set('Content-Security-Policy', res.get('Content-Security-Policy').replace("frame-src 'none'", "frame-src 'self'").replace("frame-ancestors 'none'", "frame-ancestors 'self'"));
+    }
+    res.set('Cache-Control', 'no-store');next();
+  });
   app.get('/health', (_req, res) => res.json({ status: 'ok' }));
   app.use(security(config));
   app.use(express.json({ limit: '6mb', strict: true }));
@@ -96,6 +102,7 @@ export function createApp(config, options = {}) {
     try { const entity = store.create('dataset', { title, category, description: text(req.body.description || '', '설명', 2000, false), columns, rows: sheet.rows, originalId, sheet: sheet.name }, req.actor, '파일 반입'); drafts.delete(req.params.id); res.status(201).json(summary(entity)); }
     catch (error) { store.removeOriginal(originalId); throw error; }
   });
+  app.use('/api/reference', referenceRouter(store, {mode:config.mode}));
   app.use('/api', (_req, _res) => fail(404, '요청한 기능을 찾을 수 없습니다.'));
   app.use(express.static(publicDir, { etag: false, maxAge: 0, dotfiles: 'deny' }));
   app.use((_req, res) => res.status(404).type('text').send('페이지를 찾을 수 없습니다.'));
