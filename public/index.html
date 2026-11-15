@@ -7,18 +7,19 @@
   <title>설비마루 — 설비 업무의 시작</title>
   <link rel="icon" href="/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/desktop.css">
   <script type="module" src="/app.js"></script>
 </head>
 <body>
   <a class="skip" href="#main">본문으로 이동</a>
   <aside class="sidebar">
     <a class="brand" href="/"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>설비마루<small>SEOLBI MARU</small></span></a>
-    <div class="workspace-label">ENGINEERING WORKSPACE</div>
+    <div class="workspace-label">설비 엔지니어 워크스페이스</div>
     <nav id="navigation" aria-label="주요 메뉴"></nav>
     <div class="sidebar-bottom"><span class="eyebrow">데이터 연결</span><div id="source-mini"></div><div class="sidebar-foot">함께 살피고, 더 쉽게 일하기.<br>설비 엔지니어의 업무 공간</div></div>
   </aside>
   <div class="shell">
-    <header class="topbar"><div id="breadcrumb">워크스페이스 / 오늘 업무</div><div class="topbar-right"><span id="mode-badge" class="mode-badge">연결 확인 중</span><span id="identity" class="identity"></span></div></header>
+    <header class="topbar"><div id="breadcrumb">워크스페이스 / 오늘 업무</div><div class="topbar-right"><label class="text-size-control">글자 크기 <select id="text-size" aria-label="글자 크기"><option value="16">16px</option><option value="18">18px</option><option value="20">20px</option></select></label><span id="mode-badge" class="mode-badge">연결 확인 중</span><span id="identity" class="identity"></span></div></header>
     <main id="main" tabindex="-1"><div class="loading">업무 공간을 불러오고 있습니다…</div></main>
     <footer class="footer"><span>SEOLBI MARU <span class="muted">· 설비 업무를 한곳에</span></span><span id="footer-status">서버 연결 확인 중</span></footer>
   </div>

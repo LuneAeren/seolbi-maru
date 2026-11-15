@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "generatedOn": "2026-11-15",
   "files": [
     {
@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "f12d149eb2dadb5e831b372958b267b056ff71de95bb2df5721f37b43fe17404",
-      "bytes": 5599
+      "sha256": "84df02153fba7e1898f8ed475adca9dab404e33dfb0128d8487be21e89958b67",
+      "bytes": 6351
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "bde5b565b791ebcada9b525fc88717de3ac77cbc0c24d2c1ff7cce83c6b9d511",
-      "bytes": 4588
+      "sha256": "57958bdefdac6e0219f3e316116b0abbae22307a7de7ba6ff7b2a1695ca36b7e",
+      "bytes": 5445
     },
     {
       "path": "fixtures/점검표-샘플.csv",
@@ -54,23 +54,28 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "1a8dcb6496123986a3695e97d925dd8c912b7abe9db87af94c10b9e20ff7eea0",
+      "sha256": "0b0cdf7e687c3c4de9eb8fa70548a8696ec0b72c4411f45a391da124c77b9a87",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "c90ec042441b401d75aae777e2673823be89e8ad569f292c8ce81e114d8db261",
+      "sha256": "7db785baba1068ef87d3db7d53f691b1f7f14f479b5bc0a289c894e4c3422b19",
       "bytes": 681
     },
     {
       "path": "public/app.js",
-      "sha256": "1cda42583b38821b68768796e911f0162a12eabf516e4f8ce7b74ba1849a785a",
-      "bytes": 34987
+      "sha256": "e2fff2462ba4bda763acc0e27ee72afcd60d2636228304906616e83d0bb19254",
+      "bytes": 40764
+    },
+    {
+      "path": "public/desktop.css",
+      "sha256": "7932945216c154c6cca8299f08a7d669b02dcce86466c920e732725fb10ec001",
+      "bytes": 11292
     },
     {
       "path": "public/index.html",
-      "sha256": "f09a0777e0b146d3127a8e2c0cd4f0c3f9cec2c4cb9cdc89c9f7ba58cc758c97",
-      "bytes": 1719
+      "sha256": "9fed8dcd06da14b6fe316e3ad61a1abb3f024eb4f801b09d8e733536212bddc2",
+      "bytes": 1992
     },
     {
       "path": "public/mark.svg",
@@ -79,8 +84,8 @@
     },
     {
       "path": "public/styles.css",
-      "sha256": "a062a8e5b64e20a313b03e201fca2e722d5078a048ae24155e816dffa19cea28",
-      "bytes": 15854
+      "sha256": "002df76ba8914b4e5a15679bca21a3235c503fad3d8dbce212314662ed1ae996",
+      "bytes": 13816
     },
     {
       "path": "scripts/check-source.js",

@@ -7,7 +7,7 @@ const fmt = value => value ? new Intl.DateTimeFormat('ko-KR',{month:'2-digit',da
 const shortTime = value => value ? new Intl.DateTimeFormat('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Seoul'}).format(new Date(value)) : '—';
 let toastTimer;
 function toast(message){ const e=$('#toast');e.textContent=message;e.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.hidden=true,4000); }
-const state={view:new URLSearchParams(location.search).get('view')||'today',data:{},filters:{status:'',area:'',q:''},boot:null};
+const state={view:new URLSearchParams(location.search).get('view')||'today',data:{},filters:{status:'',area:'',q:'',sort:'attention'},selectedEquipmentId:null,boot:null};
 async function api(url,options={}) {
   const headers={...options.headers};
   if(options.body&&typeof options.body!=='object')headers['Content-Type']||='application/json';
@@ -26,17 +26,63 @@ const json=async(url,options)=> (await api(url,options)).json();
 const send=(url,method,body)=>json(url,{method,body:JSON.stringify(body)});
 async function load(){ const values=await Promise.all(['equipment','info','note','dataset','site'].map(kind=>json(`/api/entities/${kind}`))); ['equipment','info','note','dataset','site'].forEach((kind,i)=>state.data[kind]=values[i]); state.boot.sources=await json('/api/sources'); }
 const labelMap={today:'오늘 업무',equipment:'설비현황',info:'설비 인폼',materials:'업무자료',sites:'업무사이트',history:'변경 이력'};
-function navigate(view){state.view=labelMap[view]?view:'today';state.filters={status:'',area:'',q:''};history.replaceState(null,'',state.view==='today'?'/':`/?view=${state.view}`);render();}
+function navigate(view){state.view=labelMap[view]?view:'today';state.filters={status:'',area:'',q:'',sort:'attention'};history.replaceState(null,'',state.view==='today'?'/':`/?view=${state.view}`);render();}
 function nav(){ const n=$('#navigation');n.replaceChildren(); for(const [view,glyph]of [['today','home'],['equipment','equipment'],['info','info'],['materials','folder'],['sites','link'],['history','clock']]){if(view==='history')n.append(h('div',{class:'nav-divider'}));const a=h('a',{href:view==='today'?'/':`/?view=${view}`,class:`nav-item ${state.view===view?'active':''}`,'aria-current':state.view===view?'page':null,onClick:e=>{e.preventDefault();navigate(view);}},icon(glyph),labelMap[view]);if(view==='info')a.append(h('span',{class:'nav-count'},state.data.info?.length||0));n.append(a);} $('#source-mini').replaceChildren(...state.boot.sources.filter(x=>x.id!=='demo').map(s=>h('div',{class:'source-mini-row'},h('span',{class:'dot'}),s.name,h('small',{},'연결 대기')))); }
 function heading(title,subtitle,actions=[],date=false){const d=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long',timeZone:'Asia/Seoul'}).format(new Date());return h('div',{class:'page-heading'},h('div',{},date?h('div',{class:'date-label'},d):null,h('h1',{},title),h('p',{class:'subtitle'},subtitle)),h('div',{class:'heading-actions'},...actions));}
 function panelTitle(title,count,action){return h('div',{class:'panel-heading'},h('h2',{},title,count!==undefined?h('span',{class:'count'},count):null),action);}
 function badge(status){return h('span',{class:`status ${{운전:'running',정지:'stopped',점검:'maintenance'}[status]||''}`},h('span',{class:'dot'}),status);}
 function notice(message,type=''){return h('div',{class:`notice ${type}`},icon(type==='error'?'alert':'shield'),message);}
-function render(){nav();$('#breadcrumb').textContent=`워크스페이스 / ${labelMap[state.view]||'오늘 업무'}`;$('#identity').replaceChildren(h('span',{class:'avatar'},state.boot.mode==='demo'?'DE':'ME'),state.boot.mode==='demo'?'데모 엔지니어':state.boot.user);$('#mode-badge').textContent=state.boot.mode==='demo'?'샘플 데이터 · 데모':'사내 계정 연결';$('#footer-status').textContent=state.boot.mode==='demo'?'실제 설비 미연결 · 한국 시간 기준':'사내 서버 · 한국 시간 기준'; const main=$('#main'); main.replaceChildren(); if(state.view==='today')renderToday(main);else if(state.view==='equipment')renderEquipment(main);else if(state.view==='info')renderInfo(main);else if(state.view==='materials')renderMaterials(main);else if(state.view==='sites')renderSites(main);else renderHistory(main); }
+function render(){nav();$('#breadcrumb').textContent=`워크스페이스 / ${labelMap[state.view]||'오늘 업무'}`;$('#identity').replaceChildren(h('span',{class:'avatar'},state.boot.mode==='demo'?'DE':'ME'),state.boot.mode==='demo'?'데모 엔지니어':state.boot.user);$('#mode-badge').textContent=state.boot.mode==='demo'?'샘플 데이터 · 데모':'사내 계정 연결';$('#footer-status').textContent=state.boot.mode==='demo'?'실제 설비 미연결 · 한국 시간 기준':'사내 서버 · 한국 시간 기준'; const main=$('#main'); main.replaceChildren(); main.classList.remove('desktop-workspace'); if(state.view==='today')renderToday(main);else if(state.view==='equipment')renderEquipment(main);else if(state.view==='info')renderInfo(main);else if(state.view==='materials')renderMaterials(main);else if(state.view==='sites')renderSites(main);else renderHistory(main); }
 async function refresh(){try{await load();render();toast('화면의 서버 자료를 새로 불러왔습니다.');}catch(e){toast(e.message);}}
 function shownStatus(e){return Date.now()-Date.parse(e.data.observedAt)>(state.boot.staleAfterMinutes||30)*60000?'확인불가':e.data.status;}
-function metrics(){const eq=state.data.equipment;return h('div',{class:'metrics'},...[['운전','운전 중 설비','check',''],['정지','정지 설비','pause','red'],['점검','점검 중 설비','tool','amber'],['확인불가','상태 확인 필요','alert','gray']].map(([status,title,glyph,cls])=>h('button',{class:`metric ${cls} ${state.filters.status===status?'active':''}`,type:'button','aria-pressed':state.filters.status===status,onClick:()=>{state.filters.status=state.filters.status===status?'':status;render();}},h('div',{class:'metric-top'},title,h('span',{class:'metric-icon'},icon(glyph))),h('div',{class:'metric-number'},eq.filter(x=>shownStatus(x)===status).length,h('small',{},'대')),h('div',{class:'metric-caption'},status==='확인불가'?`미수집 또는 ${state.boot.staleAfterMinutes||30}분 이상 경과`:`전체 ${eq.length}대 중 · 상태별 보기`))));}
-function renderToday(main){main.append(heading('오늘 업무 한눈에 보기','설비의 현재 상태와 필요한 인폼을 함께 확인하세요.',[button('새로고침',refresh,'','refresh')],true));if(state.boot.mode==='demo')main.append(notice('가짜 설비와 자료를 사용하는 데모입니다. Hue·Splunk는 아직 연결되지 않았습니다.'));main.append(metrics());const grid=h('div',{class:'dashboard-grid'});const left=h('div',{class:'stack-main'});left.append(equipmentPanel(true));left.append(sourcePanel());const right=h('div',{class:'stack'});const infos=activeInfos().slice(0,3);right.append(h('section',{class:'panel'},panelTitle('최근 설비 인폼',activeInfos().length,button('전체 보기',()=>navigate('info'),'text-button')),h('div',{class:'info-list'},...infos.map(infoItem))));right.append(h('section',{class:'panel'},panelTitle('자주 쓰는 업무사이트',undefined,button('전체 보기',()=>navigate('sites'),'text-button')),h('div',{class:'quick-grid'},...state.data.site.slice(0,4).map(s=>h('a',{href:s.data.url,class:'quick-link'},icon('link'),s.data.title)))));grid.append(left,right);main.append(grid);}
+function metrics(){const eq=state.data.equipment;return h('div',{class:'metrics'},...[['운전','운전 중 설비','check',''],['정지','정지 설비','pause','red'],['점검','점검 중 설비','tool','amber'],['확인불가','상태 확인 필요','alert','gray']].map(([status,title,glyph,cls])=>h('button',{class:`metric ${cls} ${state.filters.status===status?'active':''}`,type:'button','data-status':status,'aria-pressed':state.filters.status===status,onClick:()=>{state.filters.status=state.filters.status===status?'':status;render();}},h('div',{class:'metric-top'},title,h('span',{class:'metric-icon'},icon(glyph))),h('div',{class:'metric-number'},eq.filter(x=>shownStatus(x)===status).length,h('small',{},'대')),h('div',{class:'metric-caption'},status==='확인불가'?`미수집 또는 ${state.boot.staleAfterMinutes||30}분 이상 경과`:`전체 ${eq.length}대 중 · 상태별 보기`))));}
+function renderToday(main){
+  main.classList.add('desktop-workspace');
+  const date=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'long',timeZone:'Asia/Seoul'}).format(new Date());
+  main.append(heading('오늘 업무 한눈에 보기',`${date} · 설비현황과 인수인계를 한 화면에서 확인하세요.`,[
+    button('연동 상태',()=>modal('데이터 연동 상태',sourcePanel()),'','shield'),
+    button('새로고침',refresh,'','refresh'),button('인폼 등록',()=>editEntity('info'),'primary','plus')
+  ]));
+  if(state.boot.mode==='demo')main.append(h('div',{class:'demo-strip'},h('span',{class:'demo-indicator'}),'샘플 데이터',h('span',{class:'muted'},'실제 설비 미연결 · Hue / Splunk 연결 대기'),h('span',{class:'grow'}),h('span',{},`전체 ${state.data.equipment.length}대`)));
+  main.append(metrics(),equipmentWorkspace(true),quickDock());
+}
+function quickDock(){
+  return h('section',{class:'quick-dock','aria-label':'자주 쓰는 업무사이트'},h('strong',{},'업무 바로가기'),
+    ...state.data.site.slice(0,4).map(s=>h('a',{href:s.data.url},icon('link'),s.data.title,icon('chevron'))),
+    button('전체 보기',()=>navigate('sites'),'text-button'));
+}
+function equipmentWorkspace(today){
+  const inspector=h('aside',{class:'equipment-inspector',id:'equipment-inspector','aria-label':'선택한 설비 상세'});
+  const workspace=h('div',{class:'equipment-workspace'},equipmentPanel(today),inspector);
+  queueMicrotask(()=>refreshInspector());
+  return workspace;
+}
+function refreshInspector(){
+  const root=$('#equipment-inspector');if(!root)return;
+  const visible=filteredEquipment();
+  let e=visible.find(e=>e.id===state.selectedEquipmentId)||visible[0];
+  if(!e){root.replaceChildren(h('div',{class:'inspector-empty'},icon('equipment'),h('h2',{},'설비를 선택해주세요'),h('p',{},'검색 조건을 바꾸면 다른 설비를 볼 수 있습니다.')));return;}
+  state.selectedEquipmentId=e.id;
+  document.querySelectorAll('.equipment-table tbody tr').forEach(row=>row.setAttribute('aria-selected',String(row.dataset.equipment===e.id)));
+  const d=e.data,infos=activeInfos().filter(i=>!i.data.equipmentId||i.data.equipmentId===e.id),notes=state.data.note.filter(i=>i.data.equipmentId===e.id);
+  root.replaceChildren(
+    h('div',{class:'inspector-heading'},h('span',{class:'eyebrow'},'선택 설비'),button('상세 열기',()=>showEquipment(e),'text-button','arrow')),
+    h('div',{class:'inspector-overview'},h('div',{class:'flex'},h('span',{class:'equipment-code grow'},e.id),badge(shownStatus(e))),h('h2',{},d.title),h('p',{class:'muted'},d.area),
+      h('dl',{class:'inspector-facts'},h('div',{},h('dt',{},'데이터 출처'),h('dd',{},d.source)),h('div',{},h('dt',{},'기준 시각'),h('dd',{},fmt(d.observedAt)))),
+      shownStatus(e)!==d.status?notice(`기준 시각 경과 · 이전 상태 ${d.status}`,'warning'):null),
+    h('div',{class:'inspector-scroll'},
+      h('div',{class:'inspector-section-title'},h('h3',{},'관련 인폼'),h('span',{class:'count'},infos.length)),
+      infos.length?infos.slice(0,3).map(i=>h('article',{class:'inspector-info'},h('div',{class:'info-meta'},h('span',{class:'tag'},i.data.category)),button(i.data.title,()=>showInfo(i),'inspector-info-title'),h('p',{},i.data.body))):h('p',{class:'small muted'},'등록된 인폼이 없습니다.'),
+      h('div',{class:'inspector-section-title'},h('h3',{},'작업 메모'),button('추가',()=>editEntity('note',null,e.id),'text-button','plus')),
+      notes.length?notes.map(n=>h('article',{class:'inspector-note'},h('div',{class:'flex'},h('span',{class:'tag'},n.data.category),button('편집',()=>editEntity('note',n),'text-button')),h('strong',{},n.data.title),h('p',{},n.data.body))):h('div',{class:'note-empty'},'작성된 메모가 없습니다.',h('span',{},'확인한 내용이나 다음 작업을 남겨보세요.'))),
+    h('div',{class:'inspector-actions'},button('작업 메모 작성',()=>editEntity('note',null,e.id),'primary full','edit'))
+  );
+}
+function filteredEquipment(){
+  const q=state.filters.q.toLowerCase(),order={'확인불가':0,'정지':1,'점검':2,'운전':3};
+  const records=state.data.equipment.filter(e=>(!state.filters.status||shownStatus(e)===state.filters.status)&&(!state.filters.area||e.data.area===state.filters.area)&&(!q||[e.id,e.data.title,e.data.area].some(x=>x.toLowerCase().includes(q))));
+  return records.sort((a,b)=>state.filters.sort==='name'?a.data.title.localeCompare(b.data.title,'ko'):state.filters.sort==='recent'?b.data.observedAt.localeCompare(a.data.observedAt):order[shownStatus(a)]-order[shownStatus(b)]||a.id.localeCompare(b.id));
+}
 function activeInfos(){const now=Date.now();return state.data.info.filter(x=>Date.parse(x.data.effectiveAt)<=now&&(!x.data.expiresAt||Date.parse(x.data.expiresAt)>now));}
 function infoItem(item){return h('div',{class:'info-item'},h('div',{class:'info-meta'},h('span',{class:'tag'},item.data.category),fmt(item.updatedAt)),h('button',{class:'info-title',onClick:()=>showInfo(item)},item.data.title),h('p',{},item.data.body));}
 function sourcePanel(){
@@ -48,30 +94,39 @@ function sourcePanel(){
   return h('section',{class:'panel section-gap'},panelTitle('연동 상태',undefined,h('span',{class:'small muted'},'최종 정상 반영 기준')),
     h('div',{class:'table-scroll'},h('table',{class:'source-table'},head,h('tbody',{},rows))));
 }
-function renderEquipment(main){main.append(heading('설비현황','상태와 구역을 기준으로 설비를 빠르게 살펴보세요.',[button('설비 등록',()=>editEntity('equipment'), 'primary','plus')]),metrics(),equipmentPanel(false));}
-function equipmentPanel(compact){
-  const eq=state.data.equipment,q=state.filters.q.toLowerCase();
-  const filtered=eq.filter(e=>(!state.filters.status||shownStatus(e)===state.filters.status)&&(!state.filters.area||e.data.area===state.filters.area)&&(!q||[e.id,e.data.title,e.data.area].some(x=>x.toLowerCase().includes(q))));
-  const wrap=h('section',{class:'panel'});
-  wrap.append(panelTitle('설비별 현황',eq.length,compact?button('전체 설비',()=>navigate('equipment'),'text-button'):null));
-  const search=h('input',{type:'search',placeholder:'설비명 또는 번호 검색','aria-label':'설비 검색',value:state.filters.q});
-  search.addEventListener('change',()=>{state.filters.q=search.value;render();});
-  const select=h('select',{'aria-label':'설비 구역',onChange:e=>{state.filters.area=e.target.value;render();}},h('option',{value:''},'전체 구역'),...[...new Set(eq.map(x=>x.data.area))].map(area=>h('option',{value:area},area)));
-  select.value=state.filters.area;
-  wrap.append(h('div',{class:'toolbar'},h('div',{class:'search'},icon('search'),search),select,state.filters.status?button(`${state.filters.status} ×`,()=>{state.filters.status='';render();},'text-button'):null));
-  const shown=compact?filtered.slice(0,6):filtered;
-  const rows=shown.map(e=>h('tr',{},
-    h('td',{},h('button',{class:'row-open',onClick:()=>showEquipment(e)},h('span',{class:'equipment-name'},e.data.title),h('span',{class:'equipment-id'},e.id))),
-    h('td',{},e.data.area),h('td',{},badge(shownStatus(e)),shownStatus(e)!==e.data.status?h('span',{class:'equipment-id'},`이전: ${e.data.status} · 기준 경과`):null),h('td',{class:'muted'},fmt(e.data.observedAt)),h('td',{},button('상세',()=>showEquipment(e),'text-button'))));
-  const head=h('thead',{},h('tr',{},...['설비명 / 번호','구역','현재 상태','기준 시각',''].map(x=>h('th',{},x))));
-  wrap.append(h('div',{class:'table-scroll'},h('table',{},head,h('tbody',{},rows))));
-  if(!shown.length)wrap.append(h('div',{class:'empty'},'조건에 맞는 설비가 없습니다.'));
-  wrap.append(h('div',{class:'table-foot'},`총 ${filtered.length}대 중 ${shown.length}대 표시`,h('span',{},'현황 조회·작업 메모')));
-  return wrap;
+function renderEquipment(main){
+  main.classList.add('desktop-workspace');
+  main.append(heading('설비현황','표에서 설비를 선택하면 오른쪽에 관련 인폼과 작업 메모가 표시됩니다.',[button('설비 등록',()=>editEntity('equipment'),'primary','plus')]),metrics(),equipmentWorkspace(false));
+}
+function equipmentPanel(today){
+  const wrap=h('section',{class:'panel equipment-list-panel'}),tbody=h('tbody'),counter=h('span'),empty=h('div',{class:'empty',hidden:true},'검색 조건에 맞는 설비가 없습니다.');
+  wrap.append(panelTitle('설비별 현황',state.data.equipment.length,h('span',{class:'small muted'},'행 선택 → 오른쪽 상세')));
+  const search=h('input',{type:'search',placeholder:'설비명 · 번호 검색  /','aria-label':'설비 검색',value:state.filters.q});
+  const area=h('select',{'aria-label':'설비 구역'},h('option',{value:''},'전체 구역'),...[...new Set(state.data.equipment.map(e=>e.data.area))].sort().map(a=>h('option',{value:a},a)));area.value=state.filters.area;
+  const status=h('select',{'aria-label':'설비 상태'},h('option',{value:''},'전체 상태'),...state.boot.statuses.map(s=>h('option',{value:s},s)));status.value=state.filters.status;
+  const sort=h('select',{'aria-label':'설비 정렬'},h('option',{value:'attention'},'확인 필요 우선'),h('option',{value:'name'},'설비명순'),h('option',{value:'recent'},'최근 기준순'));sort.value=state.filters.sort||'attention';
+  function update(){
+    const records=filteredEquipment();
+    tbody.replaceChildren(...records.map(e=>h('tr',{'data-equipment':e.id,'aria-selected':String(e.id===state.selectedEquipmentId),onClick:()=>{state.selectedEquipmentId=e.id;refreshInspector();}},
+      h('td',{class:'equipment-number'},e.id),
+      h('td',{},h('button',{class:'row-open','aria-label':`${e.data.title} ${e.id}`,onClick:()=>{state.selectedEquipmentId=e.id;refreshInspector();}},h('span',{class:'equipment-name'},e.data.title))),
+      h('td',{},e.data.area),h('td',{},badge(shownStatus(e))),
+      h('td',{class:'muted'},fmt(e.data.observedAt)),h('td',{},icon('chevron')))));
+    document.querySelectorAll('.metric[data-status]').forEach(m=>{const active=m.dataset.status===state.filters.status;m.setAttribute('aria-pressed',String(active));m.classList.toggle('active',active);});
+    counter.textContent=`검색 결과 ${records.length}대 / 전체 ${state.data.equipment.length}대`;empty.hidden=records.length>0;refreshInspector();
+  }
+  search.addEventListener('input',()=>{state.filters.q=search.value;update();});
+  for(const [control,key]of [[area,'area'],[status,'status'],[sort,'sort']])control.addEventListener('change',()=>{state.filters[key]=control.value;update();});
+  const reset=button('초기화',()=>{state.filters={status:'',area:'',q:'',sort:'attention'};render();},'text-button');
+  wrap.append(h('div',{class:'toolbar equipment-toolbar'},h('div',{class:'search'},icon('search'),search),area,status),h('div',{class:'table-subtoolbar'},counter,h('div',{class:'flex'},reset,sort)));
+  const head=h('thead',{},h('tr',{},...['설비번호','설비명','구역','현재 상태','기준 시각',''].map(label=>h('th',{},label))));
+  const scroll=h('div',{class:'table-scroll equipment-table-scroll'},h('table',{class:'equipment-table'},head,tbody),empty);
+  wrap.append(scroll,h('div',{class:'table-foot'},h('span',{},'기준 경과 데이터는 확인불가로 구분'),h('span',{class:'keyboard-hint'},'/ 검색 · 행 선택으로 상세 확인')));
+  update();return wrap;
 }
 let closeGuard=null;
 function closeDialog(){if(closeGuard)closeGuard();else $('#dialog').close();}
-function modal(title,body,actions=[]){closeGuard=null;const dialog=$('#dialog');$('#dialog-content').replaceChildren(h('div',{class:'dialog-header'},h('h2',{id:'dialog-title'},title),button('닫기',closeDialog,'quiet','close')),h('div',{class:'dialog-body'},body),actions.length?h('div',{class:'dialog-footer'},actions):null);if(!dialog.open)dialog.showModal();return dialog;}
+function modal(title,body,actions=[]){closeGuard=null;$('#dialog').classList.toggle('wide-dialog',title.includes('점검표')||Boolean(body.querySelector('.editor-wrap')));const dialog=$('#dialog');$('#dialog-content').replaceChildren(h('div',{class:'dialog-header'},h('h2',{id:'dialog-title'},title),button('닫기',closeDialog,'quiet','close')),h('div',{class:'dialog-body'},body),actions.length?h('div',{class:'dialog-footer'},actions):null);if(!dialog.open)dialog.showModal();return dialog;}
 function showEquipment(e){const d=e.data;const body=h('div',{},h('div',{class:'meta-line'},h('span',{},e.id),badge(shownStatus(e)),h('span',{},`버전 ${e.version}`)),h('div',{class:'detail-grid'},...[["구역",d.area],["출처",d.source],["기준 시각",fmt(d.observedAt)]].map(([k,v])=>h('div',{class:'detail-fact'},k,h('strong',{},v)))),h('p',{class:'detail-text'},d.summary||'등록된 설비 설명이 없습니다.'));body.append(h('h3',{class:'section-title'},'설비 인폼'));const infos=activeInfos().filter(x=>x.data.equipmentId===e.id||!x.data.equipmentId);body.append(...infos.map(x=>h('div',{class:'detail-info'},h('strong',{},x.data.title),h('p',{},x.data.body))));body.append(h('div',{class:'flex section-title'},h('h3',{class:'grow'},'작업 메모'),button('메모 추가',()=>editEntity('note',null,e.id),'','plus')));const notes=state.data.note.filter(x=>x.data.equipmentId===e.id);body.append(...notes.map(x=>h('div',{class:'detail-info'},h('div',{class:'flex'},h('strong',{class:'grow'},x.data.title),h('span',{class:'tag'},x.data.category),button('편집',()=>editEntity('note',x),'text-button')),h('p',{},x.data.body))));if(!notes.length)body.append(h('p',{class:'small muted'},'아직 작성된 메모가 없습니다.'));modal(d.title,body,[button('변경 이력',()=>showHistory(e)),['hue','splunk'].includes(d.source)?button('작업 메모 추가',()=>editEntity('note',null,e.id),'primary','plus'):button('설비 정보 편집',()=>editEntity('equipment',e),'primary','edit')]);}
 function showInfo(e){modal(e.data.title,h('div',{},h('div',{class:'meta-line'},h('span',{class:'tag'},e.data.category),fmt(e.updatedAt),e.updatedBy),h('p',{class:'detail-text'},e.data.body),h('p',{class:'helper'},`적용: ${fmt(e.data.effectiveAt)} · 만료: ${e.data.expiresAt?fmt(e.data.expiresAt):'지정 없음'}`)),[button('변경 이력',()=>showHistory(e)),button('편집',()=>editEntity(e.kind,e),'primary','edit')]);}
 function field(label,type,value='',options){let input;if(type==='textarea')input=h('textarea',{},value);else if(type==='select')input=h('select',{},...options.map(o=>h('option',{value:typeof o==='string'?o:o[0]},typeof o==='string'?o:o[1])));else input=h('input',{type,value,required:!label.includes('선택')});input.value=value;return {node:h('label',{class:'field'},h('span',{class:'field-label'},label),input),input};}
@@ -136,4 +191,15 @@ function showImport(){
 }
 function previewImport(draft){const body=h('div'),title=field('자료 제목','text',draft.filename.replace(/\.(csv|xlsx)$/i,'')),category=field('분류','text','업무자료'),sheetSelect=field('시트 선택','select','0',draft.sheets.map((s,i)=>[String(i),`${s.name} · ${s.rowCount.toLocaleString()}행`])),mapping=h('div',{class:'mapping'}),preview=h('div',{class:'editor-wrap'});let columnInputs=[];function update(){const sheet=draft.sheets[Number(sheetSelect.input.value)];columnInputs=sheet.columns.map(c=>h('input',{type:'text',value:c,maxlength:100,'aria-label':`열 이름 ${c}`}));mapping.replaceChildren(...columnInputs.map((input,i)=>h('label',{class:'field'},h('span',{class:'field-label'},`원본: ${sheet.columns[i]}`),input)));preview.replaceChildren(h('table',{},h('thead',{},h('tr',{},...sheet.columns.map(c=>h('th',{},c)))),h('tbody',{},...sheet.rows.map(row=>h('tr',{},...row.map(x=>h('td',{},x)))))));}sheetSelect.input.addEventListener('change',update);body.append(notice('전체 파일 검증을 통과했습니다. 표시된 미리보기는 첫 10행입니다. 사용할 시트와 열 이름을 확인해주세요.'),...draft.warnings.map(w=>notice(w,'warning')),h('div',{class:'form-row'},title.node,category.node),sheetSelect.node,h('h3',{class:'section-title'},'열 이름 매핑'),mapping,h('h3',{class:'section-title'},'원본 미리보기'),preview);const commit=button('자료 등록',async()=>{commit.disabled=true;try{const entity=await send(`/api/imports/${draft.id}/commit`,'POST',{sheet:Number(sheetSelect.input.value),title:title.input.value,category:category.input.value,columns:columnInputs.map(i=>i.value.trim())});await load();state.view='materials';render();openEditor(entity);toast('자료를 등록했습니다.');}catch(e){inlineError(body,e);commit.disabled=false;}},'primary','check');modal('반입 미리보기',body,[button('취소',()=>$('#dialog').close()),commit]);update();}
 $('#dialog').addEventListener('cancel',event=>{if(closeGuard){event.preventDefault();closeGuard();}});
+
+function applyTextSize(value){
+  const size=['16','18','20'].includes(value)?value:'16';document.documentElement.dataset.textSize=size;$('#text-size').value=size;
+}
+try{applyTextSize(localStorage.getItem('seolbi-text-size')||'16');}catch{applyTextSize('16');}
+$('#text-size').addEventListener('change',event=>{applyTextSize(event.target.value);try{localStorage.setItem('seolbi-text-size',event.target.value);}catch{}});
+document.addEventListener('keydown',event=>{
+  if(event.key==='/'&&!$('#dialog').open&&!['INPUT','TEXTAREA','SELECT'].includes(event.target.tagName)){const input=$('input[type="search"]');if(input){event.preventDefault();input.focus();}}
+  if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'&&$('#dialog').open&&$('#dialog .editor-wrap')){event.preventDefault();const save=[...$('#dialog').querySelectorAll('button')].find(b=>b.textContent.trim()==='공유본 저장');if(save&&!save.disabled)save.click();}
+});
+
 try{state.boot=await json('/api/bootstrap');await load();render();}catch(e){$('#main').replaceChildren(heading('업무 공간에 연결하지 못했습니다.','사내 인증 또는 서버 상태를 확인해주세요.'),notice(e.message,'error'),button('다시 시도',()=>location.reload(),'primary','refresh'));$('#mode-badge').textContent='연결 확인 필요';}
