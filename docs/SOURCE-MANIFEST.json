@@ -1,6 +1,6 @@
 {
-  "version": "0.2.0",
-  "generatedOn": "2026-11-15",
+  "version": "0.3.0",
+  "generatedOn": "2026-11-16",
   "files": [
     {
       "path": ".env.example",
@@ -14,13 +14,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "a9b6cb37340b8b40fe67e200efacb34445253df985ae477679b616e9a596e3c3",
-      "bytes": 12613
+      "sha256": "1a09506914b3475c5064b1e74bfbd19bacee8afff1b928d49ce69c3322db306a",
+      "bytes": 16721
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "8230e93686e5a3b147ea434664e3d0d62ba4f970c76b663981ea7390cd7b4fd0",
-      "bytes": 10625
+      "sha256": "4c83da1a7712c8e053e4b9609c2e90748ac35a9bc0fc9fd5be7ba260ee4c7bf9",
+      "bytes": 11962
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -43,9 +43,19 @@
       "bytes": 25747
     },
     {
+      "path": "docs/SCHEDULE-BROWSER-CHECKS.json",
+      "sha256": "b30b0329d85d4f810d2a47166b520cf1e6f1e7e71864784091a68ba33ed2c5fd",
+      "bytes": 4134
+    },
+    {
+      "path": "docs/SCHEDULE-UX.md",
+      "sha256": "ca398abb13d1231a0b0785c03156faff743c922f579f47eaac9af7a86980b92f",
+      "bytes": 6229
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "sha256": "9018b1c89dce05b185fc49b7382edb5017c48e6b922befe8563adeeec39c0a3e",
-      "bytes": 7540
+      "sha256": "0f547ec33ee633507d3e14da5f6221fb785c904df1cc0b86f35b6722e44d20c8",
+      "bytes": 10063
     },
     {
       "path": "docs/research/DESIGN-REFERENCES.md",
@@ -53,13 +63,43 @@
       "bytes": 5312
     },
     {
+      "path": "docs/research/SCHEDULE-SOURCES.md",
+      "sha256": "e33aa3fa0a43aab43fc43aa6d7810fbb74667c4401d045a619bfabae663e42d8",
+      "bytes": 3212
+    },
+    {
       "path": "docs/research/design-sources.json",
       "sha256": "9d4de433d99ebdf5070b207bd29f22b1465b07a2dea53eab2bb4008bddcf7f28",
       "bytes": 1807
     },
     {
+      "path": "docs/research/upstream/anthropic-frontend-design/LICENSE.txt",
+      "sha256": "809fa1ed21450f59827d1e9aec720bbc4b687434fa22283c6cb5dd82a47ab9c0",
+      "bytes": 10175
+    },
+    {
+      "path": "docs/research/upstream/anthropic-frontend-design/SKILL.md",
+      "sha256": "d13da26c72b1a4e2a7a767904bccdc3f7fd2b62628aea89341a40c60d1191813",
+      "bytes": 9391
+    },
+    {
+      "path": "docs/research/upstream/impeccable/LICENSE.txt",
+      "sha256": "72bdc6c2866074f26236c6313f44acb6e26dd58e605aa7aa8158f4ab7ef9b069",
+      "bytes": 10767
+    },
+    {
+      "path": "docs/research/upstream/impeccable/NOTICE.md",
+      "sha256": "1b347de5ccbdc461dce1fd4d0a8d4e517c30d0dbd3b693cec5db2e651dbd668c",
+      "bytes": 504
+    },
+    {
+      "path": "docs/research/upstream/impeccable/SKILL.md",
+      "sha256": "d08c14af5402646c22d48e352250c4f9946d60960710644a3cf5c2f16b38761b",
+      "bytes": 12770
+    },
+    {
       "path": "fixtures/오늘업무-샘플.csv",
-      "sha256": "cf9cecfc2109bc584d4b19a4508b4565280449e7974fefab0c06c16830edda85",
+      "sha256": "e6d45aa85fcd2a403db748333cad83407e3dc86ca2bd019bf94e8335d95f5a71",
       "bytes": 220
     },
     {
@@ -74,12 +114,12 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "b921de33632621ad7aaaac6e6dc081968955c170defc129dd8554cf30668fb32",
+      "sha256": "a263f393e1457cf96c4b221d1eb010907760268fe9671e89cd8c3fe0345589e0",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "9b4f0946c7d774093164ec2ed12eb6ab31294151ad295d7b9179e7307e0a43cf",
+      "sha256": "fa9da67ccecf925bb24686a8760cb0b1fec04e4b943d4eb876556247e29ebf9d",
       "bytes": 681
     },
     {
@@ -134,8 +174,8 @@
     },
     {
       "path": "public/design-lab/gallery.css",
-      "sha256": "72ef3cf58aed66bb8bfcd52b6151b3300718de8ecd6e4fa9a8929a9952087cf4",
-      "bytes": 2022
+      "sha256": "042edc46a0741d8e7c0e9dd0013acccfa8288fe986fa4754d31797f4c84a5a6f",
+      "bytes": 2152
     },
     {
       "path": "public/design-lab/gallery.js",
@@ -144,8 +184,8 @@
     },
     {
       "path": "public/design-lab/index.html",
-      "sha256": "701b2de28d6f74df739273f8052755608abbc773bc17c4ef384b9cf11e1efac9",
-      "bytes": 1346
+      "sha256": "cc6a68bc16f5c7722925f81f80081cdfd6f8a3eb87a7ba617537f9ae513f0386",
+      "bytes": 1457
     },
     {
       "path": "public/design-lab/prototype.css",
@@ -174,18 +214,128 @@
     },
     {
       "path": "public/reference-lab/app.js",
-      "sha256": "a8768abd1d597453d597fb1209acba4acb4405e6cbc3a29215f3a18455f167bf",
-      "bytes": 18228
+      "sha256": "e57f421cd9503e1e46d0eeea552d5e6cb3b8e50b75ef0a74085c24d36d7f5fa1",
+      "bytes": 35567
     },
     {
       "path": "public/reference-lab/index.html",
-      "sha256": "5bb622e861979106bc344c85a7a8102b180e22ab76319e47e5288c199d2225c0",
-      "bytes": 865
+      "sha256": "a073399fa7c340b5b1005c9fca03f7671095de777afb0fee699c0214c83b678e",
+      "bytes": 928
     },
     {
       "path": "public/reference-lab/style.css",
-      "sha256": "abd141012948e1fb31de19e3c4548c012653eb0a11402e5ad2eebf62513ec136",
-      "bytes": 14902
+      "sha256": "4d82c22ed8bf4dbadf74ab8cf87d8ceffc516232faf2f42e871913ea20df68f5",
+      "bytes": 22432
+    },
+    {
+      "path": "public/schedule-designs/01-vault.html",
+      "sha256": "7485ef1b8e31baaa02addec79bdadf26fb886975f1dc1998f7468af05fa057af",
+      "bytes": 354
+    },
+    {
+      "path": "public/schedule-designs/02-week.html",
+      "sha256": "25eef7a4b3cf81e188ac2dda144c54b41717defcaa87488d24f11aab5be4a917",
+      "bytes": 351
+    },
+    {
+      "path": "public/schedule-designs/03-inbox.html",
+      "sha256": "19d3b41b0fc7620a96e17b02495b249bc2e508a0907152b82fbe28cd53409d47",
+      "bytes": 363
+    },
+    {
+      "path": "public/schedule-designs/04-matrix.html",
+      "sha256": "fce398e916fc44c23a4789a6c0f3d89e7ee3f3bf119e5e71b034cbf3fcb7e190",
+      "bytes": 354
+    },
+    {
+      "path": "public/schedule-designs/05-flow.html",
+      "sha256": "bf34b71be37db4b9b16a4dccffc2ef98f97a1f6ebdd8a7dc27720c0ffe748c75",
+      "bytes": 354
+    },
+    {
+      "path": "public/schedule-designs/06-focus.html",
+      "sha256": "42b5df6ad148c25417ee1c6c37cd92d6c4e891c75a06993c58e3ae581b5d2a26",
+      "bytes": 354
+    },
+    {
+      "path": "public/schedule-designs/07-relay.html",
+      "sha256": "c3147391518833994f5ac43a8860f90ec91488f93d6b97cd31c027334811ff1f",
+      "bytes": 359
+    },
+    {
+      "path": "public/schedule-designs/08-equipment.html",
+      "sha256": "ec77660d408b1187f123094ead6154b411bc241f7f8eb156805908e95f06ac9f",
+      "bytes": 369
+    },
+    {
+      "path": "public/schedule-designs/09-month.html",
+      "sha256": "07d7d220beca34c4bacb9a68e838bfe16be5f837b155eb98bce0ef0333d6e8dd",
+      "bytes": 351
+    },
+    {
+      "path": "public/schedule-designs/10-agenda.html",
+      "sha256": "edaf418a68a514a218bcf65fa728714deb0baf2165f35cd02620c6b5fffa375d",
+      "bytes": 358
+    },
+    {
+      "path": "public/schedule-designs/11-ledger.html",
+      "sha256": "fd207325688fead5bd58dee3f1146b26f4222f73f8a806762382c48e42a6ff49",
+      "bytes": 354
+    },
+    {
+      "path": "public/schedule-designs/12-wizard.html",
+      "sha256": "02e256498cdfeccbb229b85b58cceb8594cb0fc43559a1ccd307ae0e89da0103",
+      "bytes": 364
+    },
+    {
+      "path": "public/schedule-designs/13-command.html",
+      "sha256": "52181bc9e44dfd58ffd693340022560c6dcadf13918dc4735583cda5ddaed174",
+      "bytes": 365
+    },
+    {
+      "path": "public/schedule-designs/14-canvas.html",
+      "sha256": "3ff6ddff08f19a086ba3e99cf480e97fc24e60870ed3f52d8c80bc87ffd8a48d",
+      "bytes": 368
+    },
+    {
+      "path": "public/schedule-designs/15-notebook.html",
+      "sha256": "f9550c7b36896a58837c6b7278a591fdab5fe8a8c1281cbca9b3f17f296967da",
+      "bytes": 357
+    },
+    {
+      "path": "public/schedule-designs/16-balance.html",
+      "sha256": "bbb7fd61f023a3fed0dc49f02a6bb996abb000f0a340a7d6aa05661540f833ba",
+      "bytes": 362
+    },
+    {
+      "path": "public/schedule-designs/catalog.js",
+      "sha256": "48fba2130bd32025d209a9b08fe48c6edbf2f3b019e0dc2ecb2dc47cee625b9e",
+      "bytes": 3769
+    },
+    {
+      "path": "public/schedule-designs/gallery.css",
+      "sha256": "f8547788df50c14833b64f70462664a6a77c01579916500ab0d24400b518e13f",
+      "bytes": 1850
+    },
+    {
+      "path": "public/schedule-designs/gallery.js",
+      "sha256": "9dfc8dc9d8faa3f16ca5ea60ca8ab256ed9f270aea9cb8da0eed839f34c7cd9a",
+      "bytes": 2256
+    },
+    {
+      "path": "public/schedule-designs/index.html",
+      "sha256": "1e04584c725d0aedc6db4ee6c3d6d0c25b0e2ba4fa989b3e56a026210ac38382",
+      "bytes": 1353
+    },
+    {
+      "path": "public/schedule-designs/prototypes.css",
+      "sha256": "332a68f33f6998d14e5cbd42663b814b07454e193ab9185092be6676841ee010",
+      "bytes": 24996
+    },
+    {
+      "path": "public/schedule-designs/prototypes.js",
+      "sha256": "5c3ee418c51e490556de23453b18672ec3582545b67e47042f4e6a90c264cee1",
+      "bytes": 23100
     },
     {
       "path": "public/styles.css",
@@ -199,8 +349,8 @@
     },
     {
       "path": "reference-kit/README.md",
-      "sha256": "d05184779bc79d157803a5b3cb350bb5a027045c43874256f01825bdf8c23218",
-      "bytes": 6661
+      "sha256": "bc6aee637ccde31479add77e3d40e5bc18a4b937435e3d297e30e95c7b07838d",
+      "bytes": 6998
     },
     {
       "path": "reference-kit/planner.js",
@@ -248,14 +398,24 @@
       "bytes": 1145
     },
     {
+      "path": "reference-kit/recipes/09-daily-notes.md",
+      "sha256": "9230b8278cc99e3e91eab529b5e077a45785a341a5543bf54142f4e976d5aada",
+      "bytes": 2021
+    },
+    {
+      "path": "reference-kit/recipes/10-manual-schedule.md",
+      "sha256": "8344bdfdd9e3c36791258eb7646677fab62ddc0aabe68a26a824630caaa96a05",
+      "bytes": 1980
+    },
+    {
       "path": "reference-kit/router.js",
-      "sha256": "c68fded7f2497cf16bc4fcc0552025bb9dfd4597db08cccd38d7168026aa8fda",
-      "bytes": 4500
+      "sha256": "adfdcfeb80ebb51aea8ef593d1c9d9f131e7749196a08cfb406e4d6e3c404dba",
+      "bytes": 4844
     },
     {
       "path": "reference-kit/workflows.js",
-      "sha256": "e4a881fef8769d3627cb778b80e6c60da80da4aaf977921cb3bbe22b328c75cc",
-      "bytes": 8003
+      "sha256": "2f08b021c0aa410b9b24cd71516948fa27a0a9f28c7a84229497b5686713f01c",
+      "bytes": 10165
     },
     {
       "path": "scripts/check-source.js",
@@ -274,8 +434,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "70f9d33374f882ca6767b60808a895481eeb064587e6f1fe8894b0869425c504",
-      "bytes": 12472
+      "sha256": "0f11e84afa468436fdcdb566110df718d369f1d655558f99ae7c9d5e6f0bb6cc",
+      "bytes": 12519
     },
     {
       "path": "src/connectors.js",
@@ -331,6 +491,11 @@
       "path": "test/portal.test.js",
       "sha256": "19de89a1d47db9ebe66e6a128099cb1d790f185b0ed76f8173d6b9e8b7b603e4",
       "bytes": 10851
+    },
+    {
+      "path": "test/schedule.test.js",
+      "sha256": "96a028eed2237258d337948a689ff4ca36adfd1e91885df9af9f6bf4bf605d2d",
+      "bytes": 5336
     }
   ]
 }

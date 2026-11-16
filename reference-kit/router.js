@@ -1,6 +1,6 @@
 import express from 'express';
 import {createHash} from 'node:crypto';
-import {sampleWorkspace,importTasks,parseMailText,previewPlan,commitPlan,checkItem,completeTask,updateStaff,equipmentHistory,handover} from './workflows.js';
+import {sampleWorkspace,importTasks,parseMailText,previewPlan,commitPlan,checkItem,completeTask,updateStaff,equipmentHistory,handover,saveDailyNote,scheduleTask} from './workflows.js';
 import {parseFile,LIMITS} from '../src/tables.js';
 import {fail} from '../src/core.js';
 export function referenceRouter(store,{mode='demo'}={}){
@@ -28,6 +28,8 @@ export function referenceRouter(store,{mode='demo'}={}){
   router.put('/staff',(req,res)=>res.json(mutate(req,s=>updateStaff(s,req.body.staff),'담당자 역량·배정 가중치 수정')));
   router.post('/check',(req,res)=>res.json(mutate(req,s=>checkItem(s,{...req.body,actor:req.actor}),'작업 체크리스트 기록')));
   router.post('/complete',(req,res)=>res.json(mutate(req,s=>completeTask(s,{taskId:req.body.taskId,actor:req.actor}),'업무 완료·인폼 자동 생성')));
+  router.put('/daily-note',(req,res)=>res.json(mutate(req,s=>saveDailyNote(s,{day:req.body.day,text:req.body.text,actor:req.actor}),'날짜별 업무 메모 저장')));
+  router.post('/schedule',(req,res)=>res.json(mutate(req,s=>scheduleTask(s,{...req.body,actor:req.actor}),'업무 일정 직접 지정·변경')));
   router.get('/history',(req,res)=>res.json(equipmentHistory(workspace().data,String(req.query.equipment||'').slice(0,80))));
   router.get('/handover',(req,res)=>res.json(handover(workspace().data,String(req.query.day||''))));
   return router;

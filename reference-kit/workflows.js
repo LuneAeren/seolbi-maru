@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {planDay,validateTask,validateStaff,validDay,PlannerError} from './planner.js';
+import {planDay,validateTask,validateStaff,validDay,minuteOfDay,timeOfDay,PlannerError} from './planner.js';
 const requireValue=(ok,message)=>{if(!ok)throw new PlannerError(message);};
 export const todayKST=()=>new Intl.DateTimeFormat('en-CA',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'Asia/Seoul'}).format(new Date());
 const keyFor=t=>createHash('sha256').update(JSON.stringify([t.day,t.title,t.equipment,t.minutes,t.skill,t.level,t.priority,t.earliest,t.deadline])).digest('hex').slice(0,24);
@@ -26,3 +26,25 @@ export function completeTask(state,{taskId,actor}){const task=state.tasks.find(t
 export function updateStaff(state,input){validateStaff(input);const index=state.staff.findIndex(p=>p.id===input.id);requireValue(index>=0,'담당자를 찾을 수 없습니다.');state.staff[index]=structuredClone(input);return input;}
 export function equipmentHistory(state,equipment){return state.events.filter(e=>e.equipment===equipment).sort((a,b)=>b.at.localeCompare(a.at));}
 export function handover(state,day){validDay(day);const tasks=state.tasks.filter(t=>(t.plannedDay||t.day)===day),ids=new Set(tasks.map(t=>t.id));return{day,completed:tasks.filter(t=>t.status==='completed'),outstanding:tasks.filter(t=>t.status!=='completed'),informs:state.informs.filter(i=>ids.has(i.taskId)),partial:Object.values(state.checklists).filter(c=>ids.has(c.taskId)&&!c.completed).map(c=>({taskId:c.taskId,done:c.items.filter(i=>i.done).length,total:c.items.length}))};}
+
+/** Daily notes stay plain text; [[equipment]] only resolves known internal equipment. */
+export function saveDailyNote(state,{day,text,actor}){
+ validDay(day);requireValue(typeof text==='string'&&text.length<=20000,'일일 메모는 20,000자 이내입니다.');
+ const notes=state.dailyNotes||{};requireValue(Object.hasOwn(notes,day)||Object.keys(notes).length<730,'데모 일일 메모는 최대 730일입니다.');
+ const known=new Set(state.tasks.map(t=>t.equipment));
+ const equipment=[...new Set([...text.matchAll(/\[\[([^\]\n]{1,80})\]\]/g)].map(m=>m[1]).filter(e=>known.has(e)))];
+ state.dailyNotes=notes;notes[day]={day,text,equipment,actor,updatedAt:new Date().toISOString()};return notes[day];
+}
+export function scheduleTask(state,{taskId,personId,day,start,actor}){
+ const task=state.tasks.find(t=>t.id===taskId),person=state.staff.find(p=>p.id===personId);
+ requireValue(task&&person,'업무와 담당자를 확인해주세요.');requireValue(task.status!=='completed','완료된 작업의 일정은 변경할 수 없습니다.');validDay(day);
+ const begin=minuteOfDay(start),finish=begin+task.minutes;requireValue(finish<1440,'자정을 넘는 일정은 지원하지 않습니다.');
+ requireValue(begin>=minuteOfDay(task.earliest)&&finish<=minuteOfDay(task.deadline),'원천 업무의 시작 가능·마감 시각 안에서 선택해주세요.');
+ const other=state.bookings.filter(b=>b.taskId!==taskId);
+ const plan=planDay({tasks:[{...task,status:'pending',day,earliest:start,deadline:timeOfDay(finish)}],staff:[person],bookings:other,day});
+ requireValue(plan.assignments.length===1,'역량·하루 용량·근무/휴게·사람/설비 중복을 확인해주세요.');
+ const booking={...plan.assignments[0],status:task.status==='in-progress'?'in-progress':'scheduled'};
+ const checklist=state.checklists[task.id]||makeChecklist(task,state.templates||[]);
+ state.bookings=[...other,booking];task.status=booking.status;task.plannedDay=day;state.checklists[task.id]=checklist;
+ event(state,task.equipment,'일정 직접 지정',`${task.title} / ${person.name} / ${day} ${start}–${booking.end}`,actor);return booking;
+}

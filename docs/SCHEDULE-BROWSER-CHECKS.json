@@ -1,0 +1,201 @@
+{
+  "checkedOn": "2026-11-16",
+  "environment": "macOS, Codex in-app browser, native preview width; minimum 1280px desktop content",
+  "scope": "Initial per-concept rendering and representative interactions. Month-end date and notebook heading were corrected and rechecked afterward; final images are separate output files.",
+  "renderChecks": [
+    {
+      "key": "01-vault",
+      "bodyClass": "01-vault",
+      "buttons": 14,
+      "scroll": 1280,
+      "title": "11월 16일 업무 노트",
+      "width": 1265
+    },
+    {
+      "key": "02-week",
+      "bodyClass": "02-week",
+      "buttons": 33,
+      "scroll": 1280,
+      "title": "11월 셋째 주",
+      "width": 1265
+    },
+    {
+      "key": "03-inbox",
+      "bodyClass": "03-inbox",
+      "buttons": 12,
+      "scroll": 1280,
+      "title": "받은 업무",
+      "width": 1265
+    },
+    {
+      "key": "04-matrix",
+      "bodyClass": "04-matrix",
+      "buttons": 9,
+      "scroll": 1280,
+      "title": "팀의 일주일",
+      "width": 1265
+    },
+    {
+      "key": "05-flow",
+      "bodyClass": "05-flow",
+      "buttons": 9,
+      "scroll": 1280,
+      "title": "팀 작업 흐름",
+      "width": 1265
+    },
+    {
+      "key": "06-focus",
+      "bodyClass": "06-focus",
+      "buttons": 10,
+      "scroll": 1280,
+      "title": "구동부 정기 점검",
+      "width": 1265
+    },
+    {
+      "key": "07-relay",
+      "bodyClass": "07-relay",
+      "buttons": 6,
+      "scroll": 1280,
+      "title": "교대가 바뀌어도, 업무는 이어집니다.",
+      "width": 1265
+    },
+    {
+      "key": "08-equipment",
+      "bodyClass": "08-equipment",
+      "buttons": 9,
+      "scroll": 1280,
+      "title": "MC-104 작업 공간",
+      "width": 1265
+    },
+    {
+      "key": "09-month",
+      "bodyClass": "09-month",
+      "buttons": 41,
+      "scroll": 1280,
+      "title": "2026년 11월",
+      "width": 1265
+    },
+    {
+      "key": "10-agenda",
+      "bodyClass": "10-agenda",
+      "buttons": 2,
+      "scroll": 1280,
+      "title": "월요일의 업무 흐름",
+      "width": 1265
+    },
+    {
+      "key": "11-ledger",
+      "bodyClass": "11-ledger",
+      "buttons": 9,
+      "scroll": 1280,
+      "title": "업무 원장",
+      "width": 1265
+    },
+    {
+      "key": "12-wizard",
+      "bodyClass": "12-wizard",
+      "buttons": 13,
+      "scroll": 1280,
+      "title": "어떤 업무를 배정할까요?",
+      "width": 1265
+    },
+    {
+      "key": "13-command",
+      "bodyClass": "13-command",
+      "buttons": 20,
+      "scroll": 1280,
+      "title": "오늘은 무엇을 할까요?",
+      "width": 1265
+    },
+    {
+      "key": "14-canvas",
+      "bodyClass": "14-canvas",
+      "buttons": 4,
+      "scroll": 1280,
+      "title": "오늘의 계획 지도",
+      "width": 1265
+    },
+    {
+      "key": "15-notebook",
+      "bodyClass": "15-notebook",
+      "buttons": 8,
+      "scroll": 1280,
+      "title": "월 16요일",
+      "width": 1265
+    },
+    {
+      "key": "16-balance",
+      "bodyClass": "16-balance",
+      "buttons": 13,
+      "scroll": 1280,
+      "title": "업무량부터 균형 있게",
+      "width": 1265
+    }
+  ],
+  "interactionResults": [
+    {
+      "key": "01-vault",
+      "passed": true
+    },
+    {
+      "key": "02-week",
+      "passed": true
+    },
+    {
+      "key": "03-inbox",
+      "passed": true
+    },
+    {
+      "key": "04-matrix",
+      "passed": true
+    },
+    {
+      "key": "05-flow",
+      "passed": true
+    },
+    {
+      "key": "06-focus",
+      "passed": true
+    },
+    {
+      "key": "07-relay",
+      "passed": true
+    },
+    {
+      "key": "08-equipment",
+      "passed": true
+    },
+    {
+      "key": "09-month",
+      "passed": true
+    },
+    {
+      "key": "10-agenda",
+      "passed": true
+    },
+    {
+      "key": "11-ledger",
+      "passed": true
+    },
+    {
+      "key": "12-wizard",
+      "passed": true
+    },
+    {
+      "key": "13-command",
+      "passed": true
+    },
+    {
+      "key": "14-canvas",
+      "passed": true
+    },
+    {
+      "key": "15-notebook",
+      "passed": true
+    },
+    {
+      "key": "16-balance",
+      "passed": true
+    }
+  ]
+}

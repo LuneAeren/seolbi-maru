@@ -19,7 +19,7 @@ export function createApp(config, options = {}) {
   app.disable('x-powered-by'); app.set('trust proxy', false);
   app.use(helmet({ contentSecurityPolicy: { directives: { defaultSrc: ["'none'"], scriptSrc: ["'self'"], scriptSrcAttr: ["'none'"], styleSrc: ["'self'"], imgSrc: ["'self'"], fontSrc: ["'self'"], connectSrc: ["'self'"], objectSrc: ["'none'"], frameSrc: ["'none'"], frameAncestors: ["'none'"], baseUri: ["'none'"], formAction: ["'self'"], upgradeInsecureRequests: config.mode === 'production' ? [] : null } }, strictTransportSecurity: config.mode === 'production' ? undefined : false, referrerPolicy: { policy: 'no-referrer' } }));
   app.use((req, res, next) => {
-    if (req.path.startsWith('/design-lab/')) {
+    if ((req.path.startsWith('/design-lab/') || req.path.startsWith('/schedule-designs/'))) {
       res.set('Content-Security-Policy', res.get('Content-Security-Policy').replace("frame-src 'none'", "frame-src 'self'").replace("frame-ancestors 'none'", "frame-ancestors 'self'"));
     }
     res.set('Cache-Control', 'no-store');next();
