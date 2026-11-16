@@ -1,12 +1,14 @@
 # 설비마루 · Seolbi Maru
 
-이미 운영 중인 사내 웹사이트에 디자인과 기능을 옮겨 쓰기 위한 **Express.js 기반 레퍼런스 저장소**입니다. 설비현황·업무자료 포털 예제, PC용 홈화면 디자인 16안과 이전 화면 레퍼런스, 일정 → 작업 → 인수인계 자동화 예제를 포함합니다.
+이미 운영 중인 사내 웹사이트에 디자인과 기능을 옮겨 쓰기 위한 **Express.js 기반 레퍼런스 저장소**입니다. 설비현황·업무자료 포털 예제, PC용 업무 집중 홈 테마 16종과 이전 화면 레퍼런스, 일정 → 작업 → 인수인계 자동화 예제를 포함합니다.
 
-**v0.4.0 · 2026-11-16 — 홈화면 디자인 16안 / 캘린더 장소·상세·반복 매크로**
+**v0.5.0 · 2026-11-17 — 업무 집중 홈 테마 16종 / 접는 메뉴 / 옵니버스 개인 설정**
 
 회사 사이트·기존 DB·로그인을 유지하고 필요한 모듈만 이식하는 것이 목적입니다. 이 저장소에 실제 회사 자료, 메일, 직원 정보, 접속 주소나 자격증명을 넣지 마세요.
 
 ## 사내 AI가 먼저 읽을 내용
+
+**홈 테마를 이식할 때는 [홈 전용 AI 인계](docs/FOCUS-HOME-HANDOFF.md)를 먼저 읽으세요.**
 
 이 README를 시작점으로 삼고 [AI 이식 지침](docs/AI-INTEGRATION.md), [기능 키트](reference-kit/README.md), 선택한 기능의 [recipe](reference-kit/recipes/) 순서로 읽으세요. 새 일정·메모 화면은 [일정 UX 명세](docs/SCHEDULE-UX.md)를 함께 읽으세요.
 
@@ -26,12 +28,12 @@
 | 완료 인폼·이력 | 위 파일 | `completeTask`, `equipmentHistory`, `handover` |
 | API·버전 충돌 예제 | `reference-kit/router.js` | `referenceRouter` |
 | 실제 동작 UI | `public/reference-lab/` | 단계별 HTML·CSS·JavaScript |
-| 홈화면 디자인 선택 | `public/home-designs/` | 홈 전용 16개 HTML과 서로 다른 구성·조작 함수 |
+| 최신 홈 테마 | `public/home-designs/` | `focus.js` 공통 홈, `focus.css` 16개 테마, `settings.js` 설정·신호 규칙 |
 | 반복 매크로·장소·상세 | `reference-kit/workflows.js`, `planner.js` | `createRecurringMacro`, `previewRecurring`, `generateRecurring` |
 | 날짜 메모·수동 일정 | `reference-kit/workflows.js` | `saveDailyNote`, `scheduleTask` |
 | 이전 디자인 | `public/design-lab/` | 이전 8안 보존 |
 | 보안·파일·저장 | `src/` | 기존 인증·CSRF·파서·SQLite 예제 |
-| 합격 조건 | `test/planner.test.js`, `test/schedule.test.js`, `test/recurring.test.js`, `test/portal.test.js` | 33개 테스트 |
+| 합격 조건 | `test/*.test.js` | 설정·미확인 신호를 포함한 36개 테스트 |
 
 파일 경로는 이 저장소 루트 기준입니다. 복사 전에 API·필드명·권한을 기존 회사 코드와 대조하세요. 상세 입력·출력과 API 표는 [AI 이식 지침](docs/AI-INTEGRATION.md)에 있습니다.
 
@@ -52,7 +54,7 @@ npm start
 
 | 화면 | 로컬 주소 | 확인할 내용 |
 | --- | --- | --- |
-| **홈화면 디자인 16안** | [홈 16안 비교 갤러리](http://127.0.0.1:4317/home-designs/) | 설비현황·업무자료·업무사이트 중심의 서로 다른 구성 |
+| **업무 집중 홈 테마 16종** | [홈 테마 비교 갤러리](http://127.0.0.1:4317/home-designs/) | 같은 홈 구조에서 배경·재질·색감 비교 |
 | 이전 일정 화면 16안 | [이전 일정 레퍼런스](http://127.0.0.1:4317/schedule-designs/) | 보존한 이전 일정 화면 예제 |
 | 이전 디자인 8안 | [이전 갤러리](http://127.0.0.1:4317/design-lab/) | 이전 포털 방향 비교 |
 | 일정 자동화 | [기능 레퍼런스](http://127.0.0.1:4317/reference-lab/) | 가져오기 → 배정 검토 → 확정 → 체크 → 인폼·이력 |
@@ -60,32 +62,40 @@ npm start
 
 HTML 파일을 직접 여는 대신 Express 서버에서 여세요. 모듈·API·보안 헤더가 함께 적용되어야 합니다.
 
-## 디자인 대상: 회사 포털의 홈화면
+## 최신 홈: 같은 구조, 업무에 집중하는 16개 테마
 
-홈화면은 **설비현황·최근 인폼·업무자료·업무사이트**를 보여주는 첫 페이지입니다. 캘린더 디자인과 구분합니다. 홈에는 오늘 업무의 요약만 두고 장소·상세·반복 설정은 별도 캘린더로 연결합니다. 기존 회사 사이트와 DB를 유지하며 선택한 홈의 HTML·CSS 구성만 이식하세요.
+왼쪽 메뉴는 **홈 / 업무 / 데이터허브 / 데이터 분석**으로 고정하며 접고 펼칠 수 있습니다. 아래 기타 링크는 더미입니다. 메뉴 하단의 **옵니버스**에서 개인 설정을 바꿉니다.
 
-[홈화면 16안 열기](http://127.0.0.1:4317/home-designs/) · [홈 디자인 기준](docs/HOME-DESIGN-BRIEF.md)
+홈에는 오늘 업무 수량, 메인·챔버·LP별 신호등 표, 확인할 항목, 오늘 업무 요약, 최근 자료를 배치했습니다. 수량에서 업무 목록으로 이동하고 설비를 검색·필터링하거나 상세를 열 수 있습니다. 미확인 신호는 회색과 상태명으로 표시합니다. 모든 수량과 설비는 가짜 데이터입니다.
 
-| 번호 | 홈 이름 | 주 구성과 탐색 |
+[홈 테마 16종 비교](http://127.0.0.1:4317/home-designs/) · [01 Monolith](http://127.0.0.1:4317/home-designs/01-monolith.html) · [02 Golden Bridge Glass](http://127.0.0.1:4317/home-designs/02-goldenbridge.html)
+
+| 번호 | 테마 | 표면과 배경 |
 | --- | --- | --- |
-| 01 | Meridian Desk | 상태·업무 카드와 오른쪽 상세 |
-| 02 | Service Launcher | 업무사이트 검색과 서비스 런처 |
-| 03 | Operations Wall | 어두운 설비 현황 벽과 상태 필터 |
-| 04 | Daily Editorial | 편집형 부서 브리핑과 펼치는 인폼 |
-| 05 | Resource Library | 자료 분류·파일 목록·표 미리보기 |
-| 06 | Split Desk | 왼쪽 업무 요약·오른쪽 전환형 맥락 |
-| 07 | Bento Portal | 비대칭 모듈과 표시 구성 |
-| 08 | Team Commons | 담당자별 업무와 공용 도구 |
-| 09 | Workflow Gateway | 상태 확인·준비·기록 단계별 진입 |
-| 10 | Zone Atlas | 구역·호기 기준의 공간형 설비 지도 |
-| 11 | Spotlight Hub | 설비·자료·사이트 통합 검색 |
-| 12 | Workspace Deck | 현황/자료/사이트 전체 폭 탭 |
-| 13 | Link Switchboard | 분류를 펼치는 사내 사이트 디렉터리 |
-| 14 | Activity Journal | 최근 변경 피드와 선택 상세 |
-| 15 | Action Desk | 먼저 확인할 인폼 큐와 단일 검토 |
-| 16 | Panorama Console | 표·인폼·자료·사이트 고정 4분할 |
+| 01 | Monolith | 웅장한 산맥·느린 광원, 불투명 집중 패널 |
+| 02 | Golden Bridge Glass | 황금빛 브리지, 투명 위젯과 사이드바 |
+| 03 | Coast Glass | 옅은 바다색, 차가운 반투명 패널 |
+| 04 | Obsidian Glass | 먹색 배경, 어두운 유리 위젯 |
+| 05 | Slate Focus | 회청색, 단단한 무광 작업면 |
+| 06 | Pearl Desk | 따뜻한 백색, 부드러운 그림자 |
+| 07 | Dawn Ridge | 여명의 능선, 밝은 무광 패널 |
+| 08 | Deep Ocean | 깊은 남청색, 낮은 수면광 |
+| 09 | Graphite Stone | 무채색 석재, 절제한 경계 |
+| 10 | Sage Mist | 저채도 녹색, 맑은 반투명 위젯 |
+| 11 | Sandstone | 모래빛 배경, 종이 같은 작업면 |
+| 12 | Quiet Aurora | 어두운 보랏빛, 정적인 빛의 띠 |
+| 13 | Arctic Blue | 옅은 빙하색, 선명한 흰 패널 |
+| 14 | Forest Canopy | 깊은 숲색, 무광의 어두운 위젯 |
+| 15 | Silver Glass | 은회색 공간, 서리 낀 유리 |
+| 16 | Amber Dusk | 남색·구릿빛, 따뜻한 반투명 패널 |
 
-각 안은 같은 가짜 데이터로 비교하고 탐색·정보 순서·구성·대표 조작을 다르게 작성했습니다. 특정 안을 운영 홈에 확정하지 않았습니다. 참고한 GitHub 스킬 원문·라이선스는 docs/research/upstream/에 있으며 설치기나 외부 호출은 사용하지 않습니다.
+01은 산맥 배경만 70초 주기로 아주 느리게 움직입니다. 02는 자체 제작 브리지 풍경과 투명 위젯을 사용합니다. Apple 공식 테마나 배경 파일은 포함하지 않습니다. 나머지 14종은 같은 구조를 유지한 차분한 변형입니다.
+
+옵니버스에는 테마·16/18/20px 글자·정보 간격·위젯 선명도·배경 밝기·집중 모드·배경 동작·투명도 줄이기·보조 위젯·설비 구성요소·시작 화면·기본값 복원이 있습니다. `Ctrl+,`로 열 수 있습니다. 설정은 **해당 브라우저에만** 저장하며 부서원에게 공유하지 않습니다. 시스템 동작 줄이기와 집중 모드가 배경 움직임보다 우선합니다.
+
+[디자인 기준](docs/HOME-DESIGN-BRIEF.md) · [사내 AI용 파일 지도·데이터 계약](docs/FOCUS-HOME-HANDOFF.md)
+
+이전 홈 16안의 HTML과 `home.js`·`home.css`·`catalog-v04.js`는 보존했습니다. 현재 갤러리는 새 테마를 표시합니다. 이전 홈 UX를 새 16종으로 오인하거나 캘린더 디자인과 합치지 마세요. 이전 GitHub 스킬 원문·라이선스는 `docs/research/upstream/`에 있으며 런타임 의존성이 아닙니다.
 
 ## 캘린더의 기본 정보와 반복 매크로
 
@@ -164,7 +174,7 @@ HTML 파일을 직접 여는 대신 Express 서버에서 여세요. 모듈·API�
 
 사내 AI는 [11개 기능별 recipe](reference-kit/recipes/)를 순서대로 적용하고 기존 권한·DB 트랜잭션과 연결하세요.
 
-## 데스크톱 UI
+## 기존 포털 예제의 데스크톱 UI
 
 - 최소 가로 1360px의 PC 작업 화면입니다. 좁은 창에서는 가로로 이동하며 데스크톱 배치를 유지합니다.
 - 상태 카드 4개를 가로로 배치하고 설비 표와 선택 설비 상세를 동시에 보여줍니다.

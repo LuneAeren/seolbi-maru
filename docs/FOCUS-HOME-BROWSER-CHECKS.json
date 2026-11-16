@@ -1,0 +1,471 @@
+{
+  "checkedAt": "2026-11-17",
+  "browser": "Codex in-app Chromium on macOS",
+  "themes": [
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(17, 31, 48, 0.94)",
+      "rows": 8,
+      "scene": "url(\"http://127.0.0.1:4317/home-designs/mountain.svg\")",
+      "theme": "01-monolith",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(255, 255, 255, 0.58)",
+      "rows": 8,
+      "scene": "url(\"http://127.0.0.1:4317/home-designs/bridge.svg\")",
+      "theme": "02-goldenbridge",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(244, 252, 252, 0.64)",
+      "rows": 8,
+      "scene": "radial-gradient(at 15% 25%, rgb(236, 237, 224), rgba(0, 0, 0, 0) 45%), linear-gradient(155deg, rgb(147, 182, 199) 0%, rgb(203, 221, 224) 39%, rgb(145, 185, 191) 40%, rgb(208, 227, 220) 75%, rgb(231, 227, 206) 76%)",
+      "theme": "03-coastglass",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(27, 32, 45, 0.64)",
+      "rows": 8,
+      "scene": "radial-gradient(at 80% 10%, rgb(88, 97, 116), rgba(0, 0, 0, 0) 45%), linear-gradient(145deg, rgb(16, 20, 28) 20%, rgb(48, 59, 80) 64%, rgb(22, 27, 37))",
+      "theme": "04-obsidianglass",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(40, 56, 70, 0.97)",
+      "rows": 8,
+      "scene": "linear-gradient(155deg, rgb(53, 70, 83), rgb(29, 43, 55))",
+      "theme": "05-slate",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(255, 255, 255, 0.91)",
+      "rows": 8,
+      "scene": "radial-gradient(at 15% 15%, rgb(250, 249, 244), rgba(0, 0, 0, 0) 70%), linear-gradient(140deg, rgb(231, 235, 234), rgb(245, 244, 239))",
+      "theme": "06-pearl",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(248, 247, 239, 0.87)",
+      "rows": 8,
+      "scene": "url(\"http://127.0.0.1:4317/home-designs/mountain.svg\")",
+      "theme": "07-dawn",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(13, 44, 59, 0.9)",
+      "rows": 8,
+      "scene": "radial-gradient(at 75% -15%, rgb(62, 119, 135), rgba(0, 0, 0, 0) 55%), linear-gradient(rgb(28, 82, 101), rgb(9, 42, 61) 45%, rgb(8, 35, 46))",
+      "theme": "08-ocean",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(44, 46, 49, 0.96)",
+      "rows": 8,
+      "scene": "repeating-linear-gradient(128deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 3px, rgba(255, 255, 255, 0.01) 4px), linear-gradient(145deg, rgb(66, 70, 74), rgb(32, 33, 36))",
+      "theme": "09-graphite",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(248, 253, 248, 0.78)",
+      "rows": 8,
+      "scene": "radial-gradient(at 20% 20%, rgb(239, 244, 231), rgba(0, 0, 0, 0) 60%), linear-gradient(135deg, rgb(181, 205, 192), rgb(220, 231, 216) 58%, rgb(142, 176, 157))",
+      "theme": "10-sage",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(253, 250, 242, 0.94)",
+      "rows": 8,
+      "scene": "linear-gradient(135deg, rgb(221, 211, 190), rgb(241, 235, 223) 62%, rgb(216, 205, 184))",
+      "theme": "11-sandstone",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(29, 29, 49, 0.91)",
+      "rows": 8,
+      "scene": "radial-gradient(at 75% 25%, rgb(81, 72, 98), rgba(0, 0, 0, 0) 40%), linear-gradient(153deg, rgb(19, 24, 40), rgb(40, 42, 69) 50%, rgb(20, 45, 54))",
+      "theme": "12-aurora",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(250, 253, 255, 0.9)",
+      "rows": 8,
+      "scene": "linear-gradient(160deg, rgb(180, 205, 223), rgb(227, 238, 245) 44%, rgb(205, 223, 233) 45%, rgb(237, 244, 247))",
+      "theme": "13-arctic",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(23, 51, 44, 0.94)",
+      "rows": 8,
+      "scene": "radial-gradient(at 15% 15%, rgb(73, 99, 84), rgba(0, 0, 0, 0) 45%), radial-gradient(at 90% 70%, rgb(37, 73, 61), rgba(0, 0, 0, 0) 50%), linear-gradient(130deg, rgb(25, 61, 52), rgb(18, 44, 39))",
+      "theme": "14-forest",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(247, 250, 255, 0.64)",
+      "rows": 8,
+      "scene": "radial-gradient(at 85% 15%, rgb(247, 248, 250), rgba(0, 0, 0, 0) 55%), radial-gradient(at 10% 90%, rgb(142, 162, 180), rgba(0, 0, 0, 0) 50%), linear-gradient(140deg, rgb(166, 181, 198), rgb(212, 217, 224) 60%, rgb(181, 188, 201))",
+      "theme": "15-silverglass",
+      "viewport": [
+        1280,
+        720
+      ]
+    },
+    {
+      "bodyFont": "16px",
+      "columns": [
+        "설비 / 구역",
+        "메인",
+        "챔버 A",
+        "챔버 B",
+        "LP 1",
+        "LP 2",
+        "확인"
+      ],
+      "heading": "오늘의 업무 공간",
+      "nav": [
+        "홈",
+        "업무",
+        "데이터허브",
+        "데이터 분석"
+      ],
+      "overflow": false,
+      "panel": "rgba(45, 43, 48, 0.84)",
+      "rows": 8,
+      "scene": "radial-gradient(at 90% 65%, rgb(155, 112, 86), rgba(0, 0, 0, 0) 50%), linear-gradient(145deg, rgb(26, 38, 59), rgb(63, 65, 75) 60%, rgb(116, 84, 68))",
+      "theme": "16-amber",
+      "viewport": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "interactions": [
+    "KPI to filtered work: 4 in progress",
+    "Data hub search: 점검",
+    "Analysis: 33 normal, 4 maintenance, 2 stopped, 1 unknown",
+    "Dummy link stays on same URL",
+    "Collapsed sidebar retains Omnibus",
+    "20px and focus mode persist after reload",
+    "Focus stops motion and hides secondary widgets",
+    "Reduced transparency removes backdrop filter and makes panels opaque",
+    "Last disabled component group restores main and synchronizes controls",
+    "Golden Bridge motion can be enabled",
+    "Reset restores defaults"
+  ],
+  "limits": [
+    "Windows Edge not directly tested",
+    "OS reduced-motion behavior inspected in source; OS setting not changed"
+  ]
+}

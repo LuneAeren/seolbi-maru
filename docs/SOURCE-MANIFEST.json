@@ -1,6 +1,6 @@
 {
-  "version": "0.4.0",
-  "generatedOn": "2026-11-16",
+  "version": "0.5.0",
+  "generatedOn": "2026-11-17",
   "files": [
     {
       "path": ".env.example",
@@ -14,13 +14,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "0af971df9d553fbf77614d2cd4b754d8a389fc5d5b40fd473f5b205a038dba10",
-      "bytes": 20115
+      "sha256": "9358df4ee9b06fe5d1f33807a89c9437f2e2f6ba30ab624c47eb35f0b9531974",
+      "bytes": 21395
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "70a8289735202b99d989f65e735c6d3ceba68eb85dc3207255da920ef1c62ad3",
-      "bytes": 12884
+      "sha256": "a5b2a712edbc4df3c8cea4606c69f86e1d9ccf2df4bdfec7f99e92811a9ff601",
+      "bytes": 13496
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -33,14 +33,24 @@
       "bytes": 362
     },
     {
+      "path": "docs/FOCUS-HOME-BROWSER-CHECKS.json",
+      "sha256": "9c063746d5109cc582cd7166129da0ec3821f5be0bc641a3ca6cb6d83f0aa54a",
+      "bytes": 11581
+    },
+    {
+      "path": "docs/FOCUS-HOME-HANDOFF.md",
+      "sha256": "60b3cd06d055f4ed88e962ddc41ad1921da9609c0f8538322437e1ffea00cea8",
+      "bytes": 7842
+    },
+    {
       "path": "docs/HOME-BROWSER-CHECKS.json",
       "sha256": "f0fbc8dc2e7a99dc2997af9cdce1d4ceeca6bea3ebc2f255fa2ab817af18db83",
       "bytes": 3701
     },
     {
       "path": "docs/HOME-DESIGN-BRIEF.md",
-      "sha256": "4058c99776b3eb9854e1e7142f0c8202bdda64133051bdf3234b51787bb20916",
-      "bytes": 2821
+      "sha256": "f163363212d9284e8989072dde9a4387a694a1fbcb1c12d53c77a7523e06d5a8",
+      "bytes": 3677
     },
     {
       "path": "docs/INTERNAL-HANDOFF.md",
@@ -64,13 +74,18 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "c82f27753d8ce512534b374383cb9b33eca30742ab71ab9b9222a36873d36776",
-      "bytes": 12457
+      "sha256": "99f6825b67f543ec73d8cfd2b3669b97486983f59a6e71e0d876bc127cf0996d",
+      "bytes": 14902
+    },
+    {
+      "path": "docs/archive/HOME-DESIGN-v04.md",
+      "sha256": "4058c99776b3eb9854e1e7142f0c8202bdda64133051bdf3234b51787bb20916",
+      "bytes": 2821
     },
     {
       "path": "docs/research/DESIGN-REFERENCES.md",
-      "sha256": "ea79305b97f43b49a502e3ae2e49a352751ea86f0db7f2203094a0511c14ba87",
-      "bytes": 5312
+      "sha256": "e2406f863654e15bca4d041afcf7169731da31de26d965b9a994b7d69db7b6cf",
+      "bytes": 6323
     },
     {
       "path": "docs/research/SCHEDULE-SOURCES.md",
@@ -124,12 +139,12 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "4f3fa8535cc9cb5a7410ab90dd090bbe7f75c95429f2665984db5b0c47ed9480",
+      "sha256": "88301f41cd88ac60711e3ecdc2d8c76507aac0bebfc7aca2e472a2606fee17c9",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "b597ddc9a014e0e56efda095a41a7b8002ae63698665c7855b358e5a0a3f7dc8",
+      "sha256": "948f0cc1accdf37dac5f01b92b56e9ab59378fac79dcf299d4caec4a50ed14eb",
       "bytes": 681
     },
     {
@@ -218,9 +233,24 @@
       "bytes": 342
     },
     {
+      "path": "public/home-designs/01-monolith.html",
+      "sha256": "55b040314d8e5a5a91a4b717ca4cdf16a04bf6fde7732f697666bbb68c374fcf",
+      "bytes": 548
+    },
+    {
+      "path": "public/home-designs/02-goldenbridge.html",
+      "sha256": "1101475c231d72909b3900acc60c07217461a63c6e0febbc41707525ab354d34",
+      "bytes": 573
+    },
+    {
       "path": "public/home-designs/02-launcher.html",
       "sha256": "7d33bda3a203f40d4e6a6fee251a06b7db346012fe8250c037fc7151b879dab6",
       "bytes": 347
+    },
+    {
+      "path": "public/home-designs/03-coastglass.html",
+      "sha256": "71fd1d89513beaefbf6c6f53d08344379b2ceb88de33fe5de00215dc437602df",
+      "bytes": 555
     },
     {
       "path": "public/home-designs/03-wall.html",
@@ -233,9 +263,24 @@
       "bytes": 347
     },
     {
+      "path": "public/home-designs/04-obsidianglass.html",
+      "sha256": "08d6d589e4e73c6bcc652b10d1bff56736ba265f25c208d934643726315dae2f",
+      "bytes": 558
+    },
+    {
       "path": "public/home-designs/05-library.html",
       "sha256": "f021fd1b53800d27530c64c4534ee6008b19661d01898035a1d06c30e84e4885",
       "bytes": 343
+    },
+    {
+      "path": "public/home-designs/05-slate.html",
+      "sha256": "e787b21f181d9871880465f6c90df22b6c1b385a91898526a621bfc3bd1a3639",
+      "bytes": 545
+    },
+    {
+      "path": "public/home-designs/06-pearl.html",
+      "sha256": "53db30e4d923330d8d2c1618b68d4b5d396f46e51a2b811574eb598718cb75ca",
+      "bytes": 544
     },
     {
       "path": "public/home-designs/06-split.html",
@@ -248,6 +293,16 @@
       "bytes": 337
     },
     {
+      "path": "public/home-designs/07-dawn.html",
+      "sha256": "df8bd075ea822f54012b3260d0b35aef33340064060c8e7ba48233c6b27455d0",
+      "bytes": 539
+    },
+    {
+      "path": "public/home-designs/08-ocean.html",
+      "sha256": "35997adc56490d4f1dd98800952ae97404e97fe1fcc1d684d44cb0b786691376",
+      "bytes": 538
+    },
+    {
       "path": "public/home-designs/08-team.html",
       "sha256": "751cac717840459469106dda85a3c84b5126cb16f11fe2b98cbe4b2127cb4138",
       "bytes": 340
@@ -258,9 +313,24 @@
       "bytes": 353
     },
     {
+      "path": "public/home-designs/09-graphite.html",
+      "sha256": "14a051c9baf2e345f61ac7e8e911e69eb5ccc149d1d5dfe924845a0e3c73d9a1",
+      "bytes": 551
+    },
+    {
       "path": "public/home-designs/10-atlas.html",
       "sha256": "370f4f86dc69b95fec3ad483571b18f3f598508aae865f0b913d3b020a7bde7a",
       "bytes": 338
+    },
+    {
+      "path": "public/home-designs/10-sage.html",
+      "sha256": "fc535d41e4c6ad31fff2d8137779f49e7df486fb56db2fe39a5a8ad5d734bacd",
+      "bytes": 538
+    },
+    {
+      "path": "public/home-designs/11-sandstone.html",
+      "sha256": "43a35bd1d8b4399ae970b6c29d86e0058d07b60b929952ff8906b7fc9985df22",
+      "bytes": 548
     },
     {
       "path": "public/home-designs/11-spotlight.html",
@@ -268,14 +338,29 @@
       "bytes": 342
     },
     {
+      "path": "public/home-designs/12-aurora.html",
+      "sha256": "52532d2e4a94792a40c4dffa1c6826ba9d5fc55d6bc0043de7729e152c1dd8b3",
+      "bytes": 548
+    },
+    {
       "path": "public/home-designs/12-deck.html",
       "sha256": "2f6efd5630decdf44613f2d1e27a35c2bd0c0fbbc442213c5f8116ef2e13c532",
       "bytes": 345
     },
     {
+      "path": "public/home-designs/13-arctic.html",
+      "sha256": "e6efeaadf22b08ddad3c661490819d8f19dc480fb22e84773fc366e6153239e5",
+      "bytes": 547
+    },
+    {
       "path": "public/home-designs/13-switchboard.html",
       "sha256": "b2a9a3cd1063684c508dd227b9f8696dfee0bef335f8449b3318d30cdb042f29",
       "bytes": 347
+    },
+    {
+      "path": "public/home-designs/14-forest.html",
+      "sha256": "34ce826380be1ad9c2009abab263f19e8a7c795c26234a00e03eff06f4b219b2",
+      "bytes": 543
     },
     {
       "path": "public/home-designs/14-journal.html",
@@ -288,14 +373,44 @@
       "bytes": 347
     },
     {
+      "path": "public/home-designs/15-silverglass.html",
+      "sha256": "1a470c957e2fa1e8c06fcc0136a6fc5e6a5f32d9a90cd8e79ea4b7b3626f61f8",
+      "bytes": 555
+    },
+    {
+      "path": "public/home-designs/16-amber.html",
+      "sha256": "853168d35760a73a0f4f7faf6e63c1bd72215bdc08fa1a47c91d441f3d1e811e",
+      "bytes": 541
+    },
+    {
       "path": "public/home-designs/16-panorama.html",
       "sha256": "0c5f391c6d3e9c14cf63b7efc911683088fe3f926e34899aafa8cf87dde856ed",
       "bytes": 345
     },
     {
-      "path": "public/home-designs/catalog.js",
+      "path": "public/home-designs/bridge.svg",
+      "sha256": "67200eea438f53f9b02cca73b6a74d5ebfc26e7c8e6971de3e5ba5ce3305dd7f",
+      "bytes": 1726
+    },
+    {
+      "path": "public/home-designs/catalog-v04.js",
       "sha256": "355a66962cac71ef46124d5f7b9cea2bbf80fd5fd8ee58d342f338388136345e",
       "bytes": 3841
+    },
+    {
+      "path": "public/home-designs/catalog.js",
+      "sha256": "256c7b3548da10ba0e206d8ac6dc157ba2e1a4fd506e45ef6a318fd3c88d1bd4",
+      "bytes": 2486
+    },
+    {
+      "path": "public/home-designs/focus.css",
+      "sha256": "e32491f4cd35a2d7bc01777fcb6538605e2821cc7d1d1f2b6bb6623ddaa45c8e",
+      "bytes": 25955
+    },
+    {
+      "path": "public/home-designs/focus.js",
+      "sha256": "739c0671c2b83f94ca027053ad39180ec1c855cbe73bac45e0bad5b4f3a5b1ab",
+      "bytes": 21553
     },
     {
       "path": "public/home-designs/gallery.css",
@@ -314,13 +429,23 @@
     },
     {
       "path": "public/home-designs/home.js",
-      "sha256": "fe38eddf579ef1837da5744b16bdfba7b4031823e4f7dfdfe74158e66a1a0e1e",
-      "bytes": 23022
+      "sha256": "b0685456cd7fcb8ed98f7ae10818d52ef13c70191211c5099306f3f71fb30d94",
+      "bytes": 23026
     },
     {
       "path": "public/home-designs/index.html",
-      "sha256": "c2aa3c7a6c7ad10274f1a984db5b886d1657337b2bb0ed085e721958c8e0a03e",
-      "bytes": 1359
+      "sha256": "cf5a8d4aee0b8e27c77b3781192b5881aaf30e77749cee4697fb809749fc1f66",
+      "bytes": 1358
+    },
+    {
+      "path": "public/home-designs/mountain.svg",
+      "sha256": "cee6ec783fe3bda72b1ea350263b3a7c6d06e1855d78ff1fc6c03a64c78cadca",
+      "bytes": 1226
+    },
+    {
+      "path": "public/home-designs/settings.js",
+      "sha256": "2e2f3d68e20b68273e411b1c12b80077690e7f20633396f17b3a10bd18ef8082",
+      "bytes": 1424
     },
     {
       "path": "public/index.html",
@@ -464,8 +589,8 @@
     },
     {
       "path": "reference-kit/DESIGN-GUIDE.md",
-      "sha256": "a0a857b0306c60e3e62733fc47e98516d187c951a15287d3e2af47cff7ccd509",
-      "bytes": 1681
+      "sha256": "30ee1175016ad89d2b697a20b18f79065bc3e081a52c8784a79aee20a5c2577f",
+      "bytes": 1738
     },
     {
       "path": "reference-kit/README.md",
@@ -608,6 +733,11 @@
       "bytes": 3323
     },
     {
+      "path": "test/focus-settings.test.js",
+      "sha256": "edb7360bbb50ea80c505fb5660b772b9510165d5d641619f9bf73c98476052f4",
+      "bytes": 1538
+    },
+    {
       "path": "test/planner.test.js",
       "sha256": "07daab753be08862385e10d0c4f2758958e307a1f2cebb485121f1e1bdf8cfa8",
       "bytes": 9109
@@ -619,8 +749,8 @@
     },
     {
       "path": "test/recurring.test.js",
-      "sha256": "5bd5609360546d8cf30c1ecfec9a9d15303251aed2997bffe2df1a008526d6da",
-      "bytes": 5993
+      "sha256": "a1dd44a50a6375a1b3d3f1a46df7f1f49accd5a5750081dcfb5f567220205426",
+      "bytes": 5986
     },
     {
       "path": "test/schedule.test.js",

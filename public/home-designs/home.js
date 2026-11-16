@@ -1,4 +1,4 @@
-import {concepts} from './catalog.js';
+import {concepts} from './catalog-v04.js';
 const key=document.body.dataset.concept,concept=concepts.find(c=>c.id===key),root=document.querySelector('#home');document.body.className=key;
 function h(tag,attrs={},...children){const el=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k.startsWith('on'))el.addEventListener(k.slice(2).toLowerCase(),v);else if(k==='class')el.className=v;else if(k==='value')el.value=v;else if(typeof v==='boolean'){if(v)el.setAttribute(k,'');}else el.setAttribute(k,String(v));}for(const child of children.flat(9))if(child!==null&&child!==undefined&&child!==false)el.append(child instanceof Node?child:document.createTextNode(String(child)));return el;}
 const b=(text,fn,cls='')=>h('button',{type:'button',class:cls,onClick:fn},text),p=(text,cls='')=>h('p',{class:cls},text),title=(text,sub)=>h('div',{class:'page-title'},h('h1',{},text),sub?p(sub):null),panel=(text,...children)=>h('section',{class:'panel'},h('h2',{},text),...children);
