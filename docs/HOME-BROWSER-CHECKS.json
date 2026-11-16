@@ -1,0 +1,184 @@
+{
+  "checkedOn": "2026-11-16",
+  "renderChecks": [
+    {
+      "id": "01-meridian",
+      "buttons": 21,
+      "heading": "오늘 업무, 한눈에.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "02-launcher",
+      "buttons": 15,
+      "heading": "어떤 업무부터 시작할까요?",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "03-wall",
+      "buttons": 20,
+      "heading": "설비 운영 현황",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "04-editorial",
+      "buttons": 12,
+      "heading": "부서의 오늘을\n명확하게 정리합니다.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "05-library",
+      "buttons": 11,
+      "heading": "공용 양식과 설비 자료",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "06-split",
+      "buttons": 17,
+      "heading": "업무의 시작을 가볍게.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "07-bento",
+      "buttons": 14,
+      "heading": "나의 업무 홈",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "08-team",
+      "buttons": 17,
+      "heading": "부서 업무 공간",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "09-gateway",
+      "buttons": 11,
+      "heading": "업무 흐름에 맞는 시작점",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "10-atlas",
+      "buttons": 13,
+      "heading": "구역에서 설비를 찾으세요.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "11-spotlight",
+      "buttons": 22,
+      "heading": "찾는 것으로 바로 시작하세요.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "12-deck",
+      "buttons": 13,
+      "heading": "설비 엔지니어의 업무 포털",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "13-switchboard",
+      "buttons": 13,
+      "heading": "부서 업무 길잡이",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "14-journal",
+      "buttons": 16,
+      "heading": "바뀐 정보를 먼저 확인하세요.",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "15-action",
+      "buttons": 12,
+      "heading": "MC-107 알람 원인 확인 필요",
+      "scrollWidth": 1280,
+      "width": 1265
+    },
+    {
+      "id": "16-panorama",
+      "buttons": 25,
+      "heading": "부서 업무 콘솔",
+      "scrollWidth": 1280,
+      "width": 1265
+    }
+  ],
+  "interactionChecks": [
+    {
+      "id": "01-meridian",
+      "passed": true
+    },
+    {
+      "id": "02-launcher",
+      "passed": true
+    },
+    {
+      "id": "03-wall",
+      "passed": true
+    },
+    {
+      "id": "04-editorial",
+      "passed": true
+    },
+    {
+      "id": "05-library",
+      "passed": true
+    },
+    {
+      "id": "06-split",
+      "passed": true
+    },
+    {
+      "id": "07-bento",
+      "passed": true
+    },
+    {
+      "id": "08-team",
+      "passed": true
+    },
+    {
+      "id": "09-gateway",
+      "passed": true
+    },
+    {
+      "id": "10-atlas",
+      "passed": true
+    },
+    {
+      "id": "11-spotlight",
+      "passed": true
+    },
+    {
+      "id": "12-deck",
+      "passed": true
+    },
+    {
+      "id": "13-switchboard",
+      "passed": true
+    },
+    {
+      "id": "14-journal",
+      "passed": true
+    },
+    {
+      "id": "15-action",
+      "passed": true
+    },
+    {
+      "id": "16-panorama",
+      "passed": true
+    }
+  ],
+  "scope": "Initial rendering plus one representative interaction per home; layout refinements were refreshed before handoff."
+}

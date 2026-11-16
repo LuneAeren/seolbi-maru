@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "generatedOn": "2026-11-16",
   "files": [
     {
@@ -14,13 +14,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "1a09506914b3475c5064b1e74bfbd19bacee8afff1b928d49ce69c3322db306a",
-      "bytes": 16721
+      "sha256": "0af971df9d553fbf77614d2cd4b754d8a389fc5d5b40fd473f5b205a038dba10",
+      "bytes": 20115
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "4c83da1a7712c8e053e4b9609c2e90748ac35a9bc0fc9fd5be7ba260ee4c7bf9",
-      "bytes": 11962
+      "sha256": "70a8289735202b99d989f65e735c6d3ceba68eb85dc3207255da920ef1c62ad3",
+      "bytes": 12884
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -31,6 +31,16 @@
       "path": "docs/DEPENDENCY-AUDIT.json",
       "sha256": "e8134d875a359c1ef4981a520eff8ee5dfd4f792e80ed8fd70c2695c383e9eb9",
       "bytes": 362
+    },
+    {
+      "path": "docs/HOME-BROWSER-CHECKS.json",
+      "sha256": "f0fbc8dc2e7a99dc2997af9cdce1d4ceeca6bea3ebc2f255fa2ab817af18db83",
+      "bytes": 3701
+    },
+    {
+      "path": "docs/HOME-DESIGN-BRIEF.md",
+      "sha256": "4058c99776b3eb9854e1e7142f0c8202bdda64133051bdf3234b51787bb20916",
+      "bytes": 2821
     },
     {
       "path": "docs/INTERNAL-HANDOFF.md",
@@ -49,13 +59,13 @@
     },
     {
       "path": "docs/SCHEDULE-UX.md",
-      "sha256": "ca398abb13d1231a0b0785c03156faff743c922f579f47eaac9af7a86980b92f",
-      "bytes": 6229
+      "sha256": "2a5a423ea2326206907c8b089f17e47fadc093aed2e6561bfe27c8168d76f2d3",
+      "bytes": 6508
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "0f547ec33ee633507d3e14da5f6221fb785c904df1cc0b86f35b6722e44d20c8",
-      "bytes": 10063
+      "sha256": "c82f27753d8ce512534b374383cb9b33eca30742ab71ab9b9222a36873d36776",
+      "bytes": 12457
     },
     {
       "path": "docs/research/DESIGN-REFERENCES.md",
@@ -114,12 +124,12 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "a263f393e1457cf96c4b221d1eb010907760268fe9671e89cd8c3fe0345589e0",
+      "sha256": "4f3fa8535cc9cb5a7410ab90dd090bbe7f75c95429f2665984db5b0c47ed9480",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "fa9da67ccecf925bb24686a8760cb0b1fec04e4b943d4eb876556247e29ebf9d",
+      "sha256": "b597ddc9a014e0e56efda095a41a7b8002ae63698665c7855b358e5a0a3f7dc8",
       "bytes": 681
     },
     {
@@ -184,8 +194,8 @@
     },
     {
       "path": "public/design-lab/index.html",
-      "sha256": "cc6a68bc16f5c7722925f81f80081cdfd6f8a3eb87a7ba617537f9ae513f0386",
-      "bytes": 1457
+      "sha256": "0957c6752697c8a489cdf7e313f24e110842309841605fc57ef7d72efd08479a",
+      "bytes": 1452
     },
     {
       "path": "public/design-lab/prototype.css",
@@ -203,9 +213,119 @@
       "bytes": 11292
     },
     {
+      "path": "public/home-designs/01-meridian.html",
+      "sha256": "fd65dee156d2e4d8ae359ed67afd6bdd07b5b70b79bf3178c1256d5cdaddb0fe",
+      "bytes": 342
+    },
+    {
+      "path": "public/home-designs/02-launcher.html",
+      "sha256": "7d33bda3a203f40d4e6a6fee251a06b7db346012fe8250c037fc7151b879dab6",
+      "bytes": 347
+    },
+    {
+      "path": "public/home-designs/03-wall.html",
+      "sha256": "16099f87d7b5ca9c571b1871e95348bcfc3e24e59d2e786dd901aff0adfceb2b",
+      "bytes": 333
+    },
+    {
+      "path": "public/home-designs/04-editorial.html",
+      "sha256": "6ee83caa70e87bb7554dab89eb39e21b87a6bc48817279cac4f159cebc4c3399",
+      "bytes": 347
+    },
+    {
+      "path": "public/home-designs/05-library.html",
+      "sha256": "f021fd1b53800d27530c64c4534ee6008b19661d01898035a1d06c30e84e4885",
+      "bytes": 343
+    },
+    {
+      "path": "public/home-designs/06-split.html",
+      "sha256": "c473d5a1d2408a4724c28723dd6453dd77988662f53637d641b609fa30fa550d",
+      "bytes": 339
+    },
+    {
+      "path": "public/home-designs/07-bento.html",
+      "sha256": "625a6617d084bbbb6e7654b8d3b661a5d7d403f1aca3e0890dfe5a091a9ae5aa",
+      "bytes": 337
+    },
+    {
+      "path": "public/home-designs/08-team.html",
+      "sha256": "751cac717840459469106dda85a3c84b5126cb16f11fe2b98cbe4b2127cb4138",
+      "bytes": 340
+    },
+    {
+      "path": "public/home-designs/09-gateway.html",
+      "sha256": "0a8f115a107a62355ffff5037ee1e507404e53b839b186036681606e2aaa85e5",
+      "bytes": 353
+    },
+    {
+      "path": "public/home-designs/10-atlas.html",
+      "sha256": "370f4f86dc69b95fec3ad483571b18f3f598508aae865f0b913d3b020a7bde7a",
+      "bytes": 338
+    },
+    {
+      "path": "public/home-designs/11-spotlight.html",
+      "sha256": "fdb5cbae0fa4d589548f8baba525d150a079f087c54b01920fa224dbca111ffe",
+      "bytes": 342
+    },
+    {
+      "path": "public/home-designs/12-deck.html",
+      "sha256": "2f6efd5630decdf44613f2d1e27a35c2bd0c0fbbc442213c5f8116ef2e13c532",
+      "bytes": 345
+    },
+    {
+      "path": "public/home-designs/13-switchboard.html",
+      "sha256": "b2a9a3cd1063684c508dd227b9f8696dfee0bef335f8449b3318d30cdb042f29",
+      "bytes": 347
+    },
+    {
+      "path": "public/home-designs/14-journal.html",
+      "sha256": "a5f00994033c1a9c9027c937434a182be68d485d52f069443b1595164cf70fb3",
+      "bytes": 349
+    },
+    {
+      "path": "public/home-designs/15-action.html",
+      "sha256": "53bc621623b0254cad6c4dbe4ed1e8c35dea6c696a7bec630d5751857030f974",
+      "bytes": 347
+    },
+    {
+      "path": "public/home-designs/16-panorama.html",
+      "sha256": "0c5f391c6d3e9c14cf63b7efc911683088fe3f926e34899aafa8cf87dde856ed",
+      "bytes": 345
+    },
+    {
+      "path": "public/home-designs/catalog.js",
+      "sha256": "355a66962cac71ef46124d5f7b9cea2bbf80fd5fd8ee58d342f338388136345e",
+      "bytes": 3841
+    },
+    {
+      "path": "public/home-designs/gallery.css",
+      "sha256": "f8547788df50c14833b64f70462664a6a77c01579916500ab0d24400b518e13f",
+      "bytes": 1850
+    },
+    {
+      "path": "public/home-designs/gallery.js",
+      "sha256": "baf83c0d24dbfbcc58552b9c5f18f0282e4e122e2604a2f64bdc03bb588bfcb1",
+      "bytes": 2248
+    },
+    {
+      "path": "public/home-designs/home.css",
+      "sha256": "0bed1e97f55f46b210a2a11553622ec9e830976fe8e8a9ca550b9da2fd848204",
+      "bytes": 26119
+    },
+    {
+      "path": "public/home-designs/home.js",
+      "sha256": "fe38eddf579ef1837da5744b16bdfba7b4031823e4f7dfdfe74158e66a1a0e1e",
+      "bytes": 23022
+    },
+    {
+      "path": "public/home-designs/index.html",
+      "sha256": "c2aa3c7a6c7ad10274f1a984db5b886d1657337b2bb0ed085e721958c8e0a03e",
+      "bytes": 1359
+    },
+    {
       "path": "public/index.html",
-      "sha256": "9fed8dcd06da14b6fe316e3ad61a1abb3f024eb4f801b09d8e733536212bddc2",
-      "bytes": 1992
+      "sha256": "60258fb1c96705bd12dd5d7c6d6bac5b0db526021c3c931041f6d4a5b2de8108",
+      "bytes": 2082
     },
     {
       "path": "public/mark.svg",
@@ -214,18 +334,18 @@
     },
     {
       "path": "public/reference-lab/app.js",
-      "sha256": "e57f421cd9503e1e46d0eeea552d5e6cb3b8e50b75ef0a74085c24d36d7f5fa1",
-      "bytes": 35567
+      "sha256": "cacdcfbf0880b4acbfcaf69ed94f454adbaefed77af454b892dfa39396add1f2",
+      "bytes": 41641
     },
     {
       "path": "public/reference-lab/index.html",
-      "sha256": "a073399fa7c340b5b1005c9fca03f7671095de777afb0fee699c0214c83b678e",
-      "bytes": 928
+      "sha256": "8248594bb023879cb065ad8b77b1f6b4c5731c6b3755733a94f4e2f1e46a5563",
+      "bytes": 918
     },
     {
       "path": "public/reference-lab/style.css",
-      "sha256": "4d82c22ed8bf4dbadf74ab8cf87d8ceffc516232faf2f42e871913ea20df68f5",
-      "bytes": 22432
+      "sha256": "ffb45690147372b32cae7cd01c4c0bc4f5646cd7cf376cc225722f13443ee7aa",
+      "bytes": 22901
     },
     {
       "path": "public/schedule-designs/01-vault.html",
@@ -314,8 +434,8 @@
     },
     {
       "path": "public/schedule-designs/gallery.css",
-      "sha256": "f8547788df50c14833b64f70462664a6a77c01579916500ab0d24400b518e13f",
-      "bytes": 1850
+      "sha256": "7d7e526e5ddc3f5f7bebf6f1fdcf687623d902a20c7c1ec05857e2bc20f468e5",
+      "bytes": 2021
     },
     {
       "path": "public/schedule-designs/gallery.js",
@@ -324,8 +444,8 @@
     },
     {
       "path": "public/schedule-designs/index.html",
-      "sha256": "1e04584c725d0aedc6db4ee6c3d6d0c25b0e2ba4fa989b3e56a026210ac38382",
-      "bytes": 1353
+      "sha256": "006d61012c905f63ef4372459fe01cfe7a2307405dc578875075b7427e8801e8",
+      "bytes": 1537
     },
     {
       "path": "public/schedule-designs/prototypes.css",
@@ -344,18 +464,18 @@
     },
     {
       "path": "reference-kit/DESIGN-GUIDE.md",
-      "sha256": "c17e7d362f6ba1836dbd1b5a0628c88b839bb618b8f7c24e58c9fe891380928b",
-      "bytes": 1577
+      "sha256": "a0a857b0306c60e3e62733fc47e98516d187c951a15287d3e2af47cff7ccd509",
+      "bytes": 1681
     },
     {
       "path": "reference-kit/README.md",
-      "sha256": "bc6aee637ccde31479add77e3d40e5bc18a4b937435e3d297e30e95c7b07838d",
-      "bytes": 6998
+      "sha256": "806df9a869da69f199ca62f4773b6a970d2b59d4693cf84a78273569d087fbd3",
+      "bytes": 7375
     },
     {
       "path": "reference-kit/planner.js",
-      "sha256": "9073b6e21ccaa11a0a1889859f61712b44b726b5d59ee2dd03db374fbdf464d8",
-      "bytes": 7002
+      "sha256": "354e0a184f1cfb69c94dadefe98170e3b21582554ffe2b1658305a668d9dc88c",
+      "bytes": 7225
     },
     {
       "path": "reference-kit/recipes/01-import.md",
@@ -404,18 +524,23 @@
     },
     {
       "path": "reference-kit/recipes/10-manual-schedule.md",
-      "sha256": "8344bdfdd9e3c36791258eb7646677fab62ddc0aabe68a26a824630caaa96a05",
-      "bytes": 1980
+      "sha256": "340f826a78334c60b62ec5c7ed1c2c0592ce80e628a23860f0e0ee2221fa3982",
+      "bytes": 2039
+    },
+    {
+      "path": "reference-kit/recipes/11-calendar-details-recurring.md",
+      "sha256": "99c74c66b2ce8aa1d8f0490220f1da21d4471861ca0a858ae7326953ec89d122",
+      "bytes": 3810
     },
     {
       "path": "reference-kit/router.js",
-      "sha256": "adfdcfeb80ebb51aea8ef593d1c9d9f131e7749196a08cfb406e4d6e3c404dba",
-      "bytes": 4844
+      "sha256": "5b8537a538db8b3eb941a1e2d2d04587d43aa8eccefb9d11beed5704da11fb9a",
+      "bytes": 5657
     },
     {
       "path": "reference-kit/workflows.js",
-      "sha256": "2f08b021c0aa410b9b24cd71516948fa27a0a9f28c7a84229497b5686713f01c",
-      "bytes": 10165
+      "sha256": "7fe7844e8474c2767b75d092e3a1f1f2f7e0ae86b64cf7e352324df575029f82",
+      "bytes": 14120
     },
     {
       "path": "scripts/check-source.js",
@@ -434,8 +559,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "0f11e84afa468436fdcdb566110df718d369f1d655558f99ae7c9d5e6f0bb6cc",
-      "bytes": 12519
+      "sha256": "85d4bf53bdc69364492eb1cde5ee31d914387fcb40b0e4600e4232c6073b4144",
+      "bytes": 12560
     },
     {
       "path": "src/connectors.js",
@@ -491,6 +616,11 @@
       "path": "test/portal.test.js",
       "sha256": "19de89a1d47db9ebe66e6a128099cb1d790f185b0ed76f8173d6b9e8b7b603e4",
       "bytes": 10851
+    },
+    {
+      "path": "test/recurring.test.js",
+      "sha256": "5bd5609360546d8cf30c1ecfec9a9d15303251aed2997bffe2df1a008526d6da",
+      "bytes": 5993
     },
     {
       "path": "test/schedule.test.js",

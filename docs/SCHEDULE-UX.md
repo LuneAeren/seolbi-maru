@@ -1,4 +1,6 @@
-# 일정 워크스페이스 UX 명세 · v0.3.0
+# 이전 일정 워크스페이스 UX 명세 · v0.3.0
+
+현재 홈화면 디자인 대상은 `docs/HOME-DESIGN-BRIEF.md`와 `/home-designs/`의 16안이다. 이 문서는 이전 일정 화면의 설계 기록이다. v0.4.0 장소·상세·반복 생성은 `reference-kit/recipes/11-calendar-details-recurring.md`를 따른다.
 
 대상은 PC·Windows·Edge를 사용하는 설비 엔지니어 부서 약 20명이다. 실제 회사에 구축된 사이트의 일정·체크·인폼·이력을 유지하면서 필요한 화면과 서비스 함수를 옮긴다. 회사 운영 환경 검증은 아직 수행하지 않았다.
 

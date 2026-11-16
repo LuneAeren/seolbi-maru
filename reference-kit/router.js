@@ -1,6 +1,6 @@
 import express from 'express';
 import {createHash} from 'node:crypto';
-import {sampleWorkspace,importTasks,parseMailText,previewPlan,commitPlan,checkItem,completeTask,updateStaff,equipmentHistory,handover,saveDailyNote,scheduleTask} from './workflows.js';
+import {sampleWorkspace,importTasks,parseMailText,previewPlan,commitPlan,checkItem,completeTask,updateStaff,equipmentHistory,handover,saveDailyNote,scheduleTask,createRecurringMacro,previewRecurring,generateRecurring,setRecurringEnabled} from './workflows.js';
 import {parseFile,LIMITS} from '../src/tables.js';
 import {fail} from '../src/core.js';
 export function referenceRouter(store,{mode='demo'}={}){
@@ -16,7 +16,7 @@ export function referenceRouter(store,{mode='demo'}={}){
   router.post('/import/preview',express.raw({type:'application/octet-stream',limit:LIMITS.bytes}),async(req,res)=>{
     const parsed=await parseFile(req.body,String(req.query.filename||''),String(req.query.encoding||'utf-8'));
     const sheet=parsed.sheets[Number(req.query.sheet||0)];if(!sheet)fail(400,'시트를 확인해주세요.');
-    const map={작업명:'title',설비:'equipment',예정일:'day',예상분:'minutes',역량:'skill',필요레벨:'level',우선순위:'priority',시작가능:'earliest',마감:'deadline'};
+    const map={작업명:'title',설비:'equipment',예정일:'day',예상분:'minutes',역량:'skill',필요레벨:'level',우선순위:'priority',시작가능:'earliest',마감:'deadline',장소:'location',상세:'details'};
     for(const name of ['작업명','설비','예정일','예상분','역량','필요레벨','우선순위'])if(!sheet.columns.includes(name))fail(400,`업무 표에 '${name}' 열이 필요합니다.`);
     if(sheet.rows.length>2000)fail(400,'업무 반입은 최대 2,000행입니다.');
     const records=sheet.rows.map(row=>{const task={source:'표 파일 반입'};sheet.columns.forEach((c,i)=>{if(map[c])task[map[c]]=row[i];});return task;});
@@ -30,6 +30,10 @@ export function referenceRouter(store,{mode='demo'}={}){
   router.post('/complete',(req,res)=>res.json(mutate(req,s=>completeTask(s,{taskId:req.body.taskId,actor:req.actor}),'업무 완료·인폼 자동 생성')));
   router.put('/daily-note',(req,res)=>res.json(mutate(req,s=>saveDailyNote(s,{day:req.body.day,text:req.body.text,actor:req.actor}),'날짜별 업무 메모 저장')));
   router.post('/schedule',(req,res)=>res.json(mutate(req,s=>scheduleTask(s,{...req.body,actor:req.actor}),'업무 일정 직접 지정·변경')));
+  router.post('/recurring',(req,res)=>res.json(mutate(req,s=>createRecurringMacro(s,req.body),'반복 매크로 등록·업무 생성')));
+  router.post('/recurring/preview',(req,res)=>{const w=workspace();if(req.body.version!==w.version)fail(409,'자료가 변경됐습니다. 다시 불러와주세요.','VERSION_CONFLICT');res.json(previewRecurring(w.data,req.body.from,req.body.to));});
+  router.post('/recurring/generate',(req,res)=>res.json(mutate(req,s=>generateRecurring(s,req.body.from,req.body.to),'반복 매크로 업무 생성')));
+  router.put('/recurring/enabled',(req,res)=>res.json(mutate(req,s=>setRecurringEnabled(s,req.body.id,req.body.enabled),'반복 매크로 활성 변경')));
   router.get('/history',(req,res)=>res.json(equipmentHistory(workspace().data,String(req.query.equipment||'').slice(0,80))));
   router.get('/handover',(req,res)=>res.json(handover(workspace().data,String(req.query.day||''))));
   return router;

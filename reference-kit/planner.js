@@ -10,7 +10,8 @@ export function validateTask(input){
   const minutes=Number(input.minutes),level=Number(input.level),priority=Number(input.priority);
   requireValue(Number.isInteger(minutes)&&minutes>=5&&minutes<=480&&Number.isInteger(level)&&level>=1&&level<=5&&Number.isInteger(priority)&&priority>=1&&priority<=5,'예상분은 5~480, 역량·우선순위는 1~5의 정수입니다.');
   const earliest=input.earliest||'09:00',deadline=input.deadline||'17:00';requireValue(minuteOfDay(earliest)<minuteOfDay(deadline),'시작 가능 시각은 마감보다 빨라야 합니다.');
-  return{title,equipment,skill,minutes,level,priority,day:validDay(input.day),earliest,deadline,source:String(input.source||'직접 입력').slice(0,100)};
+  const location=String(input.location||'').trim(),details=String(input.details||'');requireValue(location.length<=150&&details.length<=4000,'장소는 150자, 상세 내용은 4,000자 이내입니다.');
+  return{title,equipment,skill,minutes,level,priority,location,details,day:validDay(input.day),earliest,deadline,source:String(input.source||'직접 입력').slice(0,100)};
 }
 export function validateStaff(input){
   requireValue(input&&typeof input.id==='string'&&input.id.length<=80&&typeof input.name==='string'&&input.name.trim().length>0&&input.name.length<=80,'담당자 식별자와 이름을 확인해주세요.');

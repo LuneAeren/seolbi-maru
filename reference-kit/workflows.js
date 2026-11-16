@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import {planDay,validateTask,validateStaff,validDay,minuteOfDay,timeOfDay,PlannerError} from './planner.js';
 const requireValue=(ok,message)=>{if(!ok)throw new PlannerError(message);};
 export const todayKST=()=>new Intl.DateTimeFormat('en-CA',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:'Asia/Seoul'}).format(new Date());
-const keyFor=t=>createHash('sha256').update(JSON.stringify([t.day,t.title,t.equipment,t.minutes,t.skill,t.level,t.priority,t.earliest,t.deadline])).digest('hex').slice(0,24);
+const keyFor=t=>createHash('sha256').update(JSON.stringify([t.day,t.title,t.equipment,t.minutes,t.skill,t.level,t.priority,t.earliest,t.deadline,t.location||'',t.details||''])).digest('hex').slice(0,24);
 export function sampleWorkspace(day=todayKST()){
   const windows=[{start:'09:00',end:'12:00'},{start:'13:00',end:'17:00'}];
   const staff=[['A','기계',4,1.2],['B','전기',4,1],['C','제어',5,.9],['D','검사',4,1]].map(([id,skill,level,weight])=>({id,name:'엔지니어 '+id,weight,maxMinutes:360,active:true,skills:{기계:2,전기:2,제어:1,검사:2,운영:3,[skill]:level},windows:structuredClone(windows)}));
@@ -35,9 +35,10 @@ export function saveDailyNote(state,{day,text,actor}){
  const equipment=[...new Set([...text.matchAll(/\[\[([^\]\n]{1,80})\]\]/g)].map(m=>m[1]).filter(e=>known.has(e)))];
  state.dailyNotes=notes;notes[day]={day,text,equipment,actor,updatedAt:new Date().toISOString()};return notes[day];
 }
-export function scheduleTask(state,{taskId,personId,day,start,actor}){
+export function scheduleTask(state,{taskId,personId,day,start,actor,location,details}){
  const task=state.tasks.find(t=>t.id===taskId),person=state.staff.find(p=>p.id===personId);
  requireValue(task&&person,'업무와 담당자를 확인해주세요.');requireValue(task.status!=='completed','완료된 작업의 일정은 변경할 수 없습니다.');validDay(day);
+ const info=validateTask({...task,location:location===undefined?task.location:location,details:details===undefined?task.details:details});
  const begin=minuteOfDay(start),finish=begin+task.minutes;requireValue(finish<1440,'자정을 넘는 일정은 지원하지 않습니다.');
  requireValue(begin>=minuteOfDay(task.earliest)&&finish<=minuteOfDay(task.deadline),'원천 업무의 시작 가능·마감 시각 안에서 선택해주세요.');
  const other=state.bookings.filter(b=>b.taskId!==taskId);
@@ -45,6 +46,26 @@ export function scheduleTask(state,{taskId,personId,day,start,actor}){
  requireValue(plan.assignments.length===1,'역량·하루 용량·근무/휴게·사람/설비 중복을 확인해주세요.');
  const booking={...plan.assignments[0],status:task.status==='in-progress'?'in-progress':'scheduled'};
  const checklist=state.checklists[task.id]||makeChecklist(task,state.templates||[]);
- state.bookings=[...other,booking];task.status=booking.status;task.plannedDay=day;state.checklists[task.id]=checklist;
+ state.bookings=[...other,booking];task.status=booking.status;task.plannedDay=day;task.location=info.location;task.details=info.details;state.checklists[task.id]=checklist;
  event(state,task.equipment,'일정 직접 지정',`${task.title} / ${person.name} / ${day} ${start}–${booking.end}`,actor);return booking;
 }
+
+function rangeDays(from,to){validDay(from);validDay(to);const days=Math.round((Date.parse(to+'T00:00:00Z')-Date.parse(from+'T00:00:00Z'))/86400000);requireValue(days>=0&&days<=90,'한 번에 생성할 기간은 0~90일입니다.');return days;}
+const addDate=(day,n)=>new Date(Date.parse(day+'T00:00:00Z')+n*86400000).toISOString().slice(0,10);
+export function previewRecurring(state,from,to){
+ rangeDays(from,to);const byContent=new Map(state.tasks.map(t=>[keyFor(t),t])),byOccurrence=new Map(state.tasks.filter(t=>t.recurringId).map(t=>[t.recurringId+'@'+(t.recurringDay||t.day),t]));const known=new Set(state.tasks.map(keyFor)),occurrences=new Set(state.tasks.filter(t=>t.recurringId).map(t=>t.recurringId+'@'+(t.recurringDay||t.day))),items=[];
+ for(const macro of state.recurringMacros||[]){if(!macro.enabled)continue;validDay(macro.anchorDay);requireValue(Number.isInteger(macro.everyDays)&&macro.everyDays>=1&&macro.everyDays<=365,'반복 간격은 1~365일입니다.');
+  const diff=Math.ceil((Date.parse(from+'T00:00:00Z')-Date.parse(macro.anchorDay+'T00:00:00Z'))/86400000),first=Math.max(0,Math.ceil(diff/macro.everyDays))*macro.everyDays;
+  for(let day=addDate(macro.anchorDay,first);day<=to;day=addDate(day,macro.everyDays)){
+   const record=validateTask({...macro.task,day,source:'반복 매크로'}),key=keyFor(record),existing=byOccurrence.get(macro.id+'@'+day)||byContent.get(key);items.push({macroId:macro.id,day,title:record.title,equipment:record.equipment,location:existing?.location??record.location,exists:occurrences.has(macro.id+'@'+day)||known.has(key),record});known.add(key);occurrences.add(macro.id+'@'+day);requireValue(items.length<=500,'한 번에 최대 500개 반복 업무를 검토할 수 있습니다.');
+  }
+ }
+ return{from,to,items,newCount:items.filter(i=>!i.exists).length,duplicates:items.filter(i=>i.exists).length};
+}
+export function generateRecurring(state,from,to,onlyId){const preview=previewRecurring(onlyId?{...state,recurringMacros:(state.recurringMacros||[]).filter(m=>m.id===onlyId)}:state,from,to),fresh=preview.items.filter(i=>!i.exists);if(!fresh.length)return{added:0,duplicates:preview.duplicates};const draft={tasks:structuredClone(state.tasks)};const result=importTasks(draft,fresh.map(i=>i.record));for(const item of fresh){const task=draft.tasks.find(t=>t.sourceKey===keyFor(item.record));task.recurringId=item.macroId;task.recurringDay=item.day;}state.tasks=draft.tasks;return{...result,duplicates:preview.duplicates};}
+export function createRecurringMacro(state,{task,everyDays,anchorDay,throughDay}){
+ validDay(anchorDay);rangeDays(anchorDay,throughDay);requireValue(Number.isInteger(everyDays)&&everyDays>=1&&everyDays<=365,'반복 간격은 1~365일입니다.');const normalized=validateTask({...task,day:anchorDay,source:'반복 매크로'});requireValue((state.recurringMacros||[]).length<50,'반복 매크로는 최대 50개입니다.');
+ const id='macro:'+createHash('sha256').update(JSON.stringify([keyFor(normalized),everyDays,anchorDay])).digest('hex').slice(0,24);requireValue(!(state.recurringMacros||[]).some(m=>m.id===id),'같은 반복 매크로가 이미 있습니다.');
+ const draft=structuredClone(state),macro={id,task:normalized,everyDays,anchorDay,enabled:true};draft.recurringMacros=[...(draft.recurringMacros||[]),macro];const result=generateRecurring(draft,anchorDay,throughDay,id);state.tasks=draft.tasks;state.recurringMacros=draft.recurringMacros;return{macro,...result};
+}
+export function setRecurringEnabled(state,id,enabled){const macro=(state.recurringMacros||[]).find(m=>m.id===id);requireValue(macro&&typeof enabled==='boolean','매크로와 활성 상태를 확인해주세요.');macro.enabled=enabled;return macro;}
