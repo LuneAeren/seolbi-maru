@@ -6,6 +6,7 @@ import { createStore } from './store.js';
 import { security } from './security.js';
 import { seed } from './seed.js';
 import { AppError, fail, kinds, text, validateEntity } from './core.js';
+import { integrationRouter } from '../reference-kit/service-router.js';
 import { referenceRouter } from '../reference-kit/router.js';
 import { parseFile, validateTable, csvOutput, xlsxOutput, LIMITS } from './tables.js';
 
@@ -102,6 +103,7 @@ export function createApp(config, options = {}) {
     try { const entity = store.create('dataset', { title, category, description: text(req.body.description || '', '설명', 2000, false), columns, rows: sheet.rows, originalId, sheet: sheet.name }, req.actor, '파일 반입'); drafts.delete(req.params.id); res.status(201).json(summary(entity)); }
     catch (error) { store.removeOriginal(originalId); throw error; }
   });
+  app.use('/api/integration', integrationRouter(store, {mode:config.mode, writable:config.integrationWritable, roles:config.integrationRoles}));
   app.use('/api/reference', referenceRouter(store, {mode:config.mode}));
   app.use('/api', (_req, _res) => fail(404, '요청한 기능을 찾을 수 없습니다.'));
   app.use(express.static(publicDir, { etag: false, maxAge: 0, dotfiles: 'deny' }));

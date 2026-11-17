@@ -11,6 +11,7 @@ export function applySnapshot(store, source, snapshot, actor = 'internal-sync') 
     if (!snapshot || snapshot.complete !== true || snapshot.rejectedCount !== 0 || !Array.isArray(snapshot.records) || !snapshot.records.length || snapshot.records.length > 30000 || snapshot.readCount !== snapshot.records.length) fail(400, '완전한 수집 결과인지 확인할 수 없어 기존 정상본을 유지했습니다.');
     const observedAt = date(snapshot.observedAt), ids = new Set();
     const records = snapshot.records.map(record => {
+      if (!record || typeof record !== 'object' || Array.isArray(record)) fail(400, '설비 레코드 형식이 올바르지 않습니다.');
       const key = text(record.sourceId, '원천 설비 키', 80);
       if (!/^[A-Za-z0-9_-]+$/.test(key) || ids.has(key) || !statuses.includes(record.status)) fail(400, '설비 키·중복·상태 검증에 실패했습니다.');
       ids.add(key);

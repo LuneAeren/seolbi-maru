@@ -1,11 +1,11 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "generatedOn": "2026-11-17",
   "files": [
     {
       "path": ".env.example",
-      "sha256": "62b27fb266e55b191e76b83782b72278f1a3aa31f0dc3aebf53935a99c54d238",
-      "bytes": 542
+      "sha256": "a545cb1f6d70df008d2e6fab2b60d5294bb226a0c582d238355b6e4fd3e67d73",
+      "bytes": 747
     },
     {
       "path": ".gitignore",
@@ -14,13 +14,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "9358df4ee9b06fe5d1f33807a89c9437f2e2f6ba30ab624c47eb35f0b9531974",
-      "bytes": 21395
+      "sha256": "21bd73043cc04c8a4cf3e0e53a266376eff2b084c93fa6d234f8d94411531c76",
+      "bytes": 22399
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "a5b2a712edbc4df3c8cea4606c69f86e1d9ccf2df4bdfec7f99e92811a9ff601",
-      "bytes": 13496
+      "sha256": "da2037066fced57d5c2cebaf190f56d374d1d8c336f22593094c283da3e06e9b",
+      "bytes": 13963
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -53,6 +53,11 @@
       "bytes": 3677
     },
     {
+      "path": "docs/INTEGRATION-API.md",
+      "sha256": "2d6e443597a84e5442bbd4ff407266affee5b9a24dcd4a7c30100a2f3a8a2464",
+      "bytes": 5263
+    },
+    {
       "path": "docs/INTERNAL-HANDOFF.md",
       "sha256": "92e7553cfe8e97489cb526385c548a435064b30154b1b007b20768f982e37978",
       "bytes": 9778
@@ -74,13 +79,343 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "99f6825b67f543ec73d8cfd2b3669b97486983f59a6e71e0d876bc127cf0996d",
-      "bytes": 14902
+      "sha256": "3b89ccad47d1878c639b39d12b753fd07f6ec12654b5c41c0501df727630b0a4",
+      "bytes": 17100
+    },
+    {
+      "path": "docs/VETCH-HANDOFF.md",
+      "sha256": "b133ac93a1ca867b5f2d02c8d8d87865f67277709f20564f7f7a3d390c1587ef",
+      "bytes": 5008
     },
     {
       "path": "docs/archive/HOME-DESIGN-v04.md",
       "sha256": "4058c99776b3eb9854e1e7142f0c8202bdda64133051bdf3234b51787bb20916",
       "bytes": 2821
+    },
+    {
+      "path": "docs/previews/README.md",
+      "sha256": "4b14a8e1efeba8f875ecd20ac0994f4fe73db2ebdf4033721b7d8c6070f49074",
+      "bytes": 5801
+    },
+    {
+      "path": "docs/previews/archive/calendar-recurring-v0.4.jpg",
+      "sha256": "5120ed4059c91a161f5a7821dd71534aba7d58f7ced772ef0d204ac56120ebd8",
+      "bytes": 126660
+    },
+    {
+      "path": "docs/previews/archive/design-01.jpg",
+      "sha256": "4c245fc7ef020495369d41f7cec197fc72648d202ed779af79d2ee488cab94a0",
+      "bytes": 116100
+    },
+    {
+      "path": "docs/previews/archive/design-02.jpg",
+      "sha256": "2585367882406632f70a8137093f6d697de8826b03bc087cce1a58c79de207e5",
+      "bytes": 119829
+    },
+    {
+      "path": "docs/previews/archive/design-03.jpg",
+      "sha256": "459e02716aa0c87ad335bf0556b2f0556391ab06dc7db8f1168927f1c27b5758",
+      "bytes": 131481
+    },
+    {
+      "path": "docs/previews/archive/design-04.jpg",
+      "sha256": "f705b2a7ab2bcff1a0dd2b2f21dfc4952836a03d1b9cd752dea5f999e198bfad",
+      "bytes": 131190
+    },
+    {
+      "path": "docs/previews/archive/design-05.jpg",
+      "sha256": "f7932d524ce45654386b18f67997fa1993bf44f38ec2f9281b5941ebf66a5433",
+      "bytes": 129190
+    },
+    {
+      "path": "docs/previews/archive/design-06.jpg",
+      "sha256": "23eb80cb3dc3dfbf3f87e213baae1227ee9f0d035e34dc0e145647b5c63489e4",
+      "bytes": 100394
+    },
+    {
+      "path": "docs/previews/archive/design-07.jpg",
+      "sha256": "eaca874b6dd7e7ebb5fa19fccdd35387ee42079e5880715b00df854d32b95efe",
+      "bytes": 112404
+    },
+    {
+      "path": "docs/previews/archive/design-08.jpg",
+      "sha256": "6baf73273da904ad285c1a9c9f8b7ac9c8731c20f72a86586af94d10911c1cbb",
+      "bytes": 127917
+    },
+    {
+      "path": "docs/previews/archive/design-gallery.jpg",
+      "sha256": "78949c2cd2b425057d0f9780f5351e43feac0641ed4f1e94e5223b99c724052c",
+      "bytes": 137135
+    },
+    {
+      "path": "docs/previews/archive/home-design-01.jpg",
+      "sha256": "18d942fee0ef84869e64baefc68cb79ee8523eef0972703124d4968a58af7e56",
+      "bytes": 94519
+    },
+    {
+      "path": "docs/previews/archive/home-design-02.jpg",
+      "sha256": "2266edc718a7d0ab0c95b993da9cdf7b6727492e03e3b761c66987b07bca2d3c",
+      "bytes": 79903
+    },
+    {
+      "path": "docs/previews/archive/home-design-03.jpg",
+      "sha256": "fdea5aa48eadce1cb78c9383328c6a93fa26b838e3edd953b60392d232fa17f3",
+      "bytes": 76814
+    },
+    {
+      "path": "docs/previews/archive/home-design-04.jpg",
+      "sha256": "45c75ff9b4f790cdb3a173f6b9b2c4622eb13eb36e3a7a9428aa92ab38b17402",
+      "bytes": 92544
+    },
+    {
+      "path": "docs/previews/archive/home-design-05.jpg",
+      "sha256": "71c712e3497035e0fb9ba3e0a805cc30114abc6f0f15b3815617ff1c2e509a39",
+      "bytes": 76293
+    },
+    {
+      "path": "docs/previews/archive/home-design-06.jpg",
+      "sha256": "2c1d1c06b97350fb235a1228ed3713e10798dd846248f4d9662e6a545249aca1",
+      "bytes": 85112
+    },
+    {
+      "path": "docs/previews/archive/home-design-07.jpg",
+      "sha256": "f85ffe71f5d207c5d9b12c007df2c08ade1bbf15f15ce3e90aefc5970825e67b",
+      "bytes": 86856
+    },
+    {
+      "path": "docs/previews/archive/home-design-08.jpg",
+      "sha256": "4188a1138188582ecf707fceb9f9042edddc16dd0f9241b7b1dc8e215b2afcc7",
+      "bytes": 82636
+    },
+    {
+      "path": "docs/previews/archive/home-design-09.jpg",
+      "sha256": "ca3ae6a1c2753b10ab826c9430ed08060e98b4e80d592c7fca1eaa859e4e19a2",
+      "bytes": 61499
+    },
+    {
+      "path": "docs/previews/archive/home-design-10.jpg",
+      "sha256": "673a169f4944874a00336bb98db5aadbfda4213bac5be3bbc3132ada19131327",
+      "bytes": 70974
+    },
+    {
+      "path": "docs/previews/archive/home-design-11.jpg",
+      "sha256": "657b4c6f4e1eae42ec9c9e5d40740b6c4ab90e8e26de697a54965d76168a5b7f",
+      "bytes": 77526
+    },
+    {
+      "path": "docs/previews/archive/home-design-12.jpg",
+      "sha256": "793585855393085161debaf9467ee6587b2eb3ea60687da88a7c09015029ef59",
+      "bytes": 72143
+    },
+    {
+      "path": "docs/previews/archive/home-design-13.jpg",
+      "sha256": "8e1ef2cc68413bdbaf6dea3ff7d2c68cbb7f78b819c40718f2ee747871d98be5",
+      "bytes": 73935
+    },
+    {
+      "path": "docs/previews/archive/home-design-14.jpg",
+      "sha256": "b696df71eea16ad2305e72044fa9232f244be77776b0422ca1ef594abd6ada71",
+      "bytes": 82451
+    },
+    {
+      "path": "docs/previews/archive/home-design-15.jpg",
+      "sha256": "0ce05a6f525b3e4c52089669b8b1192a81a8fc1a5105b99cdfd01e524369a3b5",
+      "bytes": 71449
+    },
+    {
+      "path": "docs/previews/archive/home-design-16.jpg",
+      "sha256": "fcf8345ff50c11b8493e4781aa7382d771a4f153cac77dea0d745f7ec408df8e",
+      "bytes": 82667
+    },
+    {
+      "path": "docs/previews/archive/home-design-gallery-16.jpg",
+      "sha256": "95c2e1693f63f9b5f4df58e0d22ec4cc4f1e1a5ccde89e4114c2a9469c5b1a8a",
+      "bytes": 168234
+    },
+    {
+      "path": "docs/previews/archive/reference-workflow.jpg",
+      "sha256": "6a0f8da82725ff36707e5266785a26bf12ae82c6f9258c33803e00c0d2c4ae20",
+      "bytes": 79676
+    },
+    {
+      "path": "docs/previews/archive/schedule-app-v0.3.jpg",
+      "sha256": "dc55afa04d973336dd22b1c53746a1ae15c8124d9f90ee88411f5d2ef6ed888e",
+      "bytes": 114513
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-01.jpg",
+      "sha256": "672dc0259c819cf6cd29599885a98502c5cfb0783b385fdb672ab120174e8f30",
+      "bytes": 89013
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-02.jpg",
+      "sha256": "a9f90fc7ab24dd871fa2c0e653ac0db304208487e9b874a9dd984d43bebbc0ca",
+      "bytes": 76183
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-03.jpg",
+      "sha256": "c735bf37891963cb38bec8ce51e12fc6feda53ce7ff85bd69e64623cd6ad6cb1",
+      "bytes": 82138
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-04.jpg",
+      "sha256": "f4d1f2d5bbdb96d2d6662db410904156b6f234cb5ac1cb2845206ec9919b78fd",
+      "bytes": 82523
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-05.jpg",
+      "sha256": "761f145a2e7485d86edd3262017148e5707933e755cb8044f303ae5946368ee8",
+      "bytes": 77024
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-06.jpg",
+      "sha256": "a8872eed04cb00579639596547d55e4152803cd4f82e6aea98dce780c2aadf81",
+      "bytes": 53567
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-07.jpg",
+      "sha256": "52ff0b622b4d35f34db2a109d123313c3bd5dd8fb8e0c1266325e2e33aeff77d",
+      "bytes": 79602
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-08.jpg",
+      "sha256": "4020097b2526e530046820caa8cd3d3a3824b69bf06376d1dea16b8551c1d8e0",
+      "bytes": 75239
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-09.jpg",
+      "sha256": "8f9f50a76ecbde84bb4de675caa255c66d5ad597d1a230977e45128f22549277",
+      "bytes": 72095
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-10.jpg",
+      "sha256": "29eacdbaf1cd9e2f703a838240f29da34e0548d0bf5a7f9d1f0bc57087309ed2",
+      "bytes": 71524
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-11.jpg",
+      "sha256": "eb4833d5c1d02ae993a8b3b4cf1bc8f3bc02821561df2d30714b881aac43362a",
+      "bytes": 79589
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-12.jpg",
+      "sha256": "72aba0c7c893c071f9b00fb92e7f730b91fce559599392f4cf720247b39facdd",
+      "bytes": 56615
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-13.jpg",
+      "sha256": "50150be992c6f405fb29491432ddc9b8b2ad602c76462c7f93a31a59e4c47d37",
+      "bytes": 85158
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-14.jpg",
+      "sha256": "1cc0b9fcf9d971f3fbea8f2d9e1e154869ce91a0e12f28694e41f22e75f60ffe",
+      "bytes": 95932
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-15.jpg",
+      "sha256": "cf2e0238c34ef5a592cce4c96c041c3f499e2b95be27998d7efc717d956da057",
+      "bytes": 68012
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-16.jpg",
+      "sha256": "957e6a57ebba809ee9af32b626b180b27321a5db10df65f5d639043b6c7acf60",
+      "bytes": 109018
+    },
+    {
+      "path": "docs/previews/archive/schedule-design-gallery-16.jpg",
+      "sha256": "d6c43103a2a0789578084889df0106b73de7b51eb49b519b0b596f3fd56967c7",
+      "bytes": 158423
+    },
+    {
+      "path": "docs/previews/archive/설비마루-대시보드.jpg",
+      "sha256": "426352a702ff687f944cf49549dfff37b15f76e9e05a518f4989b1211dbe0a6e",
+      "bytes": 136473
+    },
+    {
+      "path": "docs/previews/archive/설비마루-데스크톱.jpg",
+      "sha256": "81805ea9e63c1616439bbd72e94a4850ca6d72c2e0130439d0426a1dac0a4cbf",
+      "bytes": 131974
+    },
+    {
+      "path": "docs/previews/focus/01-monolith.jpg",
+      "sha256": "87b08a5ef35a68359cd1c5bc9f17e0e5e547c66b7c04bddd20acae108364569f",
+      "bytes": 109937
+    },
+    {
+      "path": "docs/previews/focus/02-goldenbridge.jpg",
+      "sha256": "13d14b1f75d76f6b549492ed76a68ffb8332c1c19175e71a5fbea344f7383f70",
+      "bytes": 116178
+    },
+    {
+      "path": "docs/previews/focus/03-coastglass.jpg",
+      "sha256": "826edb0dfec735563dc06c79a9754f265fa32512a23df7b2cf854b63f9247874",
+      "bytes": 111309
+    },
+    {
+      "path": "docs/previews/focus/04-obsidianglass.jpg",
+      "sha256": "3c1b1add7f5f5057c5d9e01689b9c8556b9aa58b1c9c57363585a473beace0a4",
+      "bytes": 109778
+    },
+    {
+      "path": "docs/previews/focus/05-slate.jpg",
+      "sha256": "4498f9c9975def43f64c3bed032f3e0a053a9ce2d65ea36c94b6c43b7e6fe54a",
+      "bytes": 103619
+    },
+    {
+      "path": "docs/previews/focus/06-pearl.jpg",
+      "sha256": "baaafbcbe496dca66980c50c7daada686067f014012d9b7394c09452c6471407",
+      "bytes": 108242
+    },
+    {
+      "path": "docs/previews/focus/07-dawn.jpg",
+      "sha256": "40f6a7e00d0e35a36b5c82ce03a7f8bf3492ed89d66e27b43554e87b5152caad",
+      "bytes": 108444
+    },
+    {
+      "path": "docs/previews/focus/08-ocean.jpg",
+      "sha256": "86f50e3856cad44435df33008d5bd9dac6626492417cd2dfe48d59390945ffc5",
+      "bytes": 108309
+    },
+    {
+      "path": "docs/previews/focus/09-graphite.jpg",
+      "sha256": "b83134d929eaa4c136c01c146b5e7f3c1f8ebfc84b219d5bc63f72d1a0b65864",
+      "bytes": 103891
+    },
+    {
+      "path": "docs/previews/focus/10-sage.jpg",
+      "sha256": "fc05fdc4f6d87ea491dc94c9194f3daa1189f53df4cccf7f62d36dd02dce1bcb",
+      "bytes": 103991
+    },
+    {
+      "path": "docs/previews/focus/11-sandstone.jpg",
+      "sha256": "0e99aa14372c10e2b015f7e5736abe72478c5ee9614ea82b167652ff7a1d8b4c",
+      "bytes": 105623
+    },
+    {
+      "path": "docs/previews/focus/12-aurora.jpg",
+      "sha256": "8093471fedc15b842652b24898607276b5a27ae01db54c72c8bbffec6b130aa2",
+      "bytes": 109263
+    },
+    {
+      "path": "docs/previews/focus/13-arctic.jpg",
+      "sha256": "6b8f1f040c4a47a209506fdbe5119dfd50a14a0468d20afeacbf35ea2f8905a6",
+      "bytes": 108842
+    },
+    {
+      "path": "docs/previews/focus/14-forest.jpg",
+      "sha256": "b1042b5d0af1f9cb15214f26ca230ee863dbf1acd7f224a98a656936a158d088",
+      "bytes": 106870
+    },
+    {
+      "path": "docs/previews/focus/15-silverglass.jpg",
+      "sha256": "c1121c93b85bacb3e533b5e0ba1d3c9434950a7b9b03238058431fff01f3a559",
+      "bytes": 105903
+    },
+    {
+      "path": "docs/previews/focus/16-amber.jpg",
+      "sha256": "6b96a64f22dcbf3141cc0e1e6b25a251e95c168ae623e22ca7b9bc9284df6268",
+      "bytes": 109374
     },
     {
       "path": "docs/research/DESIGN-REFERENCES.md",
@@ -139,13 +474,13 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "88301f41cd88ac60711e3ecdc2d8c76507aac0bebfc7aca2e472a2606fee17c9",
+      "sha256": "92f4e4fb02bfe579391fefbe44620e74d5c42a86a3fc222014aa79e0b336a8fa",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "948f0cc1accdf37dac5f01b92b56e9ab59378fac79dcf299d4caec4a50ed14eb",
-      "bytes": 681
+      "sha256": "c736e5c5e9d24cca399dd8763f827e006e5a44b99c7bc810f5a09976d21fbe17",
+      "bytes": 741
     },
     {
       "path": "public/app.js",
@@ -594,8 +929,13 @@
     },
     {
       "path": "reference-kit/README.md",
-      "sha256": "806df9a869da69f199ca62f4773b6a970d2b59d4693cf84a78273569d087fbd3",
-      "bytes": 7375
+      "sha256": "b90becc073dc2a4b90f15c41b00aa633ac20485768f58ae6fec9ade1578943d2",
+      "bytes": 7929
+    },
+    {
+      "path": "reference-kit/plan-cards.js",
+      "sha256": "c307555889508b59834b33e6188eb2a08769dcfa6980aaa7e39fd1dbedda7b15",
+      "bytes": 965
     },
     {
       "path": "reference-kit/planner.js",
@@ -658,9 +998,19 @@
       "bytes": 3810
     },
     {
+      "path": "reference-kit/recipes/12-http-service-boundary.md",
+      "sha256": "82a911f2bd1582a9ffa7b8e076b086513cfe917fbc61e86189ee369ac52c48da",
+      "bytes": 2259
+    },
+    {
       "path": "reference-kit/router.js",
       "sha256": "5b8537a538db8b3eb941a1e2d2d04587d43aa8eccefb9d11beed5704da11fb9a",
       "bytes": 5657
+    },
+    {
+      "path": "reference-kit/service-router.js",
+      "sha256": "7719cdced920776f9e2f4700ffa94f048fa09ff0d972f0135ef730a355c5ad79",
+      "bytes": 9072
     },
     {
       "path": "reference-kit/workflows.js",
@@ -673,19 +1023,24 @@
       "bytes": 1290
     },
     {
+      "path": "scripts/export-reference.js",
+      "sha256": "5b411a569543d8cf9461565d14231d2c8362c37a7ade5efe59b4a84d37e23650",
+      "bytes": 2728
+    },
+    {
       "path": "scripts/inventory.js",
       "sha256": "8ad32b7b6c42f33bf2866db5077f6128a9319d93ee32bba1913ddb7ad612dc98",
       "bytes": 709
     },
     {
       "path": "scripts/make-fixtures.js",
-      "sha256": "ced510b2b42fc323c1f72f82b9ee762a97f763841a69318637c4ebfb918321d1",
-      "bytes": 1116
+      "sha256": "48f0574d64ee145c917760f45bcc4494de5f133fdb3ae2e03246aa9a56fb6497",
+      "bytes": 1519
     },
     {
       "path": "src/app.js",
-      "sha256": "85d4bf53bdc69364492eb1cde5ee31d914387fcb40b0e4600e4232c6073b4144",
-      "bytes": 12560
+      "sha256": "323b0a3566ec2897c4dd5af6308071f3faf642d133a274876f76d7ec27a83b3f",
+      "bytes": 12777
     },
     {
       "path": "src/connectors.js",
@@ -699,8 +1054,8 @@
     },
     {
       "path": "src/ingestion.js",
-      "sha256": "9ef87bc05bc6c8e5eb8e99b64b56af57a07d0d295a3f60dec593238329b014f4",
-      "bytes": 2340
+      "sha256": "647b8a8e2c8c89e0f580128e7c7f6642cfa0eb0d37b3f79f8fabd227bc28beca",
+      "bytes": 2482
     },
     {
       "path": "src/parser-worker.js",
@@ -709,8 +1064,8 @@
     },
     {
       "path": "src/security.js",
-      "sha256": "9350bbfbe533a4d7c3451fe16fa4adcc9501cdfa8e6595686ae80199f2cda283",
-      "bytes": 4201
+      "sha256": "aba2878f2dba40d796cd3fdcba4067b09c5668c17ec0d384da7b511b7a79a171",
+      "bytes": 5053
     },
     {
       "path": "src/seed.js",
@@ -736,6 +1091,11 @@
       "path": "test/focus-settings.test.js",
       "sha256": "edb7360bbb50ea80c505fb5660b772b9510165d5d641619f9bf73c98476052f4",
       "bytes": 1538
+    },
+    {
+      "path": "test/integration-service.test.js",
+      "sha256": "9ad09dda372643e16681b9d7cb370e3ca52690d07c99892a5f63cb073b9d961d",
+      "bytes": 9681
     },
     {
       "path": "test/planner.test.js",

@@ -5,6 +5,8 @@ const rows=[['설비번호','점검항목','결과','비고'],['000123','외관,
 const csv='\ufeff'+rows.map(r=>r.map(x=>'"'+x.replaceAll('"','""')+'"').join(',')).join('\r\n');
 await writeFile('fixtures/점검표-샘플.csv',csv);
 const book=new ExcelJS.Workbook();book.addWorksheet('점검표').addRows(rows);book.addWorksheet('인수인계').addRows([['번호','내용'],['001','가짜 인수인계 자료']]);await book.xlsx.writeFile('fixtures/점검표-샘플.xlsx');
+const taskRows=[['작업명','설비','예정일','예상분','역량','필요레벨','우선순위','장소','상세'],['가짜 점검 업무','MC-DEMO','2026-11-17','30','운영','1','3','가짜 A동','실제 작업절차가 아닌 테스트']];
+await writeFile('fixtures/오늘업무-샘플.csv','\ufeff'+taskRows.map(row=>row.map(value=>'"'+value.replaceAll('"','""')+'"').join(',')).join('\r\n'));
 let large='설비번호,점검내용,결과,비고\r\n';for(let i=0;Buffer.byteLength(large)<2*1024*1024;i++)large+=`${String(i).padStart(6,'0')},${'가짜 설비 점검 자료 '.repeat(4)},양호,테스트 데이터\r\n`;
 await mkdir('data',{recursive:true});await writeFile('data/검수용-약2MB.csv',large);
 console.log('Sample CSV/XLSX fixtures and data/검수용-약2MB.csv created. All records are fake.');

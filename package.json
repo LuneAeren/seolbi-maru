@@ -1,6 +1,6 @@
 {
   "name": "seolbi-maru",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "description": "Express-based offline intranet portal for equipment engineers",
   "type": "module",
@@ -12,7 +12,8 @@
     "dev": "node --watch src/server.js",
     "test": "node --test --test-concurrency=1 test/*.test.js",
     "check": "node scripts/check-source.js",
-    "fixtures": "node scripts/make-fixtures.js"
+    "fixtures": "node scripts/make-fixtures.js",
+    "export:reference": "node scripts/export-reference.js"
   },
   "dependencies": {
     "csv-parse": "7.0.3",

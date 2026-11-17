@@ -73,3 +73,7 @@
 세부 인계 순서는 [recipes](recipes/)를 참고한다. 회사 파일·직원 실명·가중치·인증정보·원문 메일은 GitHub에 올리지 않는다.
 
 장소·상세·반복 생성은 recipes/11-calendar-details-recurring.md를 참고한다. 반복 매크로는 기간 안의 업무를 미리 생성하며 코드 실행·외부 통신을 하지 않는다.
+
+## v0.6 HTTP 연결부와 누락 없는 반입
+
+`service-router.js`는 `/api/integration`의 읽기 전용 기본값·서버 역할·CAS 경계다. 기존 `router.js`와 recipes/01~11도 모두 포함한다. `plan-cards.js`는 배정 결과를 화면 카드로 투영한다. [12번 레시피](recipes/12-http-service-boundary.md), [API 표](../docs/INTEGRATION-API.md), [v-etch 파일 지도](../docs/VETCH-HANDOFF.md)를 읽는다. `npm run export:reference`로 DB·업로드·fixtures 파일을 제외한 릴리스 참조 폴더를 만들 수 있다.
