@@ -1,0 +1,24 @@
+{
+  "checkedOn": "2026-11-18",
+  "environment": "macOS / Codex in-app browser",
+  "viewport": [
+    1280,
+    720
+  ],
+  "bodyFont": "16px",
+  "iframes": 0,
+  "horizontalOverflow": false,
+  "consoleErrorsAndWarnings": 0,
+  "checks": [
+    "Read summary stays on action-lab URL",
+    "Mutation review appears before dispatch",
+    "Cancel shows cancelled without execution",
+    "Fake acknowledgement for MC-DEMO-02 succeeds",
+    "Reload reads the same request ID and result"
+  ],
+  "limits": [
+    "No actual corporate SSO, target API, cookies or tokens",
+    "No actual memory/CPU comparison or packet capture",
+    "Windows Edge not tested"
+  ]
+}

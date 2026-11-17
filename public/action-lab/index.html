@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>설비마루 · 페이지 없는 업무 실행</title><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script></head>
+<body>
+<header><a href="/home-designs/">설비마루</a><span>연동 레퍼런스</span><span class="demo">실제 사내 사이트 미연결</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">업무 바로 실행</p><h1>필요한 동작만, 이 화면에서.</h1><p>다른 사이트 전체를 띄우는 대신, 필요한 결과만 카드로 받는 구조입니다.</p></div><div class="boundary"><strong>iframe 0개</strong><span>백그라운드 페이지·자동 폴링 없음</span></div></section>
+<div class="workspace">
+<section class="panel"><div class="panel-head"><h2>업무 동작</h2><span id="mode">연결 확인 중</span></div><label class="device">대상 설비<select id="device" aria-label="대상 설비"></select></label><div id="actions" class="actions"></div><p class="note">지금은 가짜 설비만 사용합니다. 사내 API와 사용자 위임 인증은 회사 안에서 연결해야 합니다.</p></section>
+<section class="panel result-panel"><div class="panel-head"><h2>실행 결과</h2><button id="status" disabled>처리 상태 확인</button></div><div id="result" role="status" aria-live="polite"><p class="empty">왼쪽에서 동작을 선택하세요.<br>대상 사이트로 이동하지 않고 이곳에서 결과를 확인합니다.</p></div><div class="trace"><span>이 화면에서 호출한 포털 API</span><strong id="calls">0회</strong></div><p class="note">통신 오류로 결과가 불명확하면 같은 요청의 상태만 확인합니다. 변경 동작을 자동 재실행하지 않습니다.</p></section>
+</div>
+<section class="architecture"><span>내 포털의 버튼</span><b>→</b><span>내 Express API</span><b>→</b><span>승인된 사내 API 연결부</span><b>→</b><span>결과 카드</span></section>
+<p id="error" role="alert"></p>
+<footer>조회는 바로 실행 · 변경은 내용 검토 후 실행 · 기존 로그인과 권한을 유지하는 연결부 예제</footer>
+</main>
+<dialog id="review"><div class="review-head"><h2>변경 내용을 확인해주세요</h2></div><div id="review-content"></div><div class="review-actions"><button id="cancel">실행 전 취소</button><button id="confirm" class="primary">내용 확인 후 실행</button></div></dialog>
+</body></html>

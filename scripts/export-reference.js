@@ -13,10 +13,10 @@ for (const file of selected) {
   if (!path.startsWith(root) || file.path.split('/').some(part => ['data', 'node_modules', '.git'].includes(part)) || /(^|\/)\.env($|\.)/.test(file.path) && file.path !== '.env.example') throw new Error('Unsafe manifest path: ' + file.path);
   if (createHash('sha256').update(await readFile(path)).digest('hex') !== file.sha256) throw new Error('Release file differs from manifest: ' + file.path);
 }
-for (const required of ['reference-kit/router.js', 'reference-kit/service-router.js', 'src/security.js', 'src/store.js', 'src/ingestion.js', 'test/integration-service.test.js']) {
+for (const required of ['reference-kit/router.js', 'reference-kit/service-router.js', 'src/security.js', 'src/store.js', 'src/ingestion.js', 'test/integration-service.test.js', 'reference-kit/action-gateway.js', 'reference-kit/action-router.js', 'test/action-gateway.test.js', 'public/action-lab/index.html', 'public/action-lab/app.js', 'public/action-lab/styles.css', 'docs/INTERNAL-ACTIONS.md']) {
   if (!selected.some(file => file.path === required)) throw new Error('Required transfer file missing: ' + required);
 }
-for (let number = 1; number <= 12; number++) {
+for (let number = 1; number <= 13; number++) {
   const prefix = 'reference-kit/recipes/' + String(number).padStart(2, '0') + '-';
   if (!selected.some(file => file.path.startsWith(prefix) && file.path.endsWith('.md'))) throw new Error('Missing recipe: ' + prefix);
 }

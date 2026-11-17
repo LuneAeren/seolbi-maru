@@ -1,6 +1,6 @@
 {
-  "version": "0.6.0",
-  "generatedOn": "2026-11-17",
+  "version": "0.7.0",
+  "generatedOn": "2026-11-18",
   "files": [
     {
       "path": ".env.example",
@@ -14,13 +14,18 @@
     },
     {
       "path": "README.md",
-      "sha256": "21bd73043cc04c8a4cf3e0e53a266376eff2b084c93fa6d234f8d94411531c76",
-      "bytes": 22399
+      "sha256": "8f217335155f8c3654b3b97c9407812925aea45aa19d820609f81e75f6f8aad6",
+      "bytes": 23555
+    },
+    {
+      "path": "docs/ACTION-BROWSER-CHECKS.json",
+      "sha256": "e660a1bd6392dd61d12866feb6fe5ba48154d510acedb925ee396ab4b094a4b9",
+      "bytes": 650
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "da2037066fced57d5c2cebaf190f56d374d1d8c336f22593094c283da3e06e9b",
-      "bytes": 13963
+      "sha256": "f487f4d950572fa06821a23fffb6f568450df07b0e455b4b4d2f1f4bc45b584d",
+      "bytes": 14511
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -58,6 +63,11 @@
       "bytes": 5263
     },
     {
+      "path": "docs/INTERNAL-ACTIONS.md",
+      "sha256": "adce7cd2a3e087a23458c575730c088d27fdc1524fc75c17be0fde2c26331656",
+      "bytes": 13706
+    },
+    {
       "path": "docs/INTERNAL-HANDOFF.md",
       "sha256": "92e7553cfe8e97489cb526385c548a435064b30154b1b007b20768f982e37978",
       "bytes": 9778
@@ -79,13 +89,13 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "3b89ccad47d1878c639b39d12b753fd07f6ec12654b5c41c0501df727630b0a4",
-      "bytes": 17100
+      "sha256": "d8fe2a46977e988d7dcf1900574cc561f46d8f1630e94c2298bda4008cd2f999",
+      "bytes": 19259
     },
     {
       "path": "docs/VETCH-HANDOFF.md",
-      "sha256": "b133ac93a1ca867b5f2d02c8d8d87865f67277709f20564f7f7a3d390c1587ef",
-      "bytes": 5008
+      "sha256": "be20d2dbba39eb631a55663255e3872610dbe5db8ed64966611922e4759156c2",
+      "bytes": 5627
     },
     {
       "path": "docs/archive/HOME-DESIGN-v04.md",
@@ -94,8 +104,13 @@
     },
     {
       "path": "docs/previews/README.md",
-      "sha256": "4b14a8e1efeba8f875ecd20ac0994f4fe73db2ebdf4033721b7d8c6070f49074",
-      "bytes": 5801
+      "sha256": "34c644181594b6105dc476a6132d69cb83d5aff690e01970543e6e5bc84dc544",
+      "bytes": 6082
+    },
+    {
+      "path": "docs/previews/action-gateway.jpg",
+      "sha256": "c788b461b0198aa2be7b00a38c0c8ffd953fe1c40d3680974a769de861cac6e8",
+      "bytes": 84649
     },
     {
       "path": "docs/previews/archive/calendar-recurring-v0.4.jpg",
@@ -474,13 +489,28 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "92f4e4fb02bfe579391fefbe44620e74d5c42a86a3fc222014aa79e0b336a8fa",
+      "sha256": "16ee178055ea893590bcb5a7847d3e8010893714d9820c51d7abede730a10e5f",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "c736e5c5e9d24cca399dd8763f827e006e5a44b99c7bc810f5a09976d21fbe17",
+      "sha256": "83b13eb513465f7e37495662c4feec5a1f135c9769d408eacca21b395eff7be9",
       "bytes": 741
+    },
+    {
+      "path": "public/action-lab/app.js",
+      "sha256": "26a2f9ba7bec981a34905d506097d75c0b1e02a0c998fdefd0bcc8e0f8eb3f50",
+      "bytes": 6307
+    },
+    {
+      "path": "public/action-lab/index.html",
+      "sha256": "d66bdac7b42d50c3a982f31433256ec4e0a255a7aeb4e265068b7509dbd7edfb",
+      "bytes": 2550
+    },
+    {
+      "path": "public/action-lab/styles.css",
+      "sha256": "5015ca0c2319d79ef690d312daa459b13a1d937ba6f0e0832e605a5abb8590f1",
+      "bytes": 3929
     },
     {
       "path": "public/app.js",
@@ -929,8 +959,18 @@
     },
     {
       "path": "reference-kit/README.md",
-      "sha256": "b90becc073dc2a4b90f15c41b00aa633ac20485768f58ae6fec9ade1578943d2",
-      "bytes": 7929
+      "sha256": "e4320d3c7c0d875ec2bb6d10b7877d11c3711aa32c5a72d5722f45c3ba5fddf0",
+      "bytes": 8299
+    },
+    {
+      "path": "reference-kit/action-gateway.js",
+      "sha256": "4425dbb2f2253cb888cb55c25f1bc17547c6de2ebe264307ed81a7f8eb3e40f9",
+      "bytes": 9979
+    },
+    {
+      "path": "reference-kit/action-router.js",
+      "sha256": "0e01efe0e88da4097f86ac1e3bbba463e7ad211f3f03f20f34b0abe0396417d7",
+      "bytes": 937
     },
     {
       "path": "reference-kit/plan-cards.js",
@@ -1003,6 +1043,11 @@
       "bytes": 2259
     },
     {
+      "path": "reference-kit/recipes/13-internal-actions.md",
+      "sha256": "ad5160e0596ca0f251dfb9aa3e8332c4858ad57c6b16ca90d9d4538342ca1c76",
+      "bytes": 1916
+    },
+    {
       "path": "reference-kit/router.js",
       "sha256": "5b8537a538db8b3eb941a1e2d2d04587d43aa8eccefb9d11beed5704da11fb9a",
       "bytes": 5657
@@ -1024,8 +1069,8 @@
     },
     {
       "path": "scripts/export-reference.js",
-      "sha256": "5b411a569543d8cf9461565d14231d2c8362c37a7ade5efe59b4a84d37e23650",
-      "bytes": 2728
+      "sha256": "2052d5c2b37242a746eaca08390bc8815535b2b7891c626557632266a8e93ddd",
+      "bytes": 2948
     },
     {
       "path": "scripts/inventory.js",
@@ -1039,8 +1084,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "323b0a3566ec2897c4dd5af6308071f3faf642d133a274876f76d7ec27a83b3f",
-      "bytes": 12777
+      "sha256": "51819ef3dc222022c64a0471b11e3f7ddb1aa78bab62cacddd3a1df0d6e9ca0f",
+      "bytes": 13204
     },
     {
       "path": "src/connectors.js",
@@ -1086,6 +1131,11 @@
       "path": "src/tables.js",
       "sha256": "126b9172c470bc9e4383a9caa8a4dacf6a9d0c8f96087d272739e658e65676c7",
       "bytes": 3323
+    },
+    {
+      "path": "test/action-gateway.test.js",
+      "sha256": "f3d7024741e447eb4ba3f517acf63ac3de4ae28a57f0b841ed56fd61125b8dd2",
+      "bytes": 7739
     },
     {
       "path": "test/focus-settings.test.js",

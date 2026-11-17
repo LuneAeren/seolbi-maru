@@ -1,6 +1,10 @@
-# v-etch 이식 인계 · SeolbiMaru v0.6.0
+# v-etch 이식 인계 · SeolbiMaru v0.7.0
 
 대상은 설비마루 한 저장소다. 회사 코드·데이터·주소를 반출하거나 이 저장소에 합치지 않는다. 아래 구현은 사내 SSO·DB에 붙이는 참고 예제이며 실제 v-etch 소스나 스키마를 본 상태는 아니다.
+
+## v0.7 사내 동작 연결부
+
+[INTERNAL-ACTIONS.md](INTERNAL-ACTIONS.md)를 먼저 읽는다. 기존 사이트 전체를 임베딩하는 대신 승인된 사내 API를 통해 필요한 기능만 호출하는 설계다. `reference-kit/action-gateway.js`, `action-router.js`, `public/action-lab/`, `test/action-gateway.test.js`, 13번 레시피를 추가했다. 실제 대상 API/SSO는 미확인이며 production 디스패치는 비활성이다. API 유무·사용자 위임·소유자 협조 여부에 따라 선택한다. 데모의 CPU/메모리 절감 수치를 실제 사내 실측으로 표현하지 않는다.
 
 ## 이미 있었던 파일과 경로 정정
 
@@ -12,7 +16,7 @@
 | DB 스키마·버전·이력 | `src/store.js` | SQLite entities/history/originals/meta 정의, CAS와 트랜잭션 |
 | 표 파일 처리 | `src/tables.js`, `src/parser-worker.js` | CSV/XLSX 검증·반입·출력. tables.js는 DB 스키마가 아님 |
 | 내부 스냅샷 반영 | `src/ingestion.js` | URL 조회 없이 받은 전체 스냅샷 검증·원자적 반영 |
-| 회귀 검증 | `test/*.test.js` | 기존 테스트와 새 HTTP 연동 테스트 포함, 총 42개 |
+| 회귀 검증 | `test/*.test.js` | 기존 테스트와 새 HTTP 연동 테스트 포함, 총 49개 |
 | 최신 홈 | `public/home-designs/focus.js`, `settings.js`, `focus.css`, `catalog.js` | 공통 홈·옵니버스·16개 테마. home.js는 이전 홈 보존용 |
 | 설비 배정 화면 | `public/schedule-designs/04-*.html`, `12-*.html`, `16-*.html` | 인원별 격자·배정 검토·용량 분배 참고. prototypes.js/catalog.js/CSS와 함께 사용 |
 | 모든 미리보기 | `docs/previews/README.md` | 최신 테마 16개 + 이전 검수 이미지 48개 |

@@ -77,3 +77,7 @@
 ## v0.6 HTTP 연결부와 누락 없는 반입
 
 `service-router.js`는 `/api/integration`의 읽기 전용 기본값·서버 역할·CAS 경계다. 기존 `router.js`와 recipes/01~11도 모두 포함한다. `plan-cards.js`는 배정 결과를 화면 카드로 투영한다. [12번 레시피](recipes/12-http-service-boundary.md), [API 표](../docs/INTEGRATION-API.md), [v-etch 파일 지도](../docs/VETCH-HANDOFF.md)를 읽는다. `npm run export:reference`로 DB·업로드·fixtures 파일을 제외한 릴리스 참조 폴더를 만들 수 있다.
+
+## v0.7 페이지 없는 동작
+
+`action-gateway.js`와 `action-router.js`는 허용 동작 ID·서버 역할·검토·CAS·중복 디스패치 방지·결과 미확인을 다룬다. 실제 SSO/API는 연결하지 않은 로컬 데모다. [13번 레시피](recipes/13-internal-actions.md)와 [SSO/API 선택 가이드](../docs/INTERNAL-ACTIONS.md)를 함께 읽는다.
