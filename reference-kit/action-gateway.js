@@ -1,12 +1,13 @@
 import {randomUUID, createHash} from 'node:crypto';
 import {fail} from '../src/core.js';
+import {serviceAccess} from './service-access.js';
 
 const kind = 'ref:action-request';
 const devices = Object.freeze(['MC-DEMO-01', 'MC-DEMO-02', 'MC-DEMO-03']);
 const definitions = Object.freeze([
-  {id: 'equipment.read', label: '설비 요약 조회', mutates: false, roles: ['viewer', 'operator', 'assigner']},
-  {id: 'report.preview', label: '보고서 요약 조회', mutates: false, roles: ['viewer', 'operator', 'assigner']},
-  {id: 'handover.acknowledge', label: '인계 메모 확인 기록', mutates: true, roles: ['operator', 'assigner']}
+  {id: 'equipment.read', serviceId:'equipment', label: '설비 요약 조회', mutates: false, roles: ['viewer', 'operator', 'assigner']},
+  {id: 'report.preview', serviceId:'reports', label: '보고서 요약 조회', mutates: false, roles: ['viewer', 'operator', 'assigner']},
+  {id: 'handover.acknowledge', serviceId:'handover', label: '인계 메모 확인 기록', mutates: true, roles: ['operator', 'assigner']}
 ]);
 const publicStates = new Set(['prepared', 'running', 'succeeded', 'uncertain', 'expired', 'cancelled']);
 function onlyKeys(value, keys) {
@@ -43,7 +44,7 @@ function safeResult(value) {
  * Production dispatch is deliberately disabled; no network adapter ships in this repo.
  */
 export function createActionGateway(store, {mode = 'production', writable = false, roles = {},
-  adapters = {}, clock = Date.now, timeoutMs = 3000} = {}) {
+  adapters = {}, grants = {}, clock = Date.now, timeoutMs = 3000} = {}) {
   if (!Number.isInteger(timeoutMs) || timeoutMs < 5 || timeoutMs > 30000) throw new Error('Invalid action timeout');
   const inFlight = new Map();
   const roleFor = actor => Object.hasOwn(roles, actor) && ['viewer','operator','assigner'].includes(roles[actor]) ? roles[actor] : 'viewer';
@@ -53,6 +54,8 @@ export function createActionGateway(store, {mode = 'production', writable = fals
     if (!action) fail(404, '등록된 동작이 아닙니다.');
     if (!action.roles.includes(roleFor(actor))) fail(403, '이 동작의 권한이 없습니다.', 'ACTION_FORBIDDEN');
     if (mode !== 'demo' || typeof adapters[id] !== 'function') fail(503, '사내 연결부가 설정되지 않았습니다.', 'ACTION_NOT_CONNECTED');
+    const access = serviceAccess(grants,action.serviceId,action.id,clock());
+    if (!access.allowed) fail(403, access.serviceName + ' · ' + access.label + '：서비스별 API 승인을 확인해주세요.', 'SERVICE_NOT_APPROVED');
     if (action.mutates && !writable) fail(403, '데모 변경 동작은 기본 차단됩니다.', 'ACTION_READ_ONLY');
     return action;
   }
@@ -75,7 +78,7 @@ export function createActionGateway(store, {mode = 'production', writable = fals
       return {schemaVersion: 1, demo: mode === 'demo', devices, actions: definitions.map(action => {
         let available = true, reason = '';
         try {definition(actor, action.id);} catch (error) {available = false; reason = error.message;}
-        return {id: action.id, label: action.label, mutates: action.mutates, available, reason};
+        return {id: action.id, label: action.label, mutates: action.mutates, available, reason, service:serviceAccess(grants,action.serviceId,action.id,clock())};
       })};
     },
     prepare(actor, body) {

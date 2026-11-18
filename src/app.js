@@ -6,6 +6,7 @@ import { createStore } from './store.js';
 import { security } from './security.js';
 import { seed } from './seed.js';
 import { AppError, fail, kinds, text, validateEntity } from './core.js';
+import {demoServiceGrants} from '../reference-kit/service-access.js';
 import {createActionGateway, demoActionAdapters} from '../reference-kit/action-gateway.js';
 import {actionRouter} from '../reference-kit/action-router.js';
 import { integrationRouter } from '../reference-kit/service-router.js';
@@ -105,11 +106,12 @@ export function createApp(config, options = {}) {
     try { const entity = store.create('dataset', { title, category, description: text(req.body.description || '', '설명', 2000, false), columns, rows: sheet.rows, originalId, sheet: sheet.name }, req.actor, '파일 반입'); drafts.delete(req.params.id); res.status(201).json(summary(entity)); }
     catch (error) { store.removeOriginal(originalId); throw error; }
   });
-  const actionGateway = createActionGateway(store, {mode:config.mode, writable:config.integrationWritable === true, roles:config.integrationRoles, adapters:config.mode === 'demo' ? demoActionAdapters(store) : {}});
+  const actionGateway = createActionGateway(store, {mode:config.mode, writable:config.integrationWritable === true, roles:config.integrationRoles, grants:config.mode === 'demo' ? demoServiceGrants() : {}, adapters:config.mode === 'demo' ? demoActionAdapters(store) : {}});
   app.use('/api/actions', actionRouter(actionGateway));
   app.use('/api/integration', integrationRouter(store, {mode:config.mode, writable:config.integrationWritable, roles:config.integrationRoles}));
   app.use('/api/reference', referenceRouter(store, {mode:config.mode}));
   app.use('/api', (_req, _res) => fail(404, '요청한 기능을 찾을 수 없습니다.'));
+  app.use('/streamlit-reference', express.static(fileURLToPath(new URL('../streamlit-kit/previews/', import.meta.url)), {etag:false,maxAge:0,dotfiles:'deny'}));
   app.use(express.static(publicDir, { etag: false, maxAge: 0, dotfiles: 'deny' }));
   app.use((_req, res) => res.status(404).type('text').send('페이지를 찾을 수 없습니다.'));
   app.use((error, _req, res, _next) => {

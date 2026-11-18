@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "설비별 평균 온도 표",
+  "chart": "table",
+  "x": "equipment",
+  "y": "temperature",
+  "aggregate": "mean",
+  "equipment": "all",
+  "missing": "drop"
+}

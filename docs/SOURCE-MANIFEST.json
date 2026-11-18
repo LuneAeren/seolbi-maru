@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "generatedOn": "2026-11-18",
   "files": [
     {
@@ -9,13 +9,13 @@
     },
     {
       "path": ".gitignore",
-      "sha256": "23dd2fd791cca06814025848976b0ca32ae74eab82b5c798e30006a8dfad4049",
-      "bytes": 103
+      "sha256": "cb13e10c8f6e887e6c37b66c142c3706607cde404d2bc1789be2bea5671a388b",
+      "bytes": 138
     },
     {
       "path": "README.md",
-      "sha256": "8f217335155f8c3654b3b97c9407812925aea45aa19d820609f81e75f6f8aad6",
-      "bytes": 23555
+      "sha256": "eafffc92214570cb17cd707f14592eeecd58c5b377207c47f67c06543e93cc53",
+      "bytes": 25183
     },
     {
       "path": "docs/ACTION-BROWSER-CHECKS.json",
@@ -24,8 +24,8 @@
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "f487f4d950572fa06821a23fffb6f568450df07b0e455b4b4d2f1f4bc45b584d",
-      "bytes": 14511
+      "sha256": "41d254add8dac8c9d1fd7a244ff3523083b26302cadcdbd3785dffe6e61034c4",
+      "bytes": 15072
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -64,13 +64,18 @@
     },
     {
       "path": "docs/INTERNAL-ACTIONS.md",
-      "sha256": "adce7cd2a3e087a23458c575730c088d27fdc1524fc75c17be0fde2c26331656",
-      "bytes": 13706
+      "sha256": "aa3179a7eca630ed98bcf82b75c55a14cbb29f595a6e7afc8a26419d944ef0de",
+      "bytes": 13922
     },
     {
       "path": "docs/INTERNAL-HANDOFF.md",
       "sha256": "92e7553cfe8e97489cb526385c548a435064b30154b1b007b20768f982e37978",
       "bytes": 9778
+    },
+    {
+      "path": "docs/OFFLINE-REFERENCE-CHECKS.json",
+      "sha256": "ed2a5c1040b5f6d7ea40ee10c7c16e45e664247f74ee7ab510e50c512f27c702",
+      "bytes": 628
     },
     {
       "path": "docs/PLAN.md",
@@ -88,14 +93,19 @@
       "bytes": 6508
     },
     {
+      "path": "docs/SERVICE-API-APPLICATIONS.md",
+      "sha256": "c9c17d91c9435e56ef9b7f93be6adf89c98a9560791fc5fd2b8c14da2084838f",
+      "bytes": 3653
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "sha256": "d8fe2a46977e988d7dcf1900574cc561f46d8f1630e94c2298bda4008cd2f999",
-      "bytes": 19259
+      "sha256": "d982de9aa375bb8197bf693e3ece49df897bd2e7da19a527065620cac23fe210",
+      "bytes": 21654
     },
     {
       "path": "docs/VETCH-HANDOFF.md",
-      "sha256": "be20d2dbba39eb631a55663255e3872610dbe5db8ed64966611922e4759156c2",
-      "bytes": 5627
+      "sha256": "648171ee934533e9b2b1dd0fc3e79db43f437e22dd1e0e781be9144f37c2c4ad",
+      "bytes": 6438
     },
     {
       "path": "docs/archive/HOME-DESIGN-v04.md",
@@ -104,8 +114,8 @@
     },
     {
       "path": "docs/previews/README.md",
-      "sha256": "34c644181594b6105dc476a6132d69cb83d5aff690e01970543e6e5bc84dc544",
-      "bytes": 6082
+      "sha256": "80f8e747be5e333c5d6cbb2578297e09d7380b90fdf0a7da1d83e9cbfb92a7f9",
+      "bytes": 6439
     },
     {
       "path": "docs/previews/action-gateway.jpg",
@@ -433,6 +443,16 @@
       "bytes": 109374
     },
     {
+      "path": "docs/previews/service-approvals.jpg",
+      "sha256": "8bbdfa5904a64568aeb6be04d95e8e3cb1135a7b5081d552a2383a1b8139b558",
+      "bytes": 94274
+    },
+    {
+      "path": "docs/previews/streamlit-offline.jpg",
+      "sha256": "d907d9fabf7f9cb2ca8b42a5d9a1014e96f093f09eb38f3821324dd23b7a079c",
+      "bytes": 168752
+    },
+    {
       "path": "docs/research/DESIGN-REFERENCES.md",
       "sha256": "e2406f863654e15bca4d041afcf7169731da31de26d965b9a994b7d69db7b6cf",
       "bytes": 6323
@@ -489,23 +509,23 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "16ee178055ea893590bcb5a7847d3e8010893714d9820c51d7abede730a10e5f",
+      "sha256": "27a1e88cb2d741e0ebe297a60ed60c07866bb97d877ac8845ecefc9968adf914",
       "bytes": 114964
     },
     {
       "path": "package.json",
-      "sha256": "83b13eb513465f7e37495662c4feec5a1f135c9769d408eacca21b395eff7be9",
+      "sha256": "6b9765a21909c03746ee95cad0c9126028a6a310f32c927e172915b6c5cde7ff",
       "bytes": 741
     },
     {
       "path": "public/action-lab/app.js",
-      "sha256": "26a2f9ba7bec981a34905d506097d75c0b1e02a0c998fdefd0bcc8e0f8eb3f50",
-      "bytes": 6307
+      "sha256": "898c252634fd013e0136c33023626c7343c5b855773ac22aee3ee527b34d1497",
+      "bytes": 6424
     },
     {
       "path": "public/action-lab/index.html",
-      "sha256": "d66bdac7b42d50c3a982f31433256ec4e0a255a7aeb4e265068b7509dbd7edfb",
-      "bytes": 2550
+      "sha256": "bdd95889656d7f011d93fdd629c6dd1ff2410c3bb44d8e783fe87ace5894cc89",
+      "bytes": 2617
     },
     {
       "path": "public/action-lab/styles.css",
@@ -964,8 +984,8 @@
     },
     {
       "path": "reference-kit/action-gateway.js",
-      "sha256": "4425dbb2f2253cb888cb55c25f1bc17547c6de2ebe264307ed81a7f8eb3e40f9",
-      "bytes": 9979
+      "sha256": "9820f540a9aac0eaf1af5d86492a9f245c2b09b5d755c9c275f1bf2da52b4db7",
+      "bytes": 10410
     },
     {
       "path": "reference-kit/action-router.js",
@@ -1048,9 +1068,24 @@
       "bytes": 1916
     },
     {
+      "path": "reference-kit/recipes/14-service-approvals.md",
+      "sha256": "59e91e27f39d51a95697840ce9344c73473027b857f6aa3651cd871ce1fd1a73",
+      "bytes": 573
+    },
+    {
+      "path": "reference-kit/recipes/15-offline-streamlit.md",
+      "sha256": "28310092cce626dc396680d19b2549368e5aca5b2e695e696d2804c6ebd28145",
+      "bytes": 639
+    },
+    {
       "path": "reference-kit/router.js",
       "sha256": "5b8537a538db8b3eb941a1e2d2d04587d43aa8eccefb9d11beed5704da11fb9a",
       "bytes": 5657
+    },
+    {
+      "path": "reference-kit/service-access.js",
+      "sha256": "50e2912c34686fead4523c1bf6021457143f5922d1054ff795d10e059cd20aab",
+      "bytes": 2045
     },
     {
       "path": "reference-kit/service-router.js",
@@ -1069,8 +1104,8 @@
     },
     {
       "path": "scripts/export-reference.js",
-      "sha256": "2052d5c2b37242a746eaca08390bc8815535b2b7891c626557632266a8e93ddd",
-      "bytes": 2948
+      "sha256": "0006fc60a844ba44e04f9f8a376f9ead430793a06bf855c66607be49ea0f1548",
+      "bytes": 3173
     },
     {
       "path": "scripts/inventory.js",
@@ -1084,8 +1119,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "51819ef3dc222022c64a0471b11e3f7ddb1aa78bab62cacddd3a1df0d6e9ca0f",
-      "bytes": 13204
+      "sha256": "eccdade9f98282ef2b842bb2e73d325af0f9252a058202110346da7031ee0cc7",
+      "bytes": 13493
     },
     {
       "path": "src/connectors.js",
@@ -1133,9 +1168,179 @@
       "bytes": 3323
     },
     {
+      "path": "streamlit-kit/.streamlit/config.toml",
+      "sha256": "f0cfeca83c26333c1c96c7f4a31b5fae3854e4939bdf062b0b092c35c8585a1d",
+      "bytes": 171
+    },
+    {
+      "path": "streamlit-kit/QUICKREF.md",
+      "sha256": "3470bd1073d13c5dca2a68e767c1238d6011c36f28234ffb8529e757826eed88",
+      "bytes": 4567
+    },
+    {
+      "path": "streamlit-kit/README.md",
+      "sha256": "61d7b792f4177f2cba67ed484315ed65f89f47f924841f1cfdb468ff3222eb81",
+      "bytes": 7497
+    },
+    {
+      "path": "streamlit-kit/app.py",
+      "sha256": "43c832b40fe4210a7bd2fd4e4792f2eac76457f6f36f0c063f45c256de86869b",
+      "bytes": 3303
+    },
+    {
+      "path": "streamlit-kit/build_preview.py",
+      "sha256": "bd5d6a7834448cfb2cfeeaaf379f6b68c9e176c3f00a696fce1a7b2d32d0f4c6",
+      "bytes": 3731
+    },
+    {
+      "path": "streamlit-kit/chart_core.py",
+      "sha256": "d239b7816bb7e163f8921aeae443c7e77f88dd73e34474cba6132d28155c1f3e",
+      "bytes": 10297
+    },
+    {
+      "path": "streamlit-kit/inspect_environment.py",
+      "sha256": "edca6626079f2f699c6fefb11cd10a6be782310c2e6f431f97ae6a4924d6e1b5",
+      "bytes": 1457
+    },
+    {
+      "path": "streamlit-kit/previews/01-trend.json",
+      "sha256": "3fb8bf8e2fac11ce3b9da609475458297ab1723ff91a7534525c5c443576ce25",
+      "bytes": 194
+    },
+    {
+      "path": "streamlit-kit/previews/01-trend.md",
+      "sha256": "8e4f75563b9da3ece19acd05d0b8475ce4670da37e38c5463de5c288c112f567",
+      "bytes": 856
+    },
+    {
+      "path": "streamlit-kit/previews/01-trend.py",
+      "sha256": "1a29b07a5b0b61541eb40ff39a198d28da75cb8205e7218b03c9c96127503f0d",
+      "bytes": 1162
+    },
+    {
+      "path": "streamlit-kit/previews/01-trend.svg",
+      "sha256": "76db47fefbec3f45cc8e0ff7dceaf5fa32850a5e1d2bd05e7d702fd35bf24487",
+      "bytes": 1675
+    },
+    {
+      "path": "streamlit-kit/previews/02-downtime.json",
+      "sha256": "e74065a628d30e1fada3b19ccfa6376b4b332ac38b7c3a5d12a52071013e52a5",
+      "bytes": 182
+    },
+    {
+      "path": "streamlit-kit/previews/02-downtime.md",
+      "sha256": "c66e795a8f1c8d2cdc84f030759b0571e5ea7edc651e747571df5cb31f65a23e",
+      "bytes": 847
+    },
+    {
+      "path": "streamlit-kit/previews/02-downtime.py",
+      "sha256": "eff88a4a459be0ffb5304a9ba9c5587624fa46b315bdbf50d0a60044d69e1aae",
+      "bytes": 1150
+    },
+    {
+      "path": "streamlit-kit/previews/02-downtime.svg",
+      "sha256": "c558969e8e2816bad23c30d5610f1517af91f3363266fd8cc29e88d6874e01a2",
+      "bytes": 927
+    },
+    {
+      "path": "streamlit-kit/previews/03-workload.json",
+      "sha256": "d00e5df39ddf01baf909f9dc885cdda34afef555c0233c90f239d37df1a39e54",
+      "bytes": 184
+    },
+    {
+      "path": "streamlit-kit/previews/03-workload.md",
+      "sha256": "8fb6803c29bf3deda1f279758c71b01ed03ab3da8a5b978166ad28ccf64ddae2",
+      "bytes": 849
+    },
+    {
+      "path": "streamlit-kit/previews/03-workload.py",
+      "sha256": "9d7b5293f9ed77f653fa6215fd8eb05bf7bd88b2c5cb7cebb028138175c6e087",
+      "bytes": 1152
+    },
+    {
+      "path": "streamlit-kit/previews/03-workload.svg",
+      "sha256": "f670cd5c70308a231d54792aa8d2f14888eaa1e5a4fe36b0c9f1b34bfe0046c4",
+      "bytes": 952
+    },
+    {
+      "path": "streamlit-kit/previews/04-scatter.json",
+      "sha256": "f9d70e23731cd7259a2c1f5f2a97b2a44f96a86b1ca0a9210c58ea3484d151f8",
+      "bytes": 189
+    },
+    {
+      "path": "streamlit-kit/previews/04-scatter.md",
+      "sha256": "4108e087d18c33dedc1e9ebf1ce80fea78ddd30b06e0c09dff331c7c22dcc7ed",
+      "bytes": 851
+    },
+    {
+      "path": "streamlit-kit/previews/04-scatter.py",
+      "sha256": "4357fdd410c1658bae5313253eb88a99463b13026d650cb6af969ad39d3811ce",
+      "bytes": 1157
+    },
+    {
+      "path": "streamlit-kit/previews/04-scatter.svg",
+      "sha256": "9df4307090d28ae22a2f295d5a85d86cc31252ab0f0e5ac454e78689db2c1990",
+      "bytes": 1949
+    },
+    {
+      "path": "streamlit-kit/previews/05-daily.json",
+      "sha256": "3ce1c4a689562e03d70fb832085afb64e7e48b9e8ecf9441c59ef2936b3d1c8d",
+      "bytes": 179
+    },
+    {
+      "path": "streamlit-kit/previews/05-daily.md",
+      "sha256": "31932dba4e26a3128948067dc00cbdadfa43efe36b5d888ee2daf68397913be4",
+      "bytes": 844
+    },
+    {
+      "path": "streamlit-kit/previews/05-daily.py",
+      "sha256": "2dc9c8181d835ec51bf2bb2739f73055d7080cd4c084309858d5852cd9ef60da",
+      "bytes": 1147
+    },
+    {
+      "path": "streamlit-kit/previews/05-daily.svg",
+      "sha256": "749a0bd113b24ab7fa7003062c36822c8631460874e7f25db0bc12498fe32bea",
+      "bytes": 1673
+    },
+    {
+      "path": "streamlit-kit/previews/06-table.json",
+      "sha256": "efa5e864d0d9155d32d2daa885b0a10d264cdcd7ac73806b1030d8455dda6d47",
+      "bytes": 189
+    },
+    {
+      "path": "streamlit-kit/previews/06-table.md",
+      "sha256": "deccebdf5d65c574e3b5ca98d47aca857f68cd2311cb64506108b23864ca67c0",
+      "bytes": 851
+    },
+    {
+      "path": "streamlit-kit/previews/06-table.py",
+      "sha256": "3863f6d97c75beb6a53449b1650007695f36b29209cd77079b58a6a16f96a5a5",
+      "bytes": 1157
+    },
+    {
+      "path": "streamlit-kit/previews/06-table.svg",
+      "sha256": "89456d2e46917902d505a0edaa5d78f8e4372b72b6a99e396b0f7e4e53b5af4d",
+      "bytes": 558
+    },
+    {
+      "path": "streamlit-kit/previews/index.html",
+      "sha256": "bbdf52fe5f96827f8ed9df3db1142971087dd79f904e277cbbd71e131629231e",
+      "bytes": 5850
+    },
+    {
+      "path": "streamlit-kit/previews/preview.css",
+      "sha256": "37e8ae40631e095c3a937a3d64655c610fa315dd13f521915b90a765acc82a01",
+      "bytes": 1126
+    },
+    {
+      "path": "streamlit-kit/test_chart_core.py",
+      "sha256": "efd124e3341739c4f59aab3216808be0567054aa9e220feebd81c2a43bdf3f1a",
+      "bytes": 2668
+    },
+    {
       "path": "test/action-gateway.test.js",
-      "sha256": "f3d7024741e447eb4ba3f517acf63ac3de4ae28a57f0b841ed56fd61125b8dd2",
-      "bytes": 7739
+      "sha256": "01daacf8b6732c044ee7b1f6801cc498dd365afaf9619690cfcdb1654c0bb0f3",
+      "bytes": 7874
     },
     {
       "path": "test/focus-settings.test.js",
@@ -1166,6 +1371,11 @@
       "path": "test/schedule.test.js",
       "sha256": "96a028eed2237258d337948a689ff4ca36adfd1e91885df9af9f6bf4bf605d2d",
       "bytes": 5336
+    },
+    {
+      "path": "test/service-access.test.js",
+      "sha256": "2d5d428188e40b33b2247a913a85714b775b03cbe32550c558feb5b682529c9a",
+      "bytes": 2559
     }
   ]
 }

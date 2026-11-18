@@ -3,13 +3,14 @@ import assert from 'node:assert/strict';
 import {once} from 'node:events';
 import {createStore} from '../src/store.js';
 import {createActionGateway, demoActionAdapters} from '../reference-kit/action-gateway.js';
+import {demoServiceGrants} from '../reference-kit/service-access.js';
 import {createApp} from '../src/app.js';
 
 const input = {deviceId: 'MC-DEMO-01'};
 function setup(t, options = {}) {
   const store = createStore(':memory:'); t.after(() => store.close());
   const roles = {alice: 'operator', bob: 'viewer'};
-  const settings = {mode: 'demo', writable: true, roles, adapters: demoActionAdapters(store), ...options};
+  const settings = {mode: 'demo', writable: true, roles, grants: demoServiceGrants(true), adapters: demoActionAdapters(store), ...options};
   return {store, roles, settings, gateway: createActionGateway(store, settings)};
 }
 
@@ -56,7 +57,7 @@ test('concurrent and repeated dispatches share a durable request and a single de
   const values = await Promise.all(Array.from({length: 10}, () => gateway.execute('alice', prepared.requestId, {confirm: true})));
   assert.ok(values.every(value => value.state === 'succeeded'));
   assert.equal(store.list('ref:demo-receipt').length, 1);
-  const other = createActionGateway(store, {mode: 'demo', writable: true, roles: {alice:'operator'}, adapters: demoActionAdapters(store)});
+  const other = createActionGateway(store, {mode: 'demo', writable: true, roles: {alice:'operator'}, grants:demoServiceGrants(true), adapters: demoActionAdapters(store)});
   assert.equal((await other.execute('alice', prepared.requestId, {confirm: true})).state, 'succeeded');
   assert.equal(store.list('ref:demo-receipt').length, 1);
 });

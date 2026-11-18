@@ -1,0 +1,22 @@
+{
+  "checkedOn": "2026-11-18",
+  "environment": "macOS / in-app browser / Python 3.9.6",
+  "streamlitInstalled": false,
+  "staticChartCards": 6,
+  "allPreviewImagesLoaded": true,
+  "previewScripts": 0,
+  "previewIframes": 0,
+  "previewBodyFont": "16px",
+  "horizontalOverflow": false,
+  "briefDownload": "02-downtime.md completed",
+  "serviceDemo": {
+    "equipment": "approved read succeeds",
+    "reports": "pending disabled",
+    "handover": "not requested disabled"
+  },
+  "limits": [
+    "Actual Streamlit UI not executed",
+    "Corporate versions/data/SSO/API approvals unknown",
+    "No new dependencies installed"
+  ]
+}

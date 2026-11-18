@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "온도와 압력의 분포",
+  "chart": "scatter",
+  "x": "temperature",
+  "y": "pressure",
+  "aggregate": "none",
+  "equipment": "all",
+  "missing": "drop"
+}

@@ -64,7 +64,7 @@ async function start() {
     catalog = await api('/api/actions/catalog'); $('#mode').textContent = catalog.demo ? '가짜 데이터 데모' : '사내 연결 미설정';
     for (const device of catalog.devices) {const option = h('option', device); option.value = device; $('#device').append(option);}
     for (const action of catalog.actions) {
-      const row = h('div', undefined, 'action'), text = h('div'); text.append(h('h3', action.label), h('p', action.available ? (action.mutates ? '내용 확인 후 기록 · 데모 변경' : '가짜 결과만 조회') : action.reason));
+      const row = h('div', undefined, 'action'), text = h('div'); text.append(h('h3', action.label), h('p', action.service.serviceName + ' · ' + (catalog.demo ? '가짜 승인 상태: ' : '') + action.service.label), h('p', action.available ? (action.mutates ? '내용 확인 후 기록 · 데모 변경' : '가짜 결과만 조회') : action.reason));
       const button = h('button', action.mutates ? '내용 검토' : '조회'); button.type = 'button'; button.dataset.available = String(action.available); button.disabled = !action.available;
       button.setAttribute('aria-label', action.label + (action.mutates ? ' 내용 검토' : ' 실행')); button.addEventListener('click', () => void choose(action)); row.append(text, button); $('#actions').append(row);
     }

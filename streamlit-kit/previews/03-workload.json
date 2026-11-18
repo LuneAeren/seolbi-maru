@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "설비별 작업수 합계",
+  "chart": "bar",
+  "x": "equipment",
+  "y": "work_count",
+  "aggregate": "sum",
+  "equipment": "all",
+  "missing": "drop"
+}

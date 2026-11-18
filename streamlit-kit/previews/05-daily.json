@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "날짜별 작업수 합계",
+  "chart": "line",
+  "x": "day",
+  "y": "work_count",
+  "aggregate": "sum",
+  "equipment": "all",
+  "missing": "drop"
+}

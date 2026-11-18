@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "설비 1의 일별 평균 온도",
+  "chart": "line",
+  "x": "day",
+  "y": "temperature",
+  "aggregate": "mean",
+  "equipment": "MC-DEMO-01",
+  "missing": "drop"
+}

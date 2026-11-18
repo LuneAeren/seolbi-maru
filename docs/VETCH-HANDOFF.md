@@ -1,6 +1,12 @@
-# v-etch 이식 인계 · SeolbiMaru v0.7.0
+# v-etch 이식 인계 · SeolbiMaru v0.8.0
 
 대상은 설비마루 한 저장소다. 회사 코드·데이터·주소를 반출하거나 이 저장소에 합치지 않는다. 아래 구현은 사내 SSO·DB에 붙이는 참고 예제이며 실제 v-etch 소스나 스키마를 본 상태는 아니다.
+
+## v0.8 추가 인계
+
+API는 서비스마다 신청이 필요하다. `SERVICE-API-APPLICATIONS.md`, `reference-kit/service-access.js`와 14번 레시피를 읽고 실제 서비스 승인·범위·유효기간을 서버에서 연결한다. 현재 승인은 가짜 메타데이터이며 HTTP로 사용자가 승인 상태를 변경할 수 없다.
+
+Streamlit 작업은 `streamlit-kit/README.md` → `QUICKREF.md` → `inspect_environment.py` → 예제 JSON/작업명세/참고 코드 순으로 읽는다. 기존 Express 포털을 Python으로 다시 작성하지 않는다. 실제 Streamlit UI는 이 개발 PC에서 실행하지 않았으며 회사 설치 버전을 먼저 확인해야 한다. Python 처리 테스트 5개는 JavaScript 51개와 별도다. 예제 6종은 정적 HTML/SVG로도 볼 수 있다.
 
 ## v0.7 사내 동작 연결부
 
@@ -16,7 +22,7 @@
 | DB 스키마·버전·이력 | `src/store.js` | SQLite entities/history/originals/meta 정의, CAS와 트랜잭션 |
 | 표 파일 처리 | `src/tables.js`, `src/parser-worker.js` | CSV/XLSX 검증·반입·출력. tables.js는 DB 스키마가 아님 |
 | 내부 스냅샷 반영 | `src/ingestion.js` | URL 조회 없이 받은 전체 스냅샷 검증·원자적 반영 |
-| 회귀 검증 | `test/*.test.js` | 기존 테스트와 새 HTTP 연동 테스트 포함, 총 49개 |
+| 회귀 검증 | `test/*.test.js` | 기존 테스트와 새 HTTP 연동 테스트 포함, 총 51개 |
 | 최신 홈 | `public/home-designs/focus.js`, `settings.js`, `focus.css`, `catalog.js` | 공통 홈·옵니버스·16개 테마. home.js는 이전 홈 보존용 |
 | 설비 배정 화면 | `public/schedule-designs/04-*.html`, `12-*.html`, `16-*.html` | 인원별 격자·배정 검토·용량 분배 참고. prototypes.js/catalog.js/CSS와 함께 사용 |
 | 모든 미리보기 | `docs/previews/README.md` | 최신 테마 16개 + 이전 검수 이미지 48개 |

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "설비별 정지분 합계",
+  "chart": "bar",
+  "x": "equipment",
+  "y": "downtime",
+  "aggregate": "sum",
+  "equipment": "all",
+  "missing": "drop"
+}
