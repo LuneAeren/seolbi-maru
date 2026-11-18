@@ -1,6 +1,6 @@
 {
-  "version": "0.10.0",
-  "generatedOn": "2026-11-18",
+  "version": "0.10.1",
+  "generatedOn": "2026-11-19",
   "files": [
     {
       "path": ".env.example",
@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "f9f14a6779f8e7f31dcdc1d42eb53208d2f125e7693a00d53b0d75ec67b8ad6e",
-      "bytes": 27699
+      "sha256": "8d0ba41e605f66db3720990fc148d4104d1c9116d4d9985eebaa24bb056c9fd0",
+      "bytes": 31756
     },
     {
       "path": "docs/ACTION-BROWSER-CHECKS.json",
@@ -24,8 +24,8 @@
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "7f3c598cbf466d479b4be2064fb06f96121a818e612471674c292a629e662496",
-      "bytes": 15733
+      "sha256": "5d9cab363940c7925e47e5aaa46e4ca83540465860bf77d236d6f4eced77e9cd",
+      "bytes": 16315
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -69,8 +69,8 @@
     },
     {
       "path": "docs/INTERNAL-ACTIONS.md",
-      "sha256": "aa3179a7eca630ed98bcf82b75c55a14cbb29f595a6e7afc8a26419d944ef0de",
-      "bytes": 13922
+      "sha256": "351af7fe2dea05bf2b7079e0d6641cf8c514e101db8d094b19f5327c94a3fd4e",
+      "bytes": 14581
     },
     {
       "path": "docs/INTERNAL-HANDOFF.md",
@@ -109,13 +109,13 @@
     },
     {
       "path": "docs/VERIFICATION.md",
-      "sha256": "5d63dc8e408e3cb73d9589bef4fb105ce94a2552f2cc79e3c22535055df791da",
-      "bytes": 25572
+      "sha256": "52930f53cd1ff76544f9562910cbdda0889a99dbc4c396c833affbc217c0871a",
+      "bytes": 26589
     },
     {
       "path": "docs/VETCH-HANDOFF.md",
-      "sha256": "d023ce9c85d397438075863aa2dce031a8459b69fdcab262fe1ec62e87770d2a",
-      "bytes": 7394
+      "sha256": "439da027f2f9f791ce04e6952886aa3486897fc7354cb292943fa320d4f597b3",
+      "bytes": 7782
     },
     {
       "path": "docs/archive/HOME-DESIGN-v04.md",
@@ -539,12 +539,12 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "37142921fe48c0a8f56b4b81c01326366643b7517b7f413e956d98ca06edd5ab",
+      "sha256": "de419145805477c195730a0dc0f6cedaa9eacf1f369c14c5ed31f0fb591d4e91",
       "bytes": 114966
     },
     {
       "path": "package.json",
-      "sha256": "8d696d1a226fe9d2ce542cc66b9114ce531962aa0fd2f9035cf6ece1a5bff239",
+      "sha256": "d50626d86172a262ebe3ebae5f38b724aa73623d75cb6890d3ba4a599d081088",
       "bytes": 798
     },
     {
@@ -1114,8 +1114,8 @@
     },
     {
       "path": "reference-kit/recipes/13-internal-actions.md",
-      "sha256": "ad5160e0596ca0f251dfb9aa3e8332c4858ad57c6b16ca90d9d4538342ca1c76",
-      "bytes": 1916
+      "sha256": "d55937ee4b7a9e02178111a6e52b97f587e065c054bdc897237a42baa554efde",
+      "bytes": 2405
     },
     {
       "path": "reference-kit/recipes/14-service-approvals.md",
