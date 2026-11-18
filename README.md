@@ -2,9 +2,19 @@
 
 이미 운영 중인 사내 웹사이트에 디자인과 기능을 옮겨 쓰기 위한 **Express.js 기반 레퍼런스 저장소**입니다. 설비현황·업무자료 포털 예제, PC용 업무 집중 홈 테마 16종과 이전 화면 레퍼런스, 일정 → 작업 → 인수인계 자동화 예제를 포함합니다.
 
-**v0.8.0 · 2026-11-18 — 오프라인 Streamlit 차트 키트 / 서비스별 API 승인 검사**
+**v0.9.0 · 2026-11-18 — 기존 좌표를 유지하는 ER 맵 6종·선그래프 4종**
 
 회사 사이트·기존 DB·로그인을 유지하고 필요한 모듈만 이식하는 것이 목적입니다. 이 저장소에 실제 회사 자료, 메일, 직원 정보, 접속 주소나 자격증명을 넣지 마세요.
+
+## 선그래프·ER 맵은 번호로 고르기
+
+[ER·선그래프 표현 안내](streamlit-kit/ER-REFERENCES.md) · [로컬 화면 10종](http://127.0.0.1:4317/er-reference/) · [GitHub에서 SVG 보기](streamlit-kit/er-previews/)
+
+**ER 맵 6종 + 선그래프 4종**에서 원하는 번호를 고르고 해당 SVG·JSON·수정 요청서를 사내 AI에게 함께 전달하세요. 기존 X/Y 좌표·원천 값·DB·로그인은 유지합니다. 원형 웨이퍼의 노치는 **9시 고정**이며 보간·단위·균일도 계산은 미정으로 남겼습니다. 가짜 좌표 13점과 90~110 범위는 실제 공정 기준이 아닙니다.
+
+![ER 맵 표현 참고 화면](docs/previews/er-reference.jpg)
+
+“ER-04처럼 두 웨이퍼를 같은 색상 범위로 비교해줘. 기존 좌표·계산은 유지해줘”처럼 요청할 수 있습니다. 선택한 화면만 생성하는 Streamlit 참고 앱과 성능 측정 순서도 제공합니다. 실제 Streamlit/Plotly 실행은 설치 환경이 없어 미검증이며, 정적 화면·Python 로직과 구분해 기록했습니다. [16번 이식 레시피](reference-kit/recipes/16-er-line-visual-references.md)
 
 ## 인터넷 없이 Streamlit을 개발할 때
 
@@ -28,7 +38,7 @@
 
 ## 이번 전달물
 
-- [미리보기 모음 보기](docs/previews/README.md): 홈/이전 검수 64개와 새 동작 데모 1개.
+- [미리보기 모음 보기](docs/previews/README.md): 홈·업무·서비스 승인·차트 참고 화면을 포함한 검수 이미지 69개.
 - [v-etch 인계 문서](docs/VETCH-HANDOFF.md): 빠뜨리지 말아야 할 라우터·레시피·보안·테스트·UI 파일 지도.
 - [HTTP API 한 장](docs/INTEGRATION-API.md): 기본 쓰기 403, 서버 역할 검사, 배정 카드 JSON, 버전 문서/CAS/이력/복원, 수집 URL을 조회하지 않는 스냅샷 반영.
 - `npm run export:reference`: 릴리스 파일만 해시 검증 후 `data/SeolbiMaru-Ref-...`로 복사. 실행 DB·업로드·환경 파일·fixtures 파일은 제외하고 가짜 샘플 생성기를 포함.
@@ -62,13 +72,13 @@
 | 날짜 메모·수동 일정 | `reference-kit/workflows.js` | `saveDailyNote`, `scheduleTask` |
 | 이전 디자인 | `public/design-lab/` | 이전 8안 보존 |
 | 보안·파일·저장 | `src/` | 기존 인증·CSRF·파서·SQLite 예제 |
-| 합격 조건 | `test/*.test.js` | 서비스별 승인 검사를 포함한 JavaScript 51개 테스트 + 별도 Python 5개 |
+| 합격 조건 | `test/*.test.js` | 서비스별 승인 검사를 포함한 JavaScript 51개 테스트 + 별도 Python 10개 |
 
 파일 경로는 이 저장소 루트 기준입니다. 복사 전에 API·필드명·권한을 기존 회사 코드와 대조하세요. 상세 입력·출력과 API 표는 [AI 이식 지침](docs/AI-INTEGRATION.md)에 있습니다.
 
 ## 실행
 
-Node.js **24.x**가 필요합니다. Streamlit이나 Python은 사용하지 않습니다.
+Express 포털 실행에는 Node.js **24.x**가 필요합니다. 별도 Streamlit 참고 앱은 회사에 이미 승인·설치된 Python 환경에서만 실행합니다.
 
 ```sh
 npm ci --ignore-scripts
@@ -83,6 +93,7 @@ npm start
 
 | 화면 | 로컬 주소 | 확인할 내용 |
 | --- | --- | --- |
+| **ER·선그래프 표현 10종** | [차트 표현 비교](http://127.0.0.1:4317/er-reference/) | ER 6종·선그래프 4종, 기존 좌표 유지 |
 | **업무 집중 홈 테마 16종** | [홈 테마 비교 갤러리](http://127.0.0.1:4317/home-designs/) | 같은 홈 구조에서 배경·재질·색감 비교 |
 | 이전 일정 화면 16안 | [이전 일정 레퍼런스](http://127.0.0.1:4317/schedule-designs/) | 보존한 이전 일정 화면 예제 |
 | 이전 디자인 8안 | [이전 갤러리](http://127.0.0.1:4317/design-lab/) | 이전 포털 방향 비교 |

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "ER-02",
+  "title": "맵과 측정점 목록",
+  "purpose": "공간 위치와 수치 목록을 함께 확인",
+  "useExistingCoordinates": true,
+  "notchClock": 9,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

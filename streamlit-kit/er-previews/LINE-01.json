@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "LINE-01",
+  "title": "한 계열에 집중",
+  "purpose": "단일 선과 누락 구간을 명확히 표시",
+  "useExistingCoordinates": true,
+  "notchClock": null,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

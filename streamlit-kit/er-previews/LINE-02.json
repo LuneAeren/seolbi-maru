@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "LINE-02",
+  "title": "두 계열 겹쳐 비교",
+  "purpose": "동일 축에서 두 계열의 차이 보기",
+  "useExistingCoordinates": true,
+  "notchClock": null,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

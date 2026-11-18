@@ -17,7 +17,7 @@ for name in ['streamlit','pandas','altair','plotly']:
 if report['streamlitAvailable']:
     os.environ["STREAMLIT_BROWSER_GATHER_USAGE_STATS"]="false"
     import streamlit as st
-    for name in ['line_chart','bar_chart','scatter_chart','dataframe','form','form_submit_button','download_button','cache_data','cache_resource']:
+    for name in ['line_chart','bar_chart','scatter_chart','dataframe','form','form_submit_button','download_button','cache_data','cache_resource','image','plotly_chart','selectbox','tabs']:
         function=getattr(st,name,None)
         entry={'available':function is not None}
         if function is not None:

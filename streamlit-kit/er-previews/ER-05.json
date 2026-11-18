@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "ER-05",
+  "title": "여러 웨이퍼 요약",
+  "purpose": "같은 범례로 여러 맵을 빠르게 살펴보기",
+  "useExistingCoordinates": true,
+  "notchClock": 9,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

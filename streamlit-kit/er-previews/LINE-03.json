@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "LINE-03",
+  "title": "계열별 분리 비교",
+  "purpose": "겹침을 줄이고 같은 축 범위로 비교",
+  "useExistingCoordinates": true,
+  "notchClock": null,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

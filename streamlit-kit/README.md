@@ -2,6 +2,10 @@
 
 말로 매번 화면을 묘사하는 대신 **예제 번호 + 설정 JSON + 작업명세 + 참고 코드**를 사내 AI에게 전달한다. 회사 데이터를 반출하지 않고 회사 안에서 원천 필드만 연결한다. 이번 자료는 가짜 데이터 21행을 사용하며 실제 SSO·DB·Streamlit 서버와 연결하지 않았다.
 
+## 자주 쓰는 선그래프·ER 맵부터
+
+[전용 표현 레퍼런스](ER-REFERENCES.md)에 ER 맵 6종·선그래프 4종을 추가했다. 기존 사내 X/Y 좌표를 유지하고 노치는 9시로 고정한다. 단위·보간·균일도는 변경하지 않는다. `/er-reference/` 또는 `er-previews/index.html`에서 번호를 고르고 요청서와 그림을 사내 AI에게 준다. `er_reference_app.py`는 선택한 표현만 생성하는 별도 Streamlit 참고 앱이다. 아래 일반 차트 6종은 기존 예제로 보존한다.
+
 ## 먼저 눈으로 고르기
 
 Streamlit 없이 `previews/index.html`을 로컬 브라우저에서 열 수 있다. Express 실행 중이면 `/streamlit-reference/`에서도 볼 수 있다. 이 페이지는 Streamlit 자체 화면이 아닌 **같은 집계 로직으로 생성한 정적 SVG 참고 화면**이다. 차트별 설정 JSON·사내 AI용 작업명세·Python 예제를 내려받는다.

@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "ER-01",
+  "title": "측정값 중심 맵",
+  "purpose": "각 측정점의 ER 값을 한눈에 읽기",
+  "useExistingCoordinates": true,
+  "notchClock": 9,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

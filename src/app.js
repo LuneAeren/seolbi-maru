@@ -111,6 +111,7 @@ export function createApp(config, options = {}) {
   app.use('/api/integration', integrationRouter(store, {mode:config.mode, writable:config.integrationWritable, roles:config.integrationRoles}));
   app.use('/api/reference', referenceRouter(store, {mode:config.mode}));
   app.use('/api', (_req, _res) => fail(404, '요청한 기능을 찾을 수 없습니다.'));
+  app.use('/er-reference', express.static(fileURLToPath(new URL('../streamlit-kit/er-previews/', import.meta.url)), {etag:false,maxAge:0,dotfiles:'deny'}));
   app.use('/streamlit-reference', express.static(fileURLToPath(new URL('../streamlit-kit/previews/', import.meta.url)), {etag:false,maxAge:0,dotfiles:'deny'}));
   app.use(express.static(publicDir, { etag: false, maxAge: 0, dotfiles: 'deny' }));
   app.use((_req, res) => res.status(404).type('text').send('페이지를 찾을 수 없습니다.'));

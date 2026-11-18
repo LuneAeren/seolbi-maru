@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "ER-04",
+  "title": "두 웨이퍼 나란히 비교",
+  "purpose": "같은 색상 범위로 두 맵 비교",
+  "useExistingCoordinates": true,
+  "notchClock": 9,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

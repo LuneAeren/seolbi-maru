@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "LINE-04",
+  "title": "추이와 선택값 상세",
+  "purpose": "선그래프와 선택한 측정 기록을 함께 보기",
+  "useExistingCoordinates": true,
+  "notchClock": null,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

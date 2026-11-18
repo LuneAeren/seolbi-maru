@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "referenceId": "ER-03",
+  "title": "미측정 구분 맵",
+  "purpose": "미측정 위치를 0과 구분해 확인",
+  "useExistingCoordinates": true,
+  "notchClock": 9,
+  "spatialInterpolation": "not_requested",
+  "erUnit": null,
+  "uniformityFormula": null,
+  "demoColorRange": [
+    90.0,
+    110.0
+  ],
+  "productionColorRange": "confirm_in_company"
+}

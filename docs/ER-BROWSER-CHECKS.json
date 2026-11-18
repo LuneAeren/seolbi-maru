@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-18",
+  "browser": "Codex in-app browser",
+  "type": "static HTML/SVG references; not Streamlit UI",
+  "views": [
+    {
+      "id": "ER-01",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "ER-02",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "ER-03",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "ER-04",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "ER-05",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "ER-06",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "LINE-01",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "LINE-02",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "LINE-03",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "id": "LINE-04",
+      "bodyFontPx": 16,
+      "loadedImages": 1,
+      "scripts": 0,
+      "iframes": 0,
+      "horizontalOverflow": false
+    }
+  ],
+  "visualChecks": [
+    "all ten compositions observed",
+    "ER-04 point labels adjusted after overlap observed",
+    "9 oclock notch on ER maps",
+    "LINE-02 gaps retained"
+  ],
+  "browserDownload": "unverified: browser connection interrupted before completion could be observed",
+  "staticHttp": {
+    "assetsChecked": 50,
+    "status": 200,
+    "exactLocalBytes": true
+  },
+  "actualStreamlitUI": "not run: Streamlit unavailable",
+  "actualPlotlyRendering": "not run: Plotly unavailable",
+  "corporatePerformance": "not measured"
+}

@@ -81,3 +81,7 @@
 ## v0.7 페이지 없는 동작
 
 `action-gateway.js`와 `action-router.js`는 허용 동작 ID·서버 역할·검토·CAS·중복 디스패치 방지·결과 미확인을 다룬다. 실제 SSO/API는 연결하지 않은 로컬 데모다. [13번 레시피](recipes/13-internal-actions.md)와 [SSO/API 선택 가이드](../docs/INTERNAL-ACTIONS.md)를 함께 읽는다.
+
+## 기존 Streamlit 차트 표현
+
+[16번 레시피](recipes/16-er-line-visual-references.md)와 [ER·선그래프 안내](../streamlit-kit/ER-REFERENCES.md)를 읽는다. 기존 좌표·원천 값·DB/SSO를 유지하며 ER 맵 6종·선그래프 4종의 표현만 참고한다. 노치 9시 외 단위·보간·균일도 계산은 미정이다.
