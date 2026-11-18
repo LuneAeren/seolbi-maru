@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-18",
+  "type": "browser-local UI authoring prototype",
+  "verified": [
+    "pointer drag ER x30/y100 to x50/y110",
+    "pointer resize ER w540/h330 to w500/h300",
+    "rename and behavior note appear in MD/JSON/HTML",
+    "undo and redo",
+    "glossary search modal and add",
+    "duplicate with distinct ID and copy title",
+    "blank canvas rectangle annotation",
+    "freehand stroke",
+    "generated JSON imported via file chooser restores five blocks",
+    "local synthetic JPEG background loads and removes",
+    "download event observed",
+    "body 16px, no horizontal document overflow, iframe 0",
+    "console error/warn 0"
+  ],
+  "exports": "three synthetic handoff files captured from UI text area in ui-brief-kit/examples",
+  "downloadLimit": "download event observed; downloaded on-disk bytes not separately read",
+  "standalone": "generated self-contained HTML; matching script SHA256 verified; direct file browser opening blocked by preview browser URL policy, not executed",
+  "notVerified": [
+    "Windows/Edge",
+    "actual corporate AI interpretation",
+    "watcher integration",
+    "image semantic recognition (not implemented)",
+    "packet-level egress audit"
+  ]
+}

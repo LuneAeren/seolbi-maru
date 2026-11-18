@@ -1,0 +1,50 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>설비 분석 화면</title><style>body{margin:24px;background:#f3f5f4;color:#213c3d;font:16px/1.6 sans-serif}h1{font-size:24px}article{position:relative;width:100%;min-width:700px;aspect-ratio:1000/640;background:white;border:1px solid #cedcdb}section{position:absolute;box-sizing:border-box;padding:12px;border:1px solid #cbdcda;border-radius:8px;background:#fff;overflow:auto}section svg{display:block;width:100%;height:65%;max-height:240px}p{white-space:pre-wrap}article>svg{position:absolute;width:100%;height:100%;pointer-events:none}pre{white-space:pre-wrap;font:14px/1.7 monospace;background:white;padding:20px}</style><h1>설비 분석 화면</h1><p>UI 통역 노트 · 사용자가 지정한 배치와 메모 · 이미지 자동 인식 아님</p><article><section data-ui-id="b-filter" data-ui-type="filter" aria-label="설비·기간 필터" style="left:3%;top:3.125%;width:94%;height:9.375%;font-size:16px;border-top:3px solid #3b7f80"><strong>설비·기간 필터</strong><p>기존 설비·기간 조건을 그대로 연결</p></section><section data-ui-id="b-er" data-ui-type="er" aria-label="웨이퍼 비교 영역" style="left:5%;top:17.1875%;width:50%;height:46.875%;font-size:16px;border-top:3px solid #3b7f80"><strong>웨이퍼 비교 영역</strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 205"><circle cx="150" cy="100" r="88" fill="#edf4f4" stroke="#a4bfc0" stroke-width="2"/><path d="M 60 91 L 72 100 L 60 109" fill="white" stroke="#789b9c" stroke-width="2"/><circle cx="150" cy="100" r="12" fill="#3b8081"/><circle cx="150" cy="55" r="12" fill="#5b9e95"/><circle cx="195" cy="100" r="12" fill="#8abc97"/><circle cx="150" cy="145" r="12" fill="#3b8081"/><circle cx="105" cy="100" r="12" fill="#5b9e95"/><circle cx="90" cy="45" r="12" fill="#8abc97"/><circle cx="210" cy="45" r="12" fill="#3b8081"/><circle cx="90" cy="155" r="12" fill="#5b9e95"/><circle cx="210" cy="155" r="12" fill="#8abc97"/><text x="15" y="105" fill="#5b7678" font-family="sans-serif" font-size="15">9시</text><text x="150" y="202" text-anchor="middle" fill="#6d8484" font-family="sans-serif" font-size="14">가짜 배치 · 원천 좌표 미변경</text></svg><p>왼쪽 맵과 오른쪽 측정점 표를 연계. 기존 DB·좌표는 유지.</p></section><section data-ui-id="b-table" data-ui-type="table" aria-label="측정점 목록" style="left:59%;top:15.625%;width:38%;height:51.5625%;font-size:16px;border-top:3px solid #3b7f80"><strong>측정점 목록</strong><p>맵에서 선택한 측정점과 연계</p></section><section data-ui-id="b-line" data-ui-type="line" aria-label="ER 추이" style="left:3%;top:70.3125%;width:60%;height:25%;font-size:16px;border-top:3px solid #3b7f80"><strong>ER 추이</strong><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 110"><path d="M 20 15 V 90 H 480 M20 50 H480" fill="none" stroke="#d5e2e3"/><polyline points="20,72 70,40 120,50 170,25 220,42 270,35 320,65 370,50 420,60 480,30" fill="none" stroke="#3b8081" stroke-width="3"/><text x="470" y="107" text-anchor="end" font-size="14" fill="#6d8484">가짜 추이</text></svg><p>선택한 설비의 기존 추이 데이터</p></section><section data-ui-id="b-detail" data-ui-type="detail" aria-label="선택점 상세" style="left:65%;top:70.3125%;width:32%;height:25%;font-size:16px;border-top:3px solid #3b7f80"><strong>선택점 상세</strong><p>ID·좌표·원본 값을 표시</p></section><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640"></svg></article><h2>AI용 명세</h2><pre># UI 변경 요청: 설비 분석 화면
+
+## 해석 원칙
+사용자가 배치하고 이름·메모를 붙인 명세입니다. 사진/손그림 자동 인식 결과가 아닙니다.
+좌표는 화면 배치용 1000×640입니다. 웨이퍼 측정 X/Y를 바꾸는 지시가 아닙니다.
+배경으로 올린 이미지는 포함되지 않습니다. 이미지 없이도 해석할 수 있도록 영역 이름·메모를 확인하세요.
+
+## 전체 요구사항
+기존 X/Y 좌표·원천 값·로그인·DB 연결은 유지. ER 맵 노치는 9시 고정. 단위·보간·균일도 계산은 변경하지 않음.
+
+## 화면 영역
+1. 설비·기간 필터 [b-filter]
+   종류: 필터 바 / filter
+   왼쪽 3%, 위 3.1%, 너비 94%, 높이 9.4%
+   배치 단위: x=30, y=20, w=940, h=60; 글자=16px; 강조색=#3b7f80
+   요청: 기존 설비·기간 조건을 그대로 연결
+2. 웨이퍼 비교 영역 [b-er]
+   종류: ER 맵 / er
+   왼쪽 5%, 위 17.2%, 너비 50%, 높이 46.9%
+   배치 단위: x=50, y=110, w=500, h=300; 글자=16px; 강조색=#3b7f80
+   요청: 왼쪽 맵과 오른쪽 측정점 표를 연계. 기존 DB·좌표는 유지.
+3. 측정점 목록 [b-table]
+   종류: 데이터 테이블 / table
+   왼쪽 59%, 위 15.6%, 너비 38%, 높이 51.6%
+   배치 단위: x=590, y=100, w=380, h=330; 글자=16px; 강조색=#3b7f80
+   요청: 맵에서 선택한 측정점과 연계
+4. ER 추이 [b-line]
+   종류: 선그래프 / line
+   왼쪽 3%, 위 70.3%, 너비 60%, 높이 25%
+   배치 단위: x=30, y=450, w=600, h=160; 글자=16px; 강조색=#3b7f80
+   요청: 선택한 설비의 기존 추이 데이터
+5. 선택점 상세 [b-detail]
+   종류: 상세 패널 / detail
+   왼쪽 65%, 위 70.3%, 너비 32%, 높이 25%
+   배치 단위: x=650, y=450, w=320, h=160; 글자=16px; 강조색=#3b7f80
+   요청: ID·좌표·원본 값을 표시
+
+## 시작 배치 대비 변경
+- b-er / title: 웨이퍼 ER 맵 → 웨이퍼 비교 영역; x: 30 → 50; y: 100 → 110; w: 540 → 500; h: 330 → 300; note: 9시 노치. 기존 측정 좌표와 값을 유지 → 왼쪽 맵과 오른쪽 측정점 표를 연계. 기존 DB·좌표는 유지.
+
+## 자유 스케치
+0획. 기하 좌표만으로 동작이나 의미를 추측하지 마세요. 영역의 이름과 메모를 우선합니다.
+
+## 구현 조건
+기존 원천 값·측정 좌표·SSO/DB 연결을 유지합니다. ER 노치는 9시 고정입니다.
+ER 단위·보간·균일도 계산은 미정이므로 추가/변경하지 않습니다.
+선택 영역의 메모에 상세 동작이 없으면 완성된 기능으로 추정하지 않습니다.
+Streamlit은 설치 버전에서 지원하는 열/컨테이너로 배치를 옮기고 검증합니다. HTML을 운영 화면에 그대로 주입하지 않습니다.
+수정 파일·유지한 연결·검증 결과·미구현을 구분해 보고합니다.
+</pre></html>

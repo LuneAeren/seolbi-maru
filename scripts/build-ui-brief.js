@@ -1,0 +1,10 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const base=new URL('../public/ui-brief/',import.meta.url),target=new URL('../ui-brief-kit/',import.meta.url);
+const [page,css,core,app]=await Promise.all(['index.html','style.css','core.js','app.js'].map(file=>readFile(new URL(file,base),'utf8')));
+const js=(core+'\n'+app).replace(/<\/script/gi,'<\\/script');
+const hash=createHash('sha256').update(js).digest('base64');
+const policy=`default-src 'none'; script-src 'sha256-${hash}'; script-src-attr 'none'; style-src 'unsafe-inline'; img-src blob:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'`;
+const result=page.replace('<link rel="stylesheet" href="style.css"><script defer src="core.js"></script><script defer src="app.js"></script>','<meta http-equiv="Content-Security-Policy" content="'+policy+'"><style>'+css+'</style>').replace('</body>','<script>'+js+'</script></body>');
+await mkdir(target,{recursive:true});await writeFile(new URL('UI-통역-노트.html',target),result);
+console.log('Built self-contained offline UI brief: ui-brief-kit/UI-통역-노트.html');

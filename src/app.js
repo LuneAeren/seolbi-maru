@@ -26,6 +26,10 @@ export function createApp(config, options = {}) {
     if ((req.path.startsWith('/design-lab/') || req.path.startsWith('/schedule-designs/') || req.path.startsWith('/home-designs/'))) {
       res.set('Content-Security-Policy', res.get('Content-Security-Policy').replace("frame-src 'none'", "frame-src 'self'").replace("frame-ancestors 'none'", "frame-ancestors 'self'"));
     }
+    if (req.path.startsWith('/ui-brief/')) {
+      // Browser-local positioning and raster reference backgrounds; no API access.
+      res.set('Content-Security-Policy', "default-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' blob:; connect-src 'none'; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'");
+    }
     res.set('Cache-Control', 'no-store');next();
   });
   app.get('/health', (_req, res) => res.json({ status: 'ok' }));

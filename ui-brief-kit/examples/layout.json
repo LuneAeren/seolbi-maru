@@ -1,0 +1,90 @@
+{
+  "format": "ui-brief/1",
+  "interpretation": "사용자가 지정한 영역 이름과 메모. 이미지 자동 인식 결과가 아님.",
+  "coordinateSystem": "화면 배치 전용 1000×640; 웨이퍼 측정 좌표와 무관",
+  "layout": {
+    "version": 1,
+    "title": "설비 분석 화면",
+    "width": 1000,
+    "height": 640,
+    "notes": "기존 X/Y 좌표·원천 값·로그인·DB 연결은 유지. ER 맵 노치는 9시 고정. 단위·보간·균일도 계산은 변경하지 않음.",
+    "blocks": [
+      {
+        "id": "b-filter",
+        "type": "filter",
+        "title": "설비·기간 필터",
+        "x": 30,
+        "y": 20,
+        "w": 940,
+        "h": 60,
+        "note": "기존 설비·기간 조건을 그대로 연결",
+        "color": "#3b7f80",
+        "font": 16
+      },
+      {
+        "id": "b-er",
+        "type": "er",
+        "title": "웨이퍼 비교 영역",
+        "x": 50,
+        "y": 110,
+        "w": 500,
+        "h": 300,
+        "note": "왼쪽 맵과 오른쪽 측정점 표를 연계. 기존 DB·좌표는 유지.",
+        "color": "#3b7f80",
+        "font": 16
+      },
+      {
+        "id": "b-table",
+        "type": "table",
+        "title": "측정점 목록",
+        "x": 590,
+        "y": 100,
+        "w": 380,
+        "h": 330,
+        "note": "맵에서 선택한 측정점과 연계",
+        "color": "#3b7f80",
+        "font": 16
+      },
+      {
+        "id": "b-line",
+        "type": "line",
+        "title": "ER 추이",
+        "x": 30,
+        "y": 450,
+        "w": 600,
+        "h": 160,
+        "note": "선택한 설비의 기존 추이 데이터",
+        "color": "#3b7f80",
+        "font": 16
+      },
+      {
+        "id": "b-detail",
+        "type": "detail",
+        "title": "선택점 상세",
+        "x": 650,
+        "y": 450,
+        "w": 320,
+        "h": 160,
+        "note": "ID·좌표·원본 값을 표시",
+        "color": "#3b7f80",
+        "font": 16
+      }
+    ],
+    "strokes": []
+  },
+  "changes": [
+    "b-er / title: 웨이퍼 ER 맵 → 웨이퍼 비교 영역; x: 30 → 50; y: 100 → 110; w: 540 → 500; h: 330 → 300; note: 9시 노치. 기존 측정 좌표와 값을 유지 → 왼쪽 맵과 오른쪽 측정점 표를 연계. 기존 DB·좌표는 유지."
+  ],
+  "preserve": [
+    "existing source values",
+    "existing measurement coordinates",
+    "SSO and DB",
+    "9 oclock ER notch"
+  ],
+  "unconfirmed": [
+    "ER unit",
+    "spatial interpolation",
+    "uniformity formula"
+  ],
+  "imageIncluded": false
+}

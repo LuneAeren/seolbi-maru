@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "0.10.0",
   "generatedOn": "2026-11-18",
   "files": [
     {
@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "09e4c70393a8922f26fe1225f49ed756227c0fb37b7d406909aa5c531e5dbf97",
-      "bytes": 26615
+      "sha256": "f9f14a6779f8e7f31dcdc1d42eb53208d2f125e7693a00d53b0d75ec67b8ad6e",
+      "bytes": 27699
     },
     {
       "path": "docs/ACTION-BROWSER-CHECKS.json",
@@ -24,8 +24,8 @@
     },
     {
       "path": "docs/AI-INTEGRATION.md",
-      "sha256": "ad2ddfd2caaff343fe498947c8d15322238984fffec39323f6c6c3cf23813fb0",
-      "bytes": 15423
+      "sha256": "7f3c598cbf466d479b4be2064fb06f96121a818e612471674c292a629e662496",
+      "bytes": 15733
     },
     {
       "path": "docs/DEPENDENCIES.json",
@@ -103,14 +103,19 @@
       "bytes": 3653
     },
     {
+      "path": "docs/UI-BRIEF-CHECKS.json",
+      "sha256": "f54138234d31cfccccb33376b8e108cec6fde175485817cfa5422fb424d70018",
+      "bytes": 1210
+    },
+    {
       "path": "docs/VERIFICATION.md",
-      "sha256": "8a7b876f8e8691750c273973163f7a5b7552e06d4561a0a57dd9cbf59b615505",
-      "bytes": 23865
+      "sha256": "5d63dc8e408e3cb73d9589bef4fb105ce94a2552f2cc79e3c22535055df791da",
+      "bytes": 25572
     },
     {
       "path": "docs/VETCH-HANDOFF.md",
-      "sha256": "297fa26a6a6ac564d3a3e77e2e76aac3a3657cc580d1132c17ca8f15b9ec8fae",
-      "bytes": 6984
+      "sha256": "d023ce9c85d397438075863aa2dce031a8459b69fdcab262fe1ec62e87770d2a",
+      "bytes": 7394
     },
     {
       "path": "docs/archive/HOME-DESIGN-v04.md",
@@ -119,8 +124,8 @@
     },
     {
       "path": "docs/previews/README.md",
-      "sha256": "3cd6ba90e70f4d781bc4e7b41c9a2a1ea35015586d5548b6b057daf267b630ad",
-      "bytes": 6748
+      "sha256": "d8ea5d41a7b4368b9fef361d3025beb860462057816e028ed651eb3611a2c99a",
+      "bytes": 6989
     },
     {
       "path": "docs/previews/action-gateway.jpg",
@@ -468,6 +473,16 @@
       "bytes": 168752
     },
     {
+      "path": "docs/previews/ui-brief-handoff.jpg",
+      "sha256": "83fe1c00dca7ca12c657c32b2c98619bb33ba02822eabcfd13154491c3a18e13",
+      "bytes": 113233
+    },
+    {
+      "path": "docs/previews/ui-brief.jpg",
+      "sha256": "862c8c015f38a3bf39af01c27ef9b2ea666b6e9ddd381e901b9f0ab68369e314",
+      "bytes": 112790
+    },
+    {
       "path": "docs/research/DESIGN-REFERENCES.md",
       "sha256": "e2406f863654e15bca4d041afcf7169731da31de26d965b9a994b7d69db7b6cf",
       "bytes": 6323
@@ -524,13 +539,13 @@
     },
     {
       "path": "package-lock.json",
-      "sha256": "f9af8c22b6df89a59f7aed7a944a7b7e1a8fbe73d3825d07e6497c3930a362b2",
-      "bytes": 114964
+      "sha256": "37142921fe48c0a8f56b4b81c01326366643b7517b7f413e956d98ca06edd5ab",
+      "bytes": 114966
     },
     {
       "path": "package.json",
-      "sha256": "7f99830e7e13a841d30f22ddc8b76523596bc84d2c50a65305c0d6deec87b99d",
-      "bytes": 741
+      "sha256": "8d696d1a226fe9d2ce542cc66b9114ce531962aa0fd2f9035cf6ece1a5bff239",
+      "bytes": 798
     },
     {
       "path": "public/action-lab/app.js",
@@ -988,6 +1003,26 @@
       "bytes": 13816
     },
     {
+      "path": "public/ui-brief/app.js",
+      "sha256": "9eb099e9a211e54fd9098e9a5ffb0a10546af47c1085c1c0652a34a904739ff0",
+      "bytes": 15057
+    },
+    {
+      "path": "public/ui-brief/core.js",
+      "sha256": "cf9ddbe24edce85fc2e319c2b689afc8dced21a9b78514abfc26d8905d3fb5a6",
+      "bytes": 11603
+    },
+    {
+      "path": "public/ui-brief/index.html",
+      "sha256": "3654ba60eb329d96ccb923f103c8d0782b1f6e61783dc0257496f90e354ebf0c",
+      "bytes": 7712
+    },
+    {
+      "path": "public/ui-brief/style.css",
+      "sha256": "20e430d282b080e9897bb8b6d32fbe0bf1b7d27dcc18dbc2f9b5f9b63a16b628",
+      "bytes": 7602
+    },
+    {
       "path": "reference-kit/DESIGN-GUIDE.md",
       "sha256": "30ee1175016ad89d2b697a20b18f79065bc3e081a52c8784a79aee20a5c2577f",
       "bytes": 1738
@@ -1098,6 +1133,11 @@
       "bytes": 2031
     },
     {
+      "path": "reference-kit/recipes/17-ui-brief.md",
+      "sha256": "c08d28c217c3e449655904a8f43494367654187471d2b682050afafd0dcac443",
+      "bytes": 1562
+    },
+    {
       "path": "reference-kit/router.js",
       "sha256": "5b8537a538db8b3eb941a1e2d2d04587d43aa8eccefb9d11beed5704da11fb9a",
       "bytes": 5657
@@ -1118,14 +1158,19 @@
       "bytes": 14120
     },
     {
+      "path": "scripts/build-ui-brief.js",
+      "sha256": "4e514a6d356fe6536b4ebe1696ce96a188d3e7b5fec725d89cc3d3515261ff1e",
+      "bytes": 1172
+    },
+    {
       "path": "scripts/check-source.js",
       "sha256": "921bea5d4aa8226310189f9f42224e698f539decc35a51506fe635452a52bdc6",
       "bytes": 1290
     },
     {
       "path": "scripts/export-reference.js",
-      "sha256": "091c15d53ef4888abdffd03a8c7037d94cd6cd5fc5f6b3e6e5e4e650f26919e6",
-      "bytes": 3355
+      "sha256": "7e1c92583b733cf99612d0c9f3a5e0411301d0dca1315875d716b347787ff8b0",
+      "bytes": 3497
     },
     {
       "path": "scripts/inventory.js",
@@ -1139,8 +1184,8 @@
     },
     {
       "path": "src/app.js",
-      "sha256": "1c94e949892e89b66e7b5f6454f73f2bb887b9737e210ccb3047ad19cc7a09ca",
-      "bytes": 13650
+      "sha256": "b0f4b180bc4798cb471fd268fa7a339fb2f2309448f76521b6b25670e377498c",
+      "bytes": 14066
     },
     {
       "path": "src/connectors.js",
@@ -1681,6 +1726,36 @@
       "path": "test/service-access.test.js",
       "sha256": "2d5d428188e40b33b2247a913a85714b775b03cbe32550c558feb5b682529c9a",
       "bytes": 2559
+    },
+    {
+      "path": "test/ui-brief.test.js",
+      "sha256": "093e8ce54b3348dd70d16751eb313c2e00544faa366ed40e330680c988768691",
+      "bytes": 3770
+    },
+    {
+      "path": "ui-brief-kit/README.md",
+      "sha256": "5160a4485412fd059d9e43e7c3bed60c2a6a0e96a544429277e42a521a39ff44",
+      "bytes": 5708
+    },
+    {
+      "path": "ui-brief-kit/UI-통역-노트.html",
+      "sha256": "74494feb5244d51132a55d77ea7dff56eb26a810f262425d2700496aa2ed7db2",
+      "bytes": 42192
+    },
+    {
+      "path": "ui-brief-kit/examples/CHANGE_REQUEST.md",
+      "sha256": "d430270d4f7fe4e022a68d2d5dddaf3fd72fa4a0a11cb36040fc8455d7a0d21f",
+      "bytes": 2867
+    },
+    {
+      "path": "ui-brief-kit/examples/layout.json",
+      "sha256": "2dec748aa1fe76b5c0cb74876063bcbdc175b3e5c1ade141c32264eb20d3bd3d",
+      "bytes": 2539
+    },
+    {
+      "path": "ui-brief-kit/examples/preview.html",
+      "sha256": "70790831eddf3a633e4eafb78b61d15db52830e5b0c10ae952de7a361cfd23f6",
+      "bytes": 6660
     }
   ]
 }

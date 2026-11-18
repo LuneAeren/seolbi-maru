@@ -155,3 +155,7 @@ GitHub에서 가져온 디자인 스킬 원문은 `docs/research/upstream/`에 �
 ## v0.8 서비스 신청과 오프라인 차트
 
 서비스별 API 승인 정보는 `SERVICE-API-APPLICATIONS.md`와 service-access.js를 참고한다. 실제 승인 상태는 신뢰된 사내 서버에서 읽고 사용자의 역할·리소스 권한과 함께 실행 시 다시 확인한다. Streamlit은 별도 streamlit-kit을 사용하고 설치된 공개 API 시그니처/설명, 예제 번호·JSON·작업명세로 사내 AI의 입력을 구체화한다. 실제 회사 데이터를 키트 미리보기로 생성해 Git에 올리지 않는다.
+
+## 사용자 배치 명세
+
+UI 통역 노트의 요청서/JSON을 받으면 `ui-brief-kit/README.md`와 17번 레시피를 읽는다. 배치 좌표와 측정 좌표를 구분하고 영역 이름·메모를 기준으로 해석한다. 그림 자동 인식이나 운영 코드 자동 적용 결과가 아니다.
